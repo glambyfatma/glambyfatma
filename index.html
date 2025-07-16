@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Glam by Fatma</title>
   <style>
-    /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
     body {
       background-color: #0d0d0d;
@@ -14,8 +18,14 @@
       line-height: 1.6;
     }
 
-    a { color: #f5c542; text-decoration: none; }
-    h1, h2, h3 { color: #f5c542; }
+    a {
+      color: #f5c542;
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      color: #f5c542;
+    }
 
     header {
       background-color: #111;
@@ -31,7 +41,7 @@
     }
 
     .hero {
-      background: url('https://i.ibb.co/3cLvTPc/glam-bg.jpg') center/cover no-repeat;
+      background: url('https://i.ibb.co/gjVZTbw/glam-banner.png') center/cover no-repeat;
       padding: 100px 20px;
       text-align: center;
       color: #f5c542;
@@ -65,6 +75,11 @@
       background-color: #2c2c2c;
     }
 
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
     footer {
       background: #111;
       padding: 20px;
@@ -73,9 +88,15 @@
       border-top: 1px solid #333;
     }
 
-    /* Mobile */
+    .socials a {
+      display: block;
+      margin-bottom: 8px;
+    }
+
     @media (max-width: 600px) {
-      .hero h1 { font-size: 2em; }
+      .hero h1 {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
@@ -92,14 +113,14 @@
   </header>
 
   <section class="hero">
-    <h1>Bringing Out Your Inner Glam</h1>
-    <p>Makeup | Bridal | Events | Beauty</p>
+    <h1>Elegance in Every Detail</h1>
+    <p>Henna • Makeup • Hair Styling</p>
   </section>
 
   <section id="about">
     <h2>About Me</h2>
     <p>
-      Hi, I’m Fatma — a beauty specialist passionate about elevating natural beauty with a touch of glam. From bridal transformations to photoshoot-ready makeup, I’m here to help you feel confident and radiant.
+      Hi, I’m Fatma — a beauty specialist based in Nairobi, passionate about creating elegant looks for every occasion. Whether it’s your wedding day, a special event, or a creative shoot, I bring out your inner glow with precision and glam.
     </p>
   </section>
 
@@ -108,15 +129,19 @@
     <div class="services">
       <div class="card">
         <h3>Bridal Glam</h3>
-        <p>Full-day makeup with trials. Perfect for your special day.</p>
+        <p>Full-day makeup with trial and touch-ups to make your big day flawless.</p>
       </div>
       <div class="card">
         <h3>Event Makeup</h3>
-        <p>Get camera-ready for birthdays, parties, or red carpet events.</p>
+        <p>Look stunning for birthdays, parties, graduations and more.</p>
       </div>
       <div class="card">
-        <h3>Editorial Looks</h3>
-        <p>Creative or commercial shoots with high-fashion styling.</p>
+        <h3>Hair Styling</h3>
+        <p>Elegant, soft, or bold hairstyles for any event or shoot.</p>
+      </div>
+      <div class="card">
+        <h3>Henna Art</h3>
+        <p>Traditional or modern henna for weddings and special occasions.</p>
       </div>
     </div>
   </section>
@@ -124,26 +149,33 @@
   <section id="portfolio">
     <h2>Portfolio</h2>
     <div class="portfolio">
-      <div class="card"><img src="https://i.ibb.co/gmX4Rpb/glam1.jpg" alt="Glam look 1" style="width:100%; border-radius:10px"/></div>
-      <div class="card"><img src="https://i.ibb.co/KhLnxgS/glam2.jpg" alt="Glam look 2" style="width:100%; border-radius:10px"/></div>
-      <div class="card"><img src="https://i.ibb.co/1GjSmPy/glam3.jpg" alt="Glam look 3" style="width:100%; border-radius:10px"/></div>
+      <div class="card"><img src="https://i.ibb.co/gmX4Rpb/glam1.jpg" alt="Glam look 1"/></div>
+      <div class="card"><img src="https://i.ibb.co/KhLnxgS/glam2.jpg" alt="Glam look 2"/></div>
+      <div class="card"><img src="https://i.ibb.co/1GjSmPy/glam3.jpg" alt="Glam look 3"/></div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>📍 Nairobi, Kenya</p>
-    <p>📞 <a href="tel:+254700000000">+254 700 000 000</a></p>
-    <p>💬 <a href="https://wa.me/254700000000" target="_blank">Message me on WhatsApp</a></p>
-    <p>📧 <a href="mailto:fatma@example.com">fatma@example.com</a></p>
+    <p>📞 <a href="tel:+254114065922">+254 114 065 922</a></p>
+    <p>💬 <a href="https://wa.me/254114065922" target="_blank">Message me on WhatsApp</a></p>
+    <p>📧 <a href="mailto:glambyfatmaa@gmail.com">glambyfatmaa@gmail.com</a></p>
+
+    <div class="socials">
+      <p>📱 Follow me:</p>
+      <a href="https://www.instagram.com/glam.by.fatma" target="_blank">Instagram: @glam.by.fatma</a>
+      <a href="https://www.tiktok.com/@glambyfatmaa" target="_blank">TikTok: @glambyfatmaa</a>
+      <a href="https://www.facebook.com/glambyfatma" target="_blank">Facebook: Glam by Fatma</a>
+    </div>
   </section>
 
   <footer>
     © 2025 Glam by Fatma. All rights reserved.
   </footer>
 
-  <!-- OPTIONAL: Smooth Scroll Script -->
   <script>
+    // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
