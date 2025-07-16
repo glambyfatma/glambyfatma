@@ -2,190 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Glam by Fatma</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      background-color: #0d0d0d;
-      color: #f2f2f2;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #f5c542;
-      text-decoration: none;
-    }
-
-    h1, h2, h3 {
-      color: #f5c542;
-    }
-
-    header {
-      background-color: #111;
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 1px solid #333;
-    }
-
-    nav a {
-      margin: 0 10px;
-      color: #f2f2f2;
-      font-weight: bold;
-    }
-
-    .hero {
-      background: url('https://i.ibb.co/gjVZTbw/glam-banner.png') center/cover no-repeat;
-      padding: 100px 20px;
-      text-align: center;
-      color: #f5c542;
-    }
-
-    .hero h1 {
-      font-size: 3em;
-      text-shadow: 2px 2px #000;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .services, .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background-color: #1a1a1a;
-      padding: 20px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      background-color: #2c2c2c;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    footer {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-      border-top: 1px solid #333;
-    }
-
-    .socials a {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
+  <!-- Navigation -->
   <header>
-    <h2>Glam by Fatma</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
+    <nav class="container">
+      <div class="logo">Glam by Fatma</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Elegance in Every Detail</h1>
-    <p>Henna • Makeup • Hair Styling</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero" data-aos="fade-in">
+    <div class="hero-text">
+      <h1>Artistry That Transforms.<br>Beauty That Lasts.</h1>
+      <a href="#contact" class="cta-btn">Book Now</a>
+    </div>
   </section>
 
-  <section id="about">
+  <!-- About Section -->
+  <section id="about" class="section" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>
-      Hi, I’m Fatma — a beauty specialist based in Nairobi, passionate about creating elegant looks for every occasion. Whether it’s your wedding day, a special event, or a creative shoot, I bring out your inner glow with precision and glam.
-    </p>
+    <p>Luxury bridal makeup, henna design, and hairstyling infused with East African elegance.</p>
   </section>
 
-  <section id="services">
-    <h2>Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Bridal Glam</h3>
-        <p>Full-day makeup with trial and touch-ups to make your big day flawless.</p>
-      </div>
-      <div class="card">
-        <h3>Event Makeup</h3>
-        <p>Look stunning for birthdays, parties, graduations and more.</p>
-      </div>
-      <div class="card">
-        <h3>Hair Styling</h3>
-        <p>Elegant, soft, or bold hairstyles for any event or shoot.</p>
-      </div>
-      <div class="card">
-        <h3>Henna Art</h3>
-        <p>Traditional or modern henna for weddings and special occasions.</p>
-      </div>
+  <!-- Services Section -->
+  <section id="services" class="section grid" data-aos="fade-up">
+    <div class="service">
+      <h3>Makeup</h3>
+      <p>Bridal, editorial, and occasion-based beauty services.</p>
+    </div>
+    <div class="service">
+      <h3>Hairdressing</h3>
+      <p>Elegant styling and updos tailored to your look.</p>
+    </div>
+    <div class="service">
+      <h3>Henna Artistry</h3>
+      <p>Intricate designs using natural, premium henna.</p>
     </div>
   </section>
 
-  <section id="portfolio">
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section" data-aos="fade-up">
     <h2>Portfolio</h2>
-    <div class="portfolio">
-      <div class="card"><img src="https://i.ibb.co/gmX4Rpb/glam1.jpg" alt="Glam look 1"/></div>
-      <div class="card"><img src="https://i.ibb.co/KhLnxgS/glam2.jpg" alt="Glam look 2"/></div>
-      <div class="card"><img src="https://i.ibb.co/1GjSmPy/glam3.jpg" alt="Glam look 3"/></div>
+    <div class="gallery">
+      <img src="portfolio1.jpg" alt="Bridal Look 1" />
+      <img src="portfolio2.jpg" alt="Henna Design" />
+      <!-- Add more images here -->
     </div>
   </section>
 
-  <section id="contact">
+  <!-- Contact Section -->
+  <section id="contact" class="section" data-aos="fade-up">
     <h2>Contact</h2>
-    <p>📍 Nairobi, Kenya</p>
-    <p>📞 <a href="tel:+254114065922">+254 114 065 922</a></p>
-    <p>💬 <a href="https://wa.me/254114065922" target="_blank">Message me on WhatsApp</a></p>
-    <p>📧 <a href="mailto:glambyfatmaa@gmail.com">glambyfatmaa@gmail.com</a></p>
-
-    <div class="socials">
-      <p>📱 Follow me:</p>
-      <a href="https://www.instagram.com/glam.by.fatma" target="_blank">Instagram: @glam.by.fatma</a>
-      <a href="https://www.tiktok.com/@glambyfatmaa" target="_blank">TikTok: @glambyfatmaa</a>
-      <a href="https://www.facebook.com/glambyfatma" target="_blank">Facebook: Glam by Fatma</a>
-    </div>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/254114065922?text=Hi%20Fatma%2C%20I%E2%80%99d%20love%20to%20book%20a%20session%21"
+     class="floating-whatsapp" target="_blank">💬</a>
+
+  <!-- Footer -->
   <footer>
-    © 2025 Glam by Fatma. All rights reserved.
+    <p>© Glam by Fatma</p>
+    <div class="social">
+      <a href="https://instagram.com/glam.by.fatma" target="_blank">Instagram</a>
+      <a href="https://wa.me/254114065922" target="_blank">WhatsApp</a>
+      <a href="https://tiktok.com/@glambyfatmaa" target="_blank">TikTok</a>
+      <a href="mailto:glambyfatmaa@gmail.com" target="_blank">Email</a>
+    </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+    // 🌿 Smooth Scroll for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
-  </script>
 
+    // 💌 Simple Form Validation
+    document.querySelector('form')?.addEventListener('submit', function(e) {
+      const name = this.querySelector('input[type="text"]');
+      const email = this.querySelector('input[type="email"]');
+      const message = this.querySelector('textarea');
+
+      if (!name.value || !email.value || !message.value) {
+        e.preventDefault();
+        alert('Please fill out all fields before sending.');
+      }
+    });
+
+    // ✨ Scroll Reveal Setup (AOS)
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
 </body>
 </html>
