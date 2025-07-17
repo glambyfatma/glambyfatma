@@ -2,136 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Glam by Fatma</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" /> <!-- Add this -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script>
-    if (location.protocol !== 'https:') {
-      location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-    }
-  </script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- AOS for scroll animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 <body>
 
   <!-- Navigation -->
   <header>
-  <nav class="container">
-  <div class="logo">
-  <img src="images/logo.png" alt="Glam by Fatma Logo" />
-</div>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-</header>
+    <nav class="container">
+      <div class="logo">Glam by Fatma</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero" data-aos="fade-in">
-  <div class="hero-overlay">
+  <section id="home" class="hero">
     <div class="hero-text">
-      <h1>Artistry That Transforms.<br>Beauty That Lasts.</h1>
-      <p>Luxury bridal makeup, henna design, and hairstyling infused with East African elegance.</p>
+      <h1>Elegance in Every Detail</h1>
+      <p>Luxury makeup, henna & hair styling across Kenya</p>
+      <a href="#contact" class="cta-btn">Book Now</a>
     </div>
-  </div>
-</section>
-  <!-- Call to Action -->
-<section class="call-to-action">
-  <h2>Feel Radiant, Always</h2>
-  <p>Book your glow session today and experience personalized beauty like never before.</p>
-  <a href="#contact" class="cta-btn">Book Your Glow</a>
-</section>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section" data-aos="fade-up">
+    <h2>About Glam by Fatma</h2>
+    <p>Welcome to <strong>Glam by Fatma</strong> – your go-to beauty expert for flawless, timeless, and tailored makeup artistry in Kitui and across Kenya.</p>
+    <p>Specializing in bridal makeup, henna design, and occasion-ready glam, Fatma transforms every client with precision, passion, and a deep understanding of individual beauty.</p>
+  </section>
 
   <!-- Services Section -->
   <section id="services" class="section grid" data-aos="fade-up">
     <div class="service">
-       <h2>Services</h2>
       <h3>Makeup</h3>
-      <p>Bridal, editorial, and occasion-based beauty services.</p>
+      <p>Bridal, editorial, and glam looks designed to enhance your natural beauty and last all day.</p>
     </div>
     <div class="service">
-      <h3>Hairdressing</h3>
-      <p>Elegant styling and updos tailored to your look.</p>
+      <h3>Hair Styling</h3>
+      <p>Elegant updos, curls, and styles tailored to your event and personal vibe.</p>
     </div>
     <div class="service">
-      <h3>Henna Artistry</h3>
-      <p>Intricate designs using natural, premium henna.</p>
+      <h3>Henna Art</h3>
+      <p>Intricate, cultural designs using safe, natural henna – perfect for weddings and celebrations.</p>
     </div>
   </section>
 
   <!-- Portfolio Section -->
   <section id="portfolio" class="section" data-aos="fade-up">
     <h2>Portfolio</h2>
-    <div class="gallery">
+    <div class="gallery slick-slider">
       <img src="portfolio1.jpg" alt="Bridal Look 1" />
       <img src="portfolio2.jpg" alt="Henna Design" />
-      <!-- Add more images here -->
+      <img src="portfolio3.jpg" alt="Hair Styling" />
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="section" data-aos="fade-up">
-    <h2>Contact</h2>
+    <h2>Contact & Booking</h2>
+    <p>We offer mobile and in-studio beauty services across Kenya – from Kitui to Nairobi, Mombasa, Kisumu and beyond.</p>
     <form>
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Email Address" required />
       <textarea placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
+    <div class="social">
+      <a href="https://facebook.com/glambyfatma" target="_blank">Facebook</a>
+      <a href="https://tiktok.com/@glambyfatmaa" target="_blank">TikTok</a>
+      <a href="https://instagram.com/glam.by.fatma" target="_blank">Instagram</a>
+      <a href="mailto:glambyfatmaa@gmail.com">Email</a>
+    </div>
   </section>
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/254114065922?text=Hi%20Fatma%2C%20I%E2%80%99d%20love%20to%20book%20a%20session%21"
-     class="floating-whatsapp" target="_blank">💬</a>
+  <!-- WhatsApp Floating -->
+  <a href="https://wa.me/254700000000?text=Hi%20Fatma%2C%20I’d%20love%20to%20book%20a%20session!" class="floating-whatsapp" target="_blank">💬</a>
 
   <!-- Footer -->
   <footer>
-    <p>© Glam by Fatma</p>
-    <div class="social">
-      <a href="https://instagram.com/glam.by.fatma" target="_blank">Instagram</a>
-      <a href="https://wa.me/254114065922" target="_blank">WhatsApp</a>
-      <a href="https://tiktok.com/@glambyfatmaa" target="_blank">TikTok</a>
-      <a href="mailto:glambyfatmaa@gmail.com" target="_blank">Email</a>
-    </div>
+    <p>© 2025 Glam by Fatma | All rights reserved</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // 🌿 Smooth Scroll for Navigation Links
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // 💌 Simple Form Validation
-    document.querySelector('form')?.addEventListener('submit', function(e) {
-      const name = this.querySelector('input[type="text"]');
-      const email = this.querySelector('input[type="email"]');
-      const message = this.querySelector('textarea');
-
-      if (!name.value || !email.value || !message.value) {
-        e.preventDefault();
-        alert('Please fill out all fields before sending.');
-      }
-    });
-
-    // ✨ Scroll Reveal Setup (AOS)
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true
-    });
-  </script>
+  <!-- JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
