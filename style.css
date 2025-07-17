@@ -37,9 +37,9 @@ nav.container {
   letter-spacing: 0.5px;
 }
 .logo img {
-  max-height: 50;
+  height: 40px;
   width: auto;
-  display: block;
+  object-fit: contain;
 }
 .nav-links {
   display: flex;
