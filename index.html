@@ -3,18 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Glam by Fatma</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Glam by Fatma – Bridal Glam, Makeup & Henna in Kenya</title>
+  <meta name="description" content="Glam by Fatma offers luxury bridal makeup, hair styling, and henna services across Kenya. Studio and mobile services available for weddings, shoots, and events." />
+  <meta name="keywords" content="Glam by Fatma, Bridal Makeup Kenya, Hair Stylist Kitui, Henna Artist Kenya, Makeup Artist Kitui, Kenyan Glam, Wedding Glam Kenya" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Fatma" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Glam by Fatma – Luxury Bridal Glam in Kenya" />
+  <meta property="og:description" content="Bridal makeup, elegant hair styling & cultural henna art – studio & mobile services available." />
+  <meta property="og:image" content="images/hero.webp" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Glam by Fatma" />
+  <meta name="twitter:description" content="Bridal beauty services in Kenya – Makeup | Hair | Henna" />
+  <meta name="twitter:image" content="images/hero.webp" />
+
+  <!-- Favicon -->
   <link rel="icon" href="images/favicon.png" type="image/png">
+
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
+
 <body>
 
-  <header>
-    <nav class="container">
-      <div class="logo">Glam by Fatma</div>
+  <header role="banner">
+    <nav class="container" role="navigation" aria-label="Main">
+      <div class="logo" aria-label="Brand Name">Glam by Fatma</div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
@@ -24,67 +49,71 @@
     </nav>
   </header>
 
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Artistry That Transforms.<br>Beauty That Lasts.</h1>
-      <a href="#contact" class="cta-btn">Book Now</a>
-    </div>
-  </section>
+  <main>
+    <section id="home" class="hero" aria-label="Hero Section">
+      <div class="hero-text">
+        <h1>Artistry That Transforms.<br>Beauty That Lasts.</h1>
+        <a href="#contact" class="cta-btn" role="button">Book Now</a>
+      </div>
+    </section>
 
-  <section id="services" class="section grid">
-    <div class="service">
-      <img src="images/makeup1.png" alt="Makeup Service" />
-      <h3>Makeup</h3>
-      <p>Bridal, editorial, and glam looks designed to enhance your natural beauty and last all day.</p>
-    </div>
-    <div class="service">
-      <img src="images/hairstyle.jpeg" alt="Hair Styling Service" />
-      <h3>Hair Styling</h3>
-      <p>Elegant updos, curls, and styles tailored to your event and personal vibe.</p>
-    </div>
-    <div class="service">
-      <img src="images/henna.jpeg" alt="Henna Art Service" />
-      <h3>Henna Art</h3>
-      <p>Intricate, cultural designs using safe, natural henna – perfect for weddings and celebrations.</p>
-    </div>
-  </section>
+    <section id="services" class="section grid" aria-label="Our Services">
+      <div class="service" data-aos="fade-up">
+        <img src="images/makeup1.png" alt="Makeup Service" loading="lazy" />
+        <h3>Makeup</h3>
+        <p>Bridal, editorial, and glam looks designed to enhance your natural beauty and last all day.</p>
+      </div>
+      <div class="service" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/hairstyle.jpeg" alt="Hair Styling Service" loading="lazy" />
+        <h3>Hair Styling</h3>
+        <p>Elegant updos, curls, and styles tailored to your event and personal vibe.</p>
+      </div>
+      <div class="service" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/henna.jpeg" alt="Henna Art Service" loading="lazy" />
+        <h3>Henna Art</h3>
+        <p>Intricate, cultural designs using safe, natural henna – perfect for weddings and celebrations.</p>
+      </div>
+    </section>
 
-  <section id="portfolio" class="section">
-    <h2>Portfolio</h2>
-    <div class="portfolio-carousel">
-      <img src="images/portfolio1.jpeg" alt="Portfolio Look 1" />
-      <img src="images/portfolio2.png" alt="Portfolio Look 2" />
-      <img src="images/portfolio3.png" alt="Portfolio Look 3" />
-      <img src="images/portfolio4.png" alt="Portfolio Look 4" />
-      <img src="images/portfolio5.png" alt="Portfolio Look 5" />
-      <img src="images/portfolio6.jpeg" alt="Portfolio Look 6" />
-      <img src="images/portfolio7.png" alt="Portfolio Look 7" />
-    </div>
-  </section>
+    <section id="portfolio" class="section" aria-label="Portfolio">
+      <h2 data-aos="fade-up">Portfolio</h2>
+      <div class="portfolio-carousel" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/portfolio1.jpeg" alt="Portfolio Look 1" loading="lazy" />
+        <img src="images/portfolio2.png" alt="Portfolio Look 2" loading="lazy" />
+        <img src="images/portfolio3.png" alt="Portfolio Look 3" loading="lazy" />
+        <img src="images/portfolio4.png" alt="Portfolio Look 4" loading="lazy" />
+        <img src="images/portfolio5.png" alt="Portfolio Look 5" loading="lazy" />
+        <img src="images/portfolio6.jpeg" alt="Portfolio Look 6" loading="lazy" />
+        <img src="images/portfolio7.png" alt="Portfolio Look 7" loading="lazy" />
+      </div>
+    </section>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <form>
-      <input type="text" placeholder="Your Name" />
-      <input type="email" placeholder="Your Email" />
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="contact" class="section" aria-label="Contact Form">
+      <h2 data-aos="fade-up">Contact</h2>
+      <form data-aos="fade-up" data-aos-delay="100">
+        <input type="text" placeholder="Your Name" aria-label="Your Name" required />
+        <input type="email" placeholder="Your Email" aria-label="Your Email" required />
+        <textarea placeholder="Your Message" aria-label="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 Glam by Fatma. All rights reserved.</p>
     <div class="social">
-      <a href="https://www.instagram.com/">Instagram</a>
-      <a href="https://wa.me/254700000000">WhatsApp</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/254700000000" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </footer>
 
-  <a href="#" class="floating-whatsapp whatsapp-trigger">💬</a>
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/254700000000" class="floating-whatsapp whatsapp-trigger" aria-label="Chat on WhatsApp">💬</a>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
