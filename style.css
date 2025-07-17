@@ -1,48 +1,40 @@
-/* ========== RESET & BASE ========== */
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --accent: #c4861f; /* Gold tone */
-  --white: #f5f5f5;
-  --black: #000000;
-}
-
 body {
-  background-color: var(--black);
-  color: var(--white);
+  background: #000;
+  color: #f5f5f5;
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: 100;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-/* ========== NAVIGATION ========== */
+/* Navigation */
 header {
-  background-color: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.85);
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0.5em 0;
 }
 
 nav.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1em 2em;
   max-width: 1200px;
   margin: auto;
-  padding: 0 2em;
 }
 
-.logo img {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-  display: block;
+.logo {
+  font-size: 1.5em;
+  font-weight: 100;
+  letter-spacing: 0.5px;
 }
 
 .nav-links {
@@ -53,16 +45,17 @@ nav.container {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--white);
+  color: #f5f5f5;
   font-size: 0.9em;
+  font-weight: 100;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+  color: #e0e0e0;
 }
 
-/* ========== HERO SECTION ========== */
+/* Hero Section */
 .hero {
   height: 100vh;
   background: url('hero-image.jpg') no-repeat center center/cover;
@@ -71,47 +64,34 @@ nav.container {
   justify-content: center;
   text-align: center;
   padding: 2em;
-  margin-bottom: 3em; /* added spacing below hero */
 }
 
-/* ========== CALL TO ACTION SECTION ========== */
-.call-to-action {
-  background: linear-gradient(to right, #111, #1a1a1a);
-  padding: 3em 2em 2.5em; /* reduced bottom space */
-  text-align: center;
-  margin-bottom: 2em; /* space before next section */
-}
-
-.call-to-action h2 {
-  font-size: 2em;
+.hero-text h1 {
+  font-size: 2.5em;
   font-weight: 100;
-  margin-bottom: 0.5em;
-  color: var(--accent);
+  line-height: 1.4;
 }
 
-.call-to-action p {
-  font-size: 1em;
-  font-weight: 100;
-  margin-bottom: 1.5em;
-}
-
-.call-to-action .cta-btn {
-  font-size: 1em;
+.cta-btn {
+  display: inline-block;
+  margin-top: 1em;
   padding: 0.8em 2em;
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid white;
   background: transparent;
-  transition: all 0.3s ease;
+  color: #fff;
+  font-weight: 100;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
-.call-to-action .cta-btn:hover {
-  background: var(--accent);
-  color: var(--black);
-  border: none;
-  
-/* ========== SECTIONS ========== */
+.cta-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* Sections */
 .section {
-  padding-top: 2em;
+  padding: 4em 2em;
   text-align: center;
   max-width: 1100px;
   margin: auto;
@@ -130,17 +110,11 @@ nav.container {
   margin: 0.5em 0;
 }
 
-/* ========== SERVICES GRID ========== */
+/* Services Grid */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2em;
-}
-
-@media(min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .service h3 {
@@ -149,7 +123,13 @@ nav.container {
   margin-bottom: 0.5em;
 }
 
-/* ========== PORTFOLIO GALLERY ========== */
+@media(min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Portfolio */
 .gallery {
   display: grid;
   grid-template-columns: 1fr;
@@ -173,7 +153,7 @@ nav.container {
   }
 }
 
-/* ========== CONTACT FORM ========== */
+/* Contact Form */
 form {
   display: flex;
   flex-direction: column;
@@ -184,9 +164,9 @@ form {
 form input,
 form textarea {
   padding: 0.75em;
-  border: 1px solid var(--white);
+  border: 1px solid #f5f5f5;
   background: transparent;
-  color: var(--white);
+  color: #f5f5f5;
   font-weight: 100;
   border-radius: 4px;
 }
@@ -194,20 +174,19 @@ form textarea {
 form button {
   padding: 0.8em;
   background: transparent;
-  border: 1px solid var(--white);
-  color: var(--white);
+  border: 1px solid white;
+  color: white;
   font-weight: 100;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 form button:hover {
-  background: var(--accent);
-  color: var(--black);
-  border: none;
+  background: white;
+  color: black;
 }
 
-/* ========== FOOTER ========== */
+/* Footer */
 footer {
   text-align: center;
   padding: 2em;
@@ -218,17 +197,28 @@ footer {
 .social a {
   margin: 0 0.5em;
   text-decoration: none;
-  color: var(--white);
+  color: #f5f5f5;
   font-weight: 100;
   font-size: 0.9em;
   transition: color 0.3s ease;
 }
 
 .social a:hover {
-  color: var(--accent);
+  color: #bbb;
+}
+/* Accent tone */
+:root {
+  --accent: #d4af37; /* Gold — change to blush if preferred */
 }
 
-/* ========== WHATSAPP BUTTON ========== */
+.nav-links a:hover,
+.cta-btn:hover,
+form button:hover {
+  background: var(--accent);
+  color: black;
+  border: none;
+}
+/* Add to your style.css */
 .floating-whatsapp {
   position: fixed;
   bottom: 20px;
@@ -240,9 +230,43 @@ footer {
   border-radius: 50%;
   text-decoration: none;
   z-index: 999;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-
 .floating-whatsapp:hover {
   background-color: #1ebe5b;
+/* Call to Action Section */
+.call-to-action {
+  background: linear-gradient(to right, #111, #1a1a1a);
+  padding: 6em 2em 5em; /* more top padding to separate from hero */
+  text-align: center;
+  margin-top: 2em; /* spacing below hero */
+}
+
+.call-to-action h2 {
+  font-size: 2em;
+  font-weight: 100;
+  margin-bottom: 0.5em;
+  color: var(--accent);
+}
+
+.call-to-action p {
+  font-size: 1em;
+  font-weight: 100;
+  margin-bottom: 1.5em;
+  color: #f5f5f5;
+}
+
+.call-to-action .cta-btn {
+  font-size: 1em;
+  padding: 0.8em 2em;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.call-to-action .cta-btn:hover {
+  background: var(--accent);
+  color: black;
+  border: none;
 }
