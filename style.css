@@ -32,14 +32,17 @@ nav.container {
 }
 
 .logo {
-  font-size: 1.5em;
-  font-weight: 100;
-  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  max-height: 50px;
+  overflow: hidden;
 }
+
 .logo img {
   height: 40px;
   width: auto;
   object-fit: contain;
+  display: block;
 }
 .nav-links {
   display: flex;
@@ -62,6 +65,9 @@ nav.container {
   color: #e0e0e0;
 }
 
+nav.container {
+  align-items: center;
+}
 /* Hero Section */
 .hero {
   height: 100vh;
