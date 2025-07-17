@@ -1,8 +1,12 @@
 // Initialize AOS
-AOS.init();
+AOS.init({
+  duration: 1000,
+  easing: 'ease-in-out',
+  once: true
+});
 
-// Slick Carousel
-$(document).ready(function(){
+$(document).ready(function () {
+  // Slick Carousel
   $('.portfolio-carousel').slick({
     dots: true,
     infinite: true,
@@ -19,7 +23,7 @@ $(document).ready(function(){
   });
 
   // Smooth Scroll
-  $('.nav-links a').on('click', function(e) {
+  $('.nav-links a').on('click', function (e) {
     if (this.hash !== '') {
       e.preventDefault();
       const hash = this.hash;
@@ -28,49 +32,41 @@ $(document).ready(function(){
       }, 800);
     }
   });
-AOS.init({
-  duration: 1000,
-  easing: 'ease-in-out',
-  once: true
-});
+
   // WhatsApp click event
-  $('.whatsapp-trigger').click(function(e) {
+  $('.whatsapp-trigger').click(function (e) {
     e.preventDefault();
     window.open('https://wa.me/254700000000', '_blank');
   });
-$(window).on('scroll', function () {
-  const scrollPos = $(document).scrollTop();
-  $('.nav-links a').each(function () {
-    const section = $($(this).attr('href'));
-    if (section.position().top <= scrollPos + 100 && section.position().top + section.height() > scrollPos) {
-      $('.nav-links a').removeClass('active');
-      $(this).addClass('active');
-    }
+
+  // Active nav link on scroll
+  $(window).on('scroll', function () {
+    const scrollPos = $(document).scrollTop();
+    $('.nav-links a').each(function () {
+      const section = $($(this).attr('href'));
+      if (section.length && section.position().top <= scrollPos + 100 && section.position().top + section.height() > scrollPos) {
+        $('.nav-links a').removeClass('active');
+        $(this).addClass('active');
+      }
+    });
   });
-});
-  // Simple form validation
-  $('form').submit(function(e) {
+
+  // Form validation + feedback
+  $('form').submit(function (e) {
     const name = $('input[type="text"]').val();
     const email = $('input[type="email"]').val();
     const message = $('textarea').val();
+
     if (!name || !email || !message) {
       alert("Please fill out all fields.");
       e.preventDefault();
+    } else {
+      alert("Thanks for reaching out! We'll be in touch soon.");
     }
-    $('form').submit(function(e) {
-  const name = $('input[type="text"]').val();
-  const email = $('input[type="email"]').val();
-  const message = $('textarea').val();
-  if (!name || !email || !message) {
-    alert("Please fill out all fields.");
-    e.preventDefault();
-  } else {
-    alert("Thanks for reaching out! We'll be in touch soon.");
-  }
-      // Hide preloader after load
+  });
+});
+
+// Preloader fade-out
 $(window).on('load', function () {
   $('#preloader').fadeOut('slow');
-});
-});
-  });
 });
