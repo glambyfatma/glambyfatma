@@ -234,39 +234,4 @@ form button:hover {
 }
 .floating-whatsapp:hover {
   background-color: #1ebe5b;
-/* Call to Action Section */
-.call-to-action {
-  background: linear-gradient(to right, #111, #1a1a1a);
-  padding: 6em 2em 5em; /* more top padding to separate from hero */
-  text-align: center;
-  margin-top: 2em; /* spacing below hero */
-}
-
-.call-to-action h2 {
-  font-size: 2em;
-  font-weight: 100;
-  margin-bottom: 0.5em;
-  color: var(--accent);
-}
-
-.call-to-action p {
-  font-size: 1em;
-  font-weight: 100;
-  margin-bottom: 1.5em;
-  color: #f5f5f5;
-}
-
-.call-to-action .cta-btn {
-  font-size: 1em;
-  padding: 0.8em 2em;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  background: transparent;
-  transition: all 0.3s ease;
-}
-
-.call-to-action .cta-btn:hover {
-  background: var(--accent);
-  color: black;
-  border: none;
 }
