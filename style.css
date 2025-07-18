@@ -72,57 +72,28 @@ nav.container {
 }
 
 /* === HERO SECTION === */
-.hero {
-  position: relative;
-  background-image: url('images/hero.webp');
-  background-color: #111; /* fallback color */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.4); /* dark overlay for contrast */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-text {
-  animation: fadeInHero 1.2s ease-out forwards;
-  opacity: 0;
-  padding: 0 1rem;
-}
-
-/* Typewriter effect */
+/* Typewriter Effect */
 #typewriter {
+  font-family: 'Poppins', sans-serif;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 200; /* Thin and elegant */
   color: white;
-  white-space: nowrap;
+  white-space: normal; /* Wraps on mobile */
   overflow: hidden;
   border-right: 2px solid white;
-  max-width: 100%;
-  margin-bottom: 1.5rem;
+  max-width: 90vw;
+  margin: 1.5rem auto 0;
+  line-height: 1.5;
   animation: blinkCursor 0.8s infinite;
+  text-align: center;
+  padding: 0 1rem;
+  letter-spacing: 0.5px;
 }
 
+/* Blink animation for typewriter cursor */
 @keyframes blinkCursor {
   0%, 100% { border-color: white; }
   50% { border-color: transparent; }
-}
-
-@keyframes fadeInHero {
-  to { opacity: 1; }
 }
 
 /* CTA Button */
@@ -134,6 +105,8 @@ nav.container {
   text-decoration: none;
   border-radius: 4px;
   font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
   transition: background 0.3s ease;
 }
 
@@ -145,6 +118,7 @@ nav.container {
 @media (min-width: 768px) {
   #typewriter {
     font-size: 2.8rem;
+    white-space: nowrap;
   }
 }
 
@@ -159,27 +133,43 @@ nav.container {
     font-size: 0.95rem;
   }
 }
-/* Sections */
-.section {
-  padding: 4em 2em;
+/* Reusable Typewriter Style for Sections */
+.section-typewriter {
+  margin-top: 2rem;
   text-align: center;
-  max-width: 1100px;
-  margin: auto;
 }
 
-.section h2 {
-  font-size: 2.2em;
-  font-weight: 100;
-  margin-bottom: 1em;
+.typewriter-text {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #333;
+  max-width: 100%;
+  animation: blinkCursor 0.8s infinite;
 }
 
-.section p,
-.section li {
-  font-size: 1em;
-  font-weight: 100;
-  margin: 0.5em 0;
+@keyframes blinkCursor {
+  0%, 100% { border-color: #333; }
+  50% { border-color: transparent; }
 }
 
+@media (min-width: 768px) {
+  .typewriter-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter-text {
+    font-size: 1.2rem;
+    white-space: normal;
+    padding: 0 1rem;
+  }
+}
 /* Services Grid */
 .grid {
   display: grid;
