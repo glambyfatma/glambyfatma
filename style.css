@@ -3,23 +3,23 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  background-color: #fafafa;
-  color: #333;
+  background-color: #000;
+  color: #fff;
 }
 
 /* Boxed Layout for All Sections */
 .section, .hero, footer {
   padding: 3rem 1rem;
-  background: #f9f9f9;
+  background-color: #000;
 }
 
 .box {
-  background: #fff;
+  background-color: #111;
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05);
 }
 
 /* Hero Section */
@@ -32,7 +32,7 @@ body {
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   padding: 4rem 1rem;
   border-radius: 8px;
 }
@@ -67,14 +67,15 @@ body {
   text-decoration: none;
   border-radius: 4px;
   font-weight: 500;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .cta-btn:hover {
   background-color: #f1c8c8;
+  color: #000;
 }
 
-/* Typewriter Section Messages */
+/* Section Typewriter */
 .section-typewriter {
   text-align: center;
   margin-bottom: 2rem;
@@ -84,11 +85,10 @@ body {
   display: inline-block;
   font-size: 1.4rem;
   font-weight: 300;
-  color: #333;
+  color: #fff;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #333;
-  max-width: 100%;
+  border-right: 2px solid #fff;
   animation: blinkCursor 0.8s infinite;
 }
 
@@ -110,6 +110,10 @@ body {
   max-width: 300px;
   border-radius: 6px;
   margin-top: 1rem;
+}
+
+.service h3 {
+  color: #f8f8f8;
 }
 
 /* Portfolio Carousel */
@@ -138,7 +142,9 @@ form {
 form input,
 form textarea {
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
   border-radius: 4px;
   font: inherit;
 }
@@ -149,27 +155,30 @@ form textarea {
 }
 
 form button {
-  background-color: black;
-  color: white;
+  background-color: #fff;
+  color: #000;
   padding: 0.75rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: 500;
 }
 
 form button:hover {
-  background-color: #222;
+  background-color: #f1c8c8;
+  color: #000;
 }
 
 /* Footer */
 footer {
-  background: #111;
+  background: #000;
   color: white;
   text-align: center;
 }
 
 footer .box {
   padding: 2rem 1rem;
+  background: #111;
 }
 
 footer .social a {
@@ -195,15 +204,4 @@ footer .social img {
 .floating-whatsapp img {
   width: 48px;
   height: 48px;
-}
-@media (max-width: 480px) {
-  .hero-text h1,
-  #typewriter {
-    font-size: 1.6rem;
-  }
-
-  .cta-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
-  }
 }
