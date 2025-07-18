@@ -269,7 +269,12 @@ form button:hover {
   color: #000;
   border: none;
 }
-
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
 /* Footer */
 footer {
   text-align: center;
