@@ -144,5 +144,59 @@
   <img src="images/whatsapp-icon.svg" alt="WhatsApp Chat" width="40" />
 </a>
   <script src="script.js" defer></script>
+<script>
+  
+// Hero typewriter
+document.addEventListener("DOMContentLoaded", () => {
+  const heroText = "Where Beauty Meets Art. And Every Look Tells a Story.";
+  const heroEl = document.getElementById("typewriter");
+  let i = 0;
+
+  function typeHero() {
+    if (i < heroText.length) {
+      heroEl.textContent += heroText.charAt(i);
+      i++;
+      setTimeout(typeHero, 65);
+    }
+  }
+
+  heroEl.textContent = ""; // Clear if fallback text exists
+  typeHero();
+});
+
+// Section typewriters on scroll
+const sectionTypewriters = document.querySelectorAll(".typewriter-text");
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const text = el.getAttribute("data-text");
+        let index = 0;
+        el.textContent = "";
+
+        function typeNextChar() {
+          if (index < text.length) {
+            el.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeNextChar, 50);
+          }
+        }
+
+        typeNextChar();
+        observer.unobserve(el); // Run once
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+sectionTypewriters.forEach(el => {
+  observer.observe(el);
+});
+</script>    
 </body>
 </html>
