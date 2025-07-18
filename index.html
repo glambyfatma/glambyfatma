@@ -55,13 +55,13 @@
 
   <main>
   <section id="home" class="hero" aria-label="Hero Section">
-    <div class="hero-overlay">
-      <div class="hero-text">
-        <h1 id="typewriter"></h1>
-        <a href="#contact" class="cta-btn">Book Now</a>
-      </div>
+  <div class="hero-overlay">
+    <div class="hero-text">
+      <h1 id="typewriter">Where Beauty Meets Art. And Every Look Tells a Story.</h1>
+      <a href="#contact" class="cta-btn">Book Now</a>
     </div>
-  </section>
+  </div>
+</section>
   
     <section id="services" class="section grid" aria-label="Our Services">
 <div class="section-typewriter" aria-label="Section Message">
@@ -135,6 +135,7 @@
   const text = "Where Beauty Meets Art. And Every Look Tells a Story.";
   const typewriter = document.getElementById("typewriter");
   let index = 0;
+  typewriter.textContent = ""; // Clear initial text for typing effect
 
   function type() {
     if (index < text.length) {
@@ -146,6 +147,9 @@
 
   window.addEventListener("DOMContentLoaded", type);
 </script>
+  <noscript>
+  <style>#typewriter::after { content: "Where Beauty Meets Art. And Every Look Tells a Story."; }</style>
+</noscript>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".typewriter-text");
