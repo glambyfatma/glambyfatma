@@ -62,7 +62,11 @@
       </div>
     </div>
   </section>
+  
     <section id="services" class="section grid" aria-label="Our Services">
+<div class="section-typewriter" aria-label="Section Message">
+  <span class="typewriter-text" data-text="Glam by Fatma. Your professional & passionate artist."></span>
+</div>
       <div class="service" data-aos="fade-up">
         <h3>Makeup</h3>
         <p>Bridal, editorial, and glam looks designed to enhance your natural beauty and last all day.</p>
@@ -82,6 +86,9 @@
 
     <section id="portfolio" class="section" aria-label="Portfolio">
       <h2 data-aos="fade-up">Portfolio</h2>
+      <div class="section-typewriter" aria-label="Section Message">
+  <span class="typewriter-text" data-text="Glam by Fatma. Your professional & passionate artist."></span>
+</div>
       <div class="portfolio-carousel" data-aos="fade-up" data-aos-delay="100">
         <img src="images/portfolio1.jpeg" alt="Portfolio Look 1" loading="lazy"/>
         <img src="images/portfolio2.png" alt="Portfolio Look 2" loading="lazy"/>
@@ -95,6 +102,9 @@
 
     <section id="contact" class="section" aria-label="Contact Form">
       <h2 data-aos="fade-up">Contact</h2>
+      <div class="section-typewriter" aria-label="Section Message">
+  <span class="typewriter-text" data-text="Glam by Fatma. Your professional & passionate artist."></span>
+</div>
       <form data-aos="fade-up" data-aos-delay="100">
         <input type="text" placeholder="Your Name" aria-label="Your Name" required />
         <input type="email" placeholder="Your Email" aria-label="Your Email" required />
@@ -120,6 +130,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script src="script.js" defer></script>
+
 <script>
   const text = "Where Beauty Meets Art. And Every Look Tells a Story.";
   const typewriter = document.getElementById("typewriter");
@@ -134,6 +145,26 @@
   }
 
   window.addEventListener("DOMContentLoaded", type);
+</script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".typewriter-text");
+
+    elements.forEach((el) => {
+      const text = el.getAttribute("data-text");
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          el.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 50); // typing speed for sections
+        }
+      }
+
+      type();
+    });
+  });
 </script>
 </body>
 </html>
