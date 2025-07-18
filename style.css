@@ -72,6 +72,19 @@ nav.container {
 }
 
 /* === HERO SECTION === */
+.hero {
+  position: relative;
+  background-image: url('images/hero.webp'); /* adjust if path or name changed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 /* Typewriter Effect */
 #typewriter {
   font-family: 'Poppins', sans-serif;
