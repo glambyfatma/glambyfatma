@@ -155,8 +155,13 @@ nav.container {
 
 .service img {
   width: 100%;
-  border-radius: 4px;
-  margin-bottom: 1em;
+  max-width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 1em auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .service h3 {
