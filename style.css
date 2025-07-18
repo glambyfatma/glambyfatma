@@ -89,7 +89,23 @@ nav.container {
   padding: 0 1rem;
   letter-spacing: 0.5px;
 }
+.typewriter-text {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #333;
+  max-width: 100%;
+  margin: 2rem auto 1rem;
+  text-align: center;
+  animation: blinkCursor 0.8s infinite;
+}
 
+@keyframes blinkCursor {
+  0%, 100% { border-color: #333; }
+  50% { border-color: transparent; }
+}
 /* Blink animation for typewriter cursor */
 @keyframes blinkCursor {
   0%, 100% { border-color: white; }
