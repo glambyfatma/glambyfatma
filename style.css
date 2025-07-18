@@ -71,10 +71,11 @@ nav.container {
   background: var(--accent);
 }
 
-/* Hero Section */
+/* === HERO SECTION === */
 .hero {
   position: relative;
   background-image: url('images/hero.webp');
+  background-color: #111; /* fallback color */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -84,10 +85,11 @@ nav.container {
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.4); /* adds contrast for text */
+  background: rgba(0, 0, 0, 0.4); /* dark overlay for contrast */
   width: 100%;
   height: 100%;
   display: flex;
@@ -95,13 +97,35 @@ nav.container {
   justify-content: center;
 }
 
-.hero-text h1 {
-  font-size: 2rem;
-  font-weight: 300;
-  line-height: 1.4;
+.hero-text {
+  animation: fadeInHero 1.2s ease-out forwards;
+  opacity: 0;
   padding: 0 1rem;
 }
 
+/* Typewriter effect */
+#typewriter {
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { border-color: white; }
+  50% { border-color: transparent; }
+}
+
+@keyframes fadeInHero {
+  to { opacity: 1; }
+}
+
+/* CTA Button */
 .cta-btn {
   margin-top: 1.5rem;
   padding: 0.8rem 1.6rem;
@@ -110,13 +134,31 @@ nav.container {
   text-decoration: none;
   border-radius: 4px;
   font-weight: 500;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .cta-btn:hover {
   background-color: #f1c8c8;
 }
 
+/* Responsive Typography */
+@media (min-width: 768px) {
+  #typewriter {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #typewriter {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .cta-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
 /* Sections */
 .section {
   padding: 4em 2em;
