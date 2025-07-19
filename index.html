@@ -33,78 +33,74 @@
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- CSS & AOS -->
+  <!-- CSS + Animations -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-</head>
 
+</head>
 <body>
-  <!-- Header -->
-  <header role="banner">
-    <nav class="container" role="navigation" aria-label="Main">
+  <header>
+    <nav class="container">
       <div class="logo">
-        <img src="images/logo.webp" alt="Glam by Fatma Logo" width="60" height="60"/>
+        <img src="images/logo.webp" alt="Glam by Fatma Logo" width="60" height="60" />
       </div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="order.html">Book Now</a></li>
+        <li><a href="order.html">Book</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero" aria-label="Hero Section">
-    <div class="box">
-      <div class="hero-overlay">
-        <div class="hero-text">
-          <h1 id="typewriter"></h1>
-          <a href="#contact" class="cta-btn">Book Now</a>
-        </div>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Where Beauty Meets Art</h1>
+        <p>Bridal Glam, Hair Styling & Henna – Personalized for You</p>
+        <a href="order.html" class="cta-btn">Book Now</a>
       </div>
-      <img src="images/hero.webp" alt="Bridal Glam by Fatma" class="hero-bg" loading="eager" />
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="section" aria-label="Our Services">
-    <div class="box">
-      <h2 data-aos="fade-up">Services</h2>
-      <div class="section-typewriter" aria-label="Section Message">
-        <span class="typewriter-text" data-text="Glam by Fatma. Your professional & passionate artist."></span>
-      </div>
+  <section id="services" class="section dark-section">
+    <div class="container">
+      <h2 data-aos="fade-up">Our Services</h2>
+      <p class="section-subtext" data-aos="fade-up">Expert beauty transformations for weddings, shoots, and celebrations.</p>
+
       <div class="grid">
-        <div class="service" data-aos="fade-up">
-          <h3>Makeup</h3>
-          <p>Bridal, editorial, and glam looks designed to enhance your natural beauty and last all day.</p>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
           <img src="images/makeup1.webp" alt="Makeup Service" loading="lazy" width="300" height="300" />
+          <h3>Makeup</h3>
+          <p>Bridal, editorial, and glam looks designed to enhance your beauty and last all day.</p>
         </div>
-        <div class="service" data-aos="fade-up" data-aos-delay="100">
-          <h3>Hair Styling</h3>
-          <p>Elegant updos, curls, and styles tailored to your event and personal vibe.</p>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
           <img src="images/hairstyle.webp" alt="Hair Styling Service" loading="lazy" width="300" height="300" />
+          <h3>Hair Styling</h3>
+          <p>Elegant updos, curls, and custom styles tailored to your event and personality.</p>
         </div>
-        <div class="service" data-aos="fade-up" data-aos-delay="200">
-          <h3>Henna Art</h3>
-          <p>Intricate, cultural designs using safe, natural henna – perfect for weddings and celebrations.</p>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
           <img src="images/henna.webp" alt="Henna Art Service" loading="lazy" width="300" height="300" />
+          <h3>Henna Art</h3>
+          <p>Intricate, cultural henna designs using safe, natural henna for all occasions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  
   <!-- Footer -->
-  <footer class="section">
-    <div class="box">
+  <footer class="section dark-section">
+    <div class="container">
       <p>&copy; 2025 Glam by Fatma. All rights reserved.</p>
       <div class="social">
         <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://wa.me/254114065922" target="_blank" rel="noopener">
-          <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" style="vertical-align: middle;" /> WhatsApp
+          <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" style="vertical-align: middle;" />
+          WhatsApp
         </a>
       </div>
     </div>
@@ -116,47 +112,9 @@
   </a>
 
   <!-- Scripts -->
-  <script src="script.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Hero typewriter
-    document.addEventListener("DOMContentLoaded", () => {
-      const heroText = "Where Beauty Meets Art. And Every Look Tells a Story.";
-      const heroEl = document.getElementById("typewriter");
-      let i = 0;
-      function typeHero() {
-        if (i < heroText.length) {
-          heroEl.textContent += heroText.charAt(i);
-          i++;
-          setTimeout(typeHero, 65);
-        }
-      }
-      heroEl.textContent = "";
-      typeHero();
-    });
-
-    // Section typewriters on scroll
-    const sectionTypewriters = document.querySelectorAll(".typewriter-text");
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const text = el.getAttribute("data-text");
-          let index = 0;
-          el.textContent = "";
-          function typeNextChar() {
-            if (index < text.length) {
-              el.textContent += text.charAt(index);
-              index++;
-              setTimeout(typeNextChar, 50);
-            }
-          }
-          typeNextChar();
-          obs.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    sectionTypewriters.forEach(el => observer.observe(el));
+    AOS.init({ once: true });
   </script>
 </body>
 </html>
