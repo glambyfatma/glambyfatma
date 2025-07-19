@@ -53,75 +53,92 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero" style="background-image: url('images/portfolio.webp');">
-    <div class="hero-overlay">
-      <div class="hero-content" data-aos="fade-up">
-        <h1>Portfolio</h1>
-        <p>Elegance. Artistry. Transformation.</p>
+    <section class="hero" id="portfolio-hero" aria-label="Portfolio Hero">
+    <div class="box">
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <h1 data-aos="fade-up">Our Portfolio</h1>
+          <p data-aos="fade-up" data-aos-delay="100">A showcase of timeless beauty — crafted with heart and expertise.</p>
+        </div>
       </div>
+      <img src="images/portfolio.webp" alt="Portfolio Hero" class="hero-background" />
     </div>
   </section>
 
-  <!-- Portfolio Gallery -->
-  <section class="section dark-section">
-    <div class="container">
-      <h2 data-aos="fade-up">Captured Moments</h2>
-      <p class="section-subtext" data-aos="fade-up">A showcase of our finest makeup, hairstyling, and henna work.</p>
+  <!-- Gallery -->
+  <section class="section" id="gallery" aria-label="Gallery Section">
+    <div class="box">
+      <h2 data-aos="fade-up">Gallery</h2>
+      <p class="section-typewriter" data-aos="fade-up" data-aos-delay="100">Every look is a work of art. Here’s a glimpse of our magic.</p>
+      <div class="gallery-grid">
+        <!-- Each image in GLightbox -->
+        <!-- Wrap each image with an <a> linking to the full-size image -->
 
-      <div class="grid gallery-grid">
-        <!-- Portfolio Images -->
-        <!-- Excludes: hero.webp, logo.webp, makeup1.webp, hairstyle.webp, henna.webp, portfolio.webp -->
+        <!-- Add all your portfolio images here -->
+        <!-- EXCLUDING: hero.webp, makeup1.webp, hairstyle.webp, henna.webp, logo.webp, portfolio.webp -->
 
-        <img src="images/IMG_5194.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/IMG_5252.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
+        <!-- Example images: -->
+        <a href="images/IMG_5194.webp" class="glightbox" data-gallery="glam-portfolio" data-aos="zoom-in">
+          <img src="images/IMG_5194.webp" alt="Bridal Look 1" loading="lazy" />
+        </a>
+        <a href="images/IMG_5252.webp" class="glightbox" data-gallery="glam-portfolio" data-aos="zoom-in" data-aos-delay="50">
+          <img src="images/IMG_5252.webp" alt="Bridal Look 2" loading="lazy" />
+        </a>
+        <a href="images/portfolio1.webp" class="glightbox" data-gallery="glam-portfolio" data-aos="zoom-in">
+          <img src="images/portfolio1.webp" alt="Portfolio 1" loading="lazy" />
+        </a>
+        <a href="images/portfolio2.webp" class="glightbox" data-gallery="glam-portfolio" data-aos="zoom-in">
+          <img src="images/portfolio2.webp" alt="Portfolio 2" loading="lazy" />
+        </a>
+        <!-- Repeat this pattern for all the rest -->
 
-        <img src="images/portfolio1.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio2.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio9.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio10.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio11.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio12.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio14.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio15.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio16.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio19.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio20.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio21.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio23.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio24.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio25.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio26.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio27.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/portfolio28.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/weddingparty.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
-        <img src="images/weddingparty2.webp" alt="Portfolio Image" loading="lazy" data-aos="zoom-in" />
+        <!-- Continue with all other portfolio images... -->
+        <a href="images/portfolio9.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio9.webp" alt="Portfolio 9" loading="lazy" /></a>
+        <a href="images/portfolio10.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio10.webp" alt="Portfolio 10" loading="lazy" /></a>
+        <a href="images/portfolio11.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio11.webp" alt="Portfolio 11" loading="lazy" /></a>
+        <a href="images/portfolio12.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio12.webp" alt="Portfolio 12" loading="lazy" /></a>
+        <a href="images/portfolio14.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio14.webp" alt="Portfolio 14" loading="lazy" /></a>
+        <a href="images/portfolio15.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio15.webp" alt="Portfolio 15" loading="lazy" /></a>
+        <a href="images/portfolio16.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio16.webp" alt="Portfolio 16" loading="lazy" /></a>
+        <a href="images/portfolio19.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio19.webp" alt="Portfolio 19" loading="lazy" /></a>
+        <a href="images/portfolio20.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio20.webp" alt="Portfolio 20" loading="lazy" /></a>
+        <a href="images/portfolio21.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio21.webp" alt="Portfolio 21" loading="lazy" /></a>
+        <a href="images/portfolio23.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio23.webp" alt="Portfolio 23" loading="lazy" /></a>
+        <a href="images/portfolio24.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio24.webp" alt="Portfolio 24" loading="lazy" /></a>
+        <a href="images/portfolio25.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio25.webp" alt="Portfolio 25" loading="lazy" /></a>
+        <a href="images/portfolio26.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio26.webp" alt="Portfolio 26" loading="lazy" /></a>
+        <a href="images/portfolio27.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio27.webp" alt="Portfolio 27" loading="lazy" /></a>
+        <a href="images/portfolio28.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/portfolio28.webp" alt="Portfolio 28" loading="lazy" /></a>
+        <a href="images/weddingparty.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/weddingparty.webp" alt="Wedding Party" loading="lazy" /></a>
+        <a href="images/weddingparty2.webp" class="glightbox" data-gallery="glam-portfolio"><img src="images/weddingparty2.webp" alt="Wedding Party 2" loading="lazy" /></a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="section dark-section">
-    <div class="container">
+  <footer class="section">
+    <div class="box">
       <p>&copy; 2025 Glam by Fatma. All rights reserved.</p>
       <div class="social">
-        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-        <a href="https://wa.me/254114065922" target="_blank">
-          <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" />
-          WhatsApp
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/254114065922" target="_blank" rel="noopener">
+          <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" style="vertical-align: middle;" /> WhatsApp
         </a>
       </div>
     </div>
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/254114065922" class="floating-whatsapp">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp" width="40" />
+  <a href="https://wa.me/254114065922" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" width="40" />
   </a>
 
-  <!-- Scripts -->
+  <!-- JS Libraries -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
     AOS.init({ once: true });
+    const lightbox = GLightbox({ selector: '.glightbox' });
   </script>
 </body>
 </html>
