@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Now | Glam by Fatma</title>
+
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="45RlH1qH2X98H3EkTaJ2r5BaFrUQPaQMtdGdk6M9cQA" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Book your personalized glam session with Fatma – makeup, hair, henna & bridal packages in Kenya." />
+  <meta name="keywords" content="Glam by Fatma booking, makeup appointment, bridal glam Kenya, henna services" />
+  <link rel="canonical" href="https://fatmaglam.com/order.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Book Your Glam | Glam by Fatma" />
+  <meta property="og:description" content="Reserve your date for makeup, hair, henna or bridal glam with Glam by Fatma." />
+  <meta property="og:url" content="https://fatmaglam.com/order.html" />
+  <meta property="og:image" content="https://fatmaglam.com/images/hero.webp" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book Your Glam | Glam by Fatma" />
+  <meta name="twitter:description" content="Reserve your date for makeup, hair, henna or bridal glam with Glam by Fatma." />
+  <meta name="twitter:image" content="https://fatmaglam.com/images/hero.webp" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="container" role="navigation" aria-label="Main Navigation">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.webp" alt="Glam by Fatma Logo" width="60" height="60" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="order.html" class="active">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Booking Form Section -->
+  <main>
+    <section class="section" aria-label="Booking Form">
+      <div class="box">
+        <h1 class="section-title" data-aos="fade-up">Book Your Glam</h1>
+        <div class="section-typewriter">
+          <span class="typewriter-text" data-text="Let’s make your day flawless. Fill the form and we’ll be in touch!"></span>
+        </div>
+        <form id="bookingForm" data-aos="fade-up" data-aos-delay="100">
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+          <input type="tel" id="phone" name="phone" placeholder="Your Phone (Optional)" />
+          <input type="text" id="date" name="date" placeholder="Preferred Date (e.g. 25th Dec)" required />
+          <select id="service" name="service" required>
+            <option value="">Select a Service</option>
+            <option value="Bridal Glam">Bridal Glam</option>
+            <option value="Makeup Only">Makeup Only</option>
+            <option value="Hairstyling Only">Hairstyling Only</option>
+            <option value="Henna Design">Henna Design</option>
+            <option value="Full Package">Full Package</option>
+          </select>
+          <textarea id="message" name="message" placeholder="Additional Notes"></textarea>
+          <button type="submit">Send via WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="section">
+    <div class="box">
+      <p>&copy; 2025 Glam by Fatma. All rights reserved.</p>
+      <div class="social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/254114065922" target="_blank" rel="noopener">
+          <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" /> WhatsApp
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/254114065922" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp" width="40" />
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+
+    // Typewriter Effect
+    const twText = document.querySelector(".typewriter-text");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const text = twText.dataset.text;
+          twText.textContent = "";
+          let i = 0;
+          function type() {
+            if (i < text.length) {
+              twText.textContent += text.charAt(i);
+              i++;
+              setTimeout(type, 50);
+            }
+          }
+          type();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (twText) observer.observe(twText);
+
+    // Form Submission to WhatsApp
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const date = document.getElementById("date").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !date || !service) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      const whatsappMessage = `Hi Fatma, I’d like to book a service:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${date}\nService: ${service}\nNotes: ${message}`;
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappURL = `https://wa.me/254114065922?text=${encodedMessage}`;
+      window.open(whatsappURL, '_blank');
+    });
+  </script>
+</body>
+</html>
