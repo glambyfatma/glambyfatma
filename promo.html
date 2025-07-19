@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TMSRSN4K');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- SEO & Verification -->
+  <meta name="google-site-verification" content="45RlH1qH2X98H3EkTaJ2r5BaFrUQPaQMtdGdk6M9cQA" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glam by Fatma | Makeup, Hairstyling & Henna in Kenya</title>
+  <meta name="description" content="Glam by Fatma offers professional makeup, hairstyling, and henna services for weddings, photoshoots, and special events across Kitui and Kenya." />
+  <meta name="keywords" content="Makeup Kitui, Bridal makeup Kenya, Henna artist Kenya, Hair stylist Kitui, Glam by Fatma" />
+  <link rel="canonical" href="https://fatmaglam.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Glam by Fatma | Bridal Glam, Hair & Henna in Kenya" />
+  <meta property="og:description" content="Elevate your look with Fatma’s flawless makeup, elegance, and artistic henna for every special occasion." />
+  <meta property="og:url" content="https://fatmaglam.com/" />
+  <meta property="og:image" content="https://fatmaglam.com/images/hero.webp" />
+  <meta property="og:image:alt" content="Bridal makeup and hair styling by Fatma" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Glam by Fatma | Bridal Glam, Hair & Henna in Kenya" />
+  <meta name="twitter:description" content="Makeup, hair, and henna services that turn moments into memories." />
+  <meta name="twitter:image" content="https://fatmaglam.com/images/hero.webp" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+    }
+
+    .promo-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url('images/hero.webp') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .promo-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: white;
+      z-index: 2;
+    }
+
+    .countdown {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      font-weight: 300;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .launch-title {
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+      display: none;
+    }
+
+    .launch-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      display: none;
+    }
+
+    .cta-btn {
+      display: none;
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #eee;
+      color: #000;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+    }
+
+    .whatsapp-float img {
+      width: 55px;
+      height: 55px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .launch-title { font-size: 2.3rem; }
+      .launch-subtitle { font-size: 1rem; }
+      .countdown { font-size: 1.4rem; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMSRSN4K"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="promo-container">
+    <div class="promo-overlay">
+      <div class="countdown" id="countdown">Launching in 00:00:10</div>
+      <h1 class="launch-title" id="launchTitle">Where Beauty Meets Passion!</h1>
+      <p class="launch-subtitle" id="launchSubtitle">Our Website is Now Live</p>
+      <a href="https://fatmaglam.com" target="_blank" class="cta-btn" id="visitBtn">Visit Website</a>
+    </div>
+  </div>
+
+  <a href="https://wa.me/254114065922" class="whatsapp-float" target="_blank">
+    <img src="images/whatsapp-icon.png" alt="Chat with us on WhatsApp" loading="lazy">
+  </a>
+
+  <script>
+    let seconds = 10;
+    const countdownEl = document.getElementById("countdown");
+    const launchTitle = document.getElementById("launchTitle");
+    const launchSubtitle = document.getElementById("launchSubtitle");
+    const visitBtn = document.getElementById("visitBtn");
+
+    const timer = setInterval(() => {
+      seconds--;
+      const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      countdownEl.textContent = `Launching in 00:${mins}:${secs}`;
+
+      if (seconds <= 0) {
+        clearInterval(timer);
+        countdownEl.style.display = "none";
+        launchTitle.style.display = "block";
+        launchSubtitle.style.display = "block";
+        visitBtn.style.display = "inline-block";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
