@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Glam by Fatma</title>
 
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="45RlH1qH2X98H3EkTaJ2r5BaFrUQPaQMtdGdk6M9cQA" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore the Glam by Fatma portfolio: real bridal glam, henna, and elegant hair styling for events across Kenya." />
+  <meta name="keywords" content="Glam by Fatma portfolio, makeup gallery, hairstyling showcase, henna designs Kenya" />
+  <link rel="canonical" href="https://fatmaglam.com/portfolio.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Glam by Fatma | Portfolio" />
+  <meta property="og:description" content="Real moments. Real beauty. View Glam by Fatma's work on brides, events, and more." />
+  <meta property="og:url" content="https://fatmaglam.com/portfolio.html" />
+  <meta property="og:image" content="https://fatmaglam.com/images/hero.webp" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Glam by Fatma | Portfolio" />
+  <meta name="twitter:description" content="View stunning bridal looks, henna artistry, and hairstyling from Glam by Fatma." />
+  <meta name="twitter:image" content="https://fatmaglam.com/images/hero.webp" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header role="banner">
+    <nav class="container" role="navigation" aria-label="Main">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.webp" alt="Glam by Fatma Logo" width="60" height="60"/>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="order.html">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Portfolio Section -->
+  <main>
+    <section class="section" aria-label="Portfolio Showcase">
+      <div class="box">
+        <h1 class="section-title" data-aos="fade-up">Our Work</h1>
+        <div class="section-typewriter" aria-label="Intro Message">
+          <span class="typewriter-text" data-text="Bridal glam, henna, and elegance — captured in every look."></span>
+        </div>
+
+        <div class="portfolio-carousel" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/portfolio1.jpeg" alt="Bridal Glam Look" loading="lazy" />
+          <img src="images/portfolio2.png" alt="Elegant Hairstyling" loading="lazy" />
+          <img src="images/portfolio3.png" alt="Henna Design on Hands" loading="lazy" />
+          <img src="images/portfolio4.png" alt="Full Bridal Transformation" loading="lazy" />
+          <img src="images/makeup1.webp" alt="Makeup Session" loading="lazy" />
+          <img src="images/hairstyle.webp" alt="Hair Styling Session" loading="lazy" />
+          <img src="images/henna.webp" alt="Henna Art Close-up" loading="lazy" />
+          <img src="images/0AA84650-2C2C-4F15-9732-0585AEFAC579.jpeg" alt="Client Glam Image" loading="lazy" />
+        </div>
+
+        <div class="cta-center" data-aos="fade-up" data-aos-delay="200">
+          <a href="order.html" class="cta-btn">Book Your Look</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="section">
+    <div class="box">
+      <p>&copy; 2025 Glam by Fatma. All rights reserved.</p>
+      <div class="social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/254114065922" target="_blank" rel="noopener">
+          <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" style="vertical-align: middle;" /> WhatsApp
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/254114065922" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" width="40" />
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js" defer></script>
+
+  <!-- Section Typewriter -->
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+
+    const sectionTypewriters = document.querySelectorAll(".typewriter-text");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const text = el.getAttribute("data-text");
+            let index = 0;
+            el.textContent = "";
+
+            function typeNextChar() {
+              if (index < text.length) {
+                el.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeNextChar, 50);
+              }
+            }
+
+            typeNextChar();
+            observer.unobserve(el); // Only run once
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sectionTypewriters.forEach(el => {
+      observer.observe(el);
+    });
+
+    $(document).ready(function () {
+      $('.portfolio-carousel').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: { slidesToShow: 1 }
+          }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
