@@ -51,27 +51,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p data-aos="fade-up" data-aos-delay="150">Fill out the form below to reserve your service.</p>
     </div>
   </section>
-
-  <!-- Order Form Section -->
+<!-- Order Form Section -->
   <section id="order" class="section">
     <div class="box">
-      <h2 data-aos="fade-up">Make a Booking</h2>
+      <h2 data-aos="fade-up">Make your Glam Booking</h2>
       <p class="typewriter-text" data-aos="fade-up" data-aos-delay="100">
         Tell us your vision, date, and location — and let Glam by Fatma bring it to life beautifully.
       </p>
-      <form action="mailto:fatmaglambookings@gmail.com" method="POST" enctype="text/plain" data-aos="fade-up" data-aos-delay="200">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <input type="tel" name="phone" placeholder="Phone Number (e.g. +254...)" required />
-        <input type="text" name="service" placeholder="Service (e.g. Bridal Makeup)" required />
-        <input type="date" name="date" required />
-        <input type="text" name="location" placeholder="Event Location" required />
-        <textarea name="details" placeholder="Tell us more about your request..." required></textarea>
-        <button type="submit">Send Order</button>
-      </form>
-    </div>
-  </section>
 
+  <form action="https://formspree.io/f/xvgqzwke" method="POST" data-aos="fade-up" data-aos-delay="200">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <input type="tel" name="phone" placeholder="Phone Number (e.g. +254...)" required />
+  <input type="text" name="service" placeholder="Service (e.g. Bridal Makeup)" required />
+  <input type="date" name="date" required />
+  <input type="text" name="location" placeholder="Event Location" required />
+  <textarea name="details" placeholder="Tell us more about your request..." required></textarea>
+
+  <!-- Optional: redirect to a thank you page after submit -->
+  <input type="hidden" name="_next" value="https://fatmaglam.com/thankyou.html" />
+
+  <button type="submit">Send Order</button>
+</form>
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
