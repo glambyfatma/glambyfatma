@@ -38,13 +38,15 @@ img {
   padding: 60px 0;
 }
 
-/* Navbar */
+/* === Navbar Styles === */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  position: relative;
+  background-color: #000;
+  position: sticky;
+  top: 0;
   z-index: 999;
 }
 
@@ -55,12 +57,20 @@ nav {
 }
 
 .nav-links a {
+  color: white;
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Hamburger Menu (mobile) */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #f0c6e8; /* Light pink highlight */
+}
+
+/* === Hamburger Menu === */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -73,18 +83,39 @@ nav {
   width: 25px;
   margin-bottom: 5px;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
+/* Hamburger Active Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 8px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -8px;
+}
+
+/* === Responsive Nav === */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
+    align-items: flex-end;
     background-color: #111;
+    position: absolute;
+    top: 100%;
+    right: 0;
     padding: 20px;
     border-radius: 8px;
+    width: max-content;
   }
 
   .nav-links.active {
@@ -94,69 +125,6 @@ nav {
   .hamburger {
     display: flex;
   }
-}
-
-nav {
-  position: sticky;
-  top: 0;
-  background-color: #000;
-  padding: 20px 0;
-  z-index: 999;
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  background-image: url('images/hero.webp');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 40px;
-  border-radius: 10px;
-  backdrop-filter: blur(8px);
-  text-align: center;
-  max-width: 90%;
-}
-
-.hero-text h1 {
-  font-size: 2rem;
-  font-weight: 300;
-  line-height: 1.4;
-}
-
-.cta-btn {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 12px 28px;
-  font-size: 1rem;
-  border: 1px solid #fff;
-  border-radius: 30px;
-  transition: background 0.3s ease;
-}
-
-.cta-btn:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* Section styling */
-.section {
-  position: relative;
-  background: transparent;
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 2rem;
-  font-weight: 400;
-  margin-bottom: 20px;
 }
 
 /* About Section */
