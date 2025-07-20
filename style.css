@@ -59,7 +59,7 @@ nav {
   gap: 24px;
 }
 
-.nav-links a {
+.nav-links li a {
   color: white;
   font-size: 0.95rem;
   font-weight: 300;
@@ -71,7 +71,7 @@ nav {
   color: #f0c6e8;
 }
 
-/* Hamburger Menu */
+/* Hamburger for Mobile */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -103,6 +103,7 @@ nav {
   top: -8px;
 }
 
+/* Mobile Nav */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
