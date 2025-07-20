@@ -142,5 +142,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     hamburger.classList.toggle('active');
   });
 </script>
+  <script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 </body>
 </html>
