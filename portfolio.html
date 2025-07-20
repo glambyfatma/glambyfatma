@@ -47,23 +47,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMSRSN4K"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <header class="header">
-  <div class="nav-container">
+  
+  <header>
+  <nav class="container">
     <a href="index.html" class="logo">
-      <img src="images/logo.webp" alt="Glam by Fatma Logo" width="60" height="60" />
+      <img src="images/logo.webp" alt="Glam by Fatma Logo" style="height: 50px;">
     </a>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <ul class="nav-links">
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="portfolio.html" class="active">Portfolio</a></li>
       <li><a href="promo.html">Promo</a></li>
-      <li><a href="order.html">Book</a></li>
-      <li><a href="#portfolio-hero" class="back-to-top">↑</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="#top" id="backToTopLink">Back to Top</a></li>
     </ul>
-  </div>
+  </nav>
 </header>
-
+ 
   <!-- Hero -->
     <section class="hero" id="portfolio-hero" aria-label="Portfolio Hero">
     <div class="box">
@@ -76,6 +82,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img src="images/portfolio.webp" alt="Portfolio Hero" class="hero-background" />
     </div>
   </section>
+
+  <section class="portfolio-hero" id="top">
+  <div class="hero-overlay" data-aos="fade-up">
+    <h1>Our Customers, Our Pride – Discover the Glam Moments</h1>
+  </div>
+</section>
 
   <!-- Gallery -->
   
@@ -218,5 +230,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     AOS.init({ once: true });
     const lightbox = GLightbox({ selector: '.glightbox' });
   </script>
+  
+  <script>
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Back to Top smooth scroll
+  document.getElementById('backToTopLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
