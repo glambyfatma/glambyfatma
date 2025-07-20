@@ -79,7 +79,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </section>
+<!-- About Section -->
+<section id="about" class="section dark-section" data-aos="fade-up">
+  <div class="container">
+    <h2>About Glam by Fatma</h2>
+    <p class="section-subtext">
+      At <strong>Glam by Fatma</strong>, we believe beauty is an experience—not just a look.  
+      Based in Kitui, we specialize in makeup artistry, custom hairstyling, and elegant henna designs  
+      for brides, photoshoots, and special occasions across Kenya.
+    </p>
+    <p>
+      Whether you're preparing for your big day or simply want to shine in a moment that matters,  
+      our mobile and in-studio services are personalized to match your skin tone, style, and story.  
+      Every detail is thoughtfully crafted to ensure you feel confident, radiant, and unforgettable.
+    </p>
 
+    <a href="https://wa.me/254114065922" target="_blank" class="cta-btn" style="margin-top: 2rem;">
+      Message Fatma on WhatsApp
+    </a>
+  </div>
+</section>
+  
   <!-- Services -->
   <section id="services" class="section dark-section">
     <div class="container">
@@ -152,5 +172,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 </script>
+  <script>
+  // Back to Top functionality
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+  <!-- Back to Top Button -->
+<button id="backToTopBtn" title="Go to top">↑</button>
 </body>
 </html>
