@@ -52,40 +52,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<header>
-  <nav class="navbar container">
+  <header>
+  <nav class="container">
     <a href="index.html" class="logo">
-      <img src="images/logo.webp" alt="Glam by Fatma" width="60" height="60" />
+      <img src="images/logo.webp" alt="Glam by Fatma Logo" style="height: 50px;">
     </a>
 
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="promo.html">Promo</a></li>
       <li><a href="book.html">Book</a></li>
     </ul>
   </nav>
 </header>
-  
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-overlay">
-      <div class="hero-content" data-aos="fade-up">
-        <h1>Where Beauty Meets Art</h1>
-        <p>Bridal Glam, Hair Styling & Henna – Personalized for You</p>
-        <a href="order.html" class="cta-btn">Book Now</a>
-      </div>
-    </div>
-  </section>
-  
+
 <!-- About Section -->
   <section class="section delayed-section" data-aos="fade-up">
 <section id="about" class="section dark-section" data-aos="fade-up">
@@ -165,13 +152,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Mobile Nav Toggle -->
 <script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const hamburger = document.querySelector('.hamburger');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
 
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+  hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
   });
 </script>
 
