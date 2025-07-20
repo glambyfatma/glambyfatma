@@ -43,7 +43,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- CSS + Animations -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -80,6 +81,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 <!-- About Section -->
+  <section class="section delayed-section" data-aos="fade-up">
 <section id="about" class="section dark-section" data-aos="fade-up">
   <div class="container">
     <h2>About Glam by Fatma</h2>
@@ -99,8 +101,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
   </div>
 </section>
+  </section>
   
   <!-- Services -->
+    <section class="section delayed-section" data-aos="fade-up">
   <section id="services" class="section dark-section">
     <div class="container">
       <h2 data-aos="fade-up">Our Services</h2>
@@ -127,7 +131,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </section>
-
+</section>
   <!-- Footer -->
   <footer class="section dark-section">
     <div class="container">
@@ -172,6 +176,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
   <script>
   // Back to Top functionality
   const backToTopBtn = document.getElementById("backToTopBtn");
@@ -188,7 +199,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.querySelectorAll('.delayed-section').forEach(section => {
+        section.style.opacity = '1';
+        section.classList.add('aos-animate');
+      });
+    }, 5000); // 5 seconds
+  });
+</script>
   <!-- Back to Top Button -->
-<button id="backToTopBtn" title="Go to top">↑</button>
-</body>
+
+  <button id="backToTopBtn" title="Go to top">↑</button>
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+  </body>
 </html>
