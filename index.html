@@ -50,20 +50,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMSRSN4K"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <header>
-    <nav class="container">
-      <div class="logo">
-        <img src="images/logo.webp" alt="Glam by Fatma Logo" width="60" height="60" />
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="order.html">Book</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="navbar">
+  <nav class="container">
+    <div class="logo">
+      <a href="#home"><img src="images/logo.webp" alt="Glam by Fatma Logo" width="60" height="60" /></a>
+    </div>
 
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="promo.html">Promo</a></li>
+      <li><a href="order.html">Book</a></li>
+    </ul>
+  </nav>
+</header>
+  
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-overlay">
@@ -127,5 +132,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     AOS.init({ once: true });
   </script>
+  <script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const hamburger = document.querySelector('.hamburger');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    hamburger.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
