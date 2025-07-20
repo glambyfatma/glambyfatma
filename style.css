@@ -94,6 +94,8 @@ nav {
   .hamburger {
     display: flex;
   }
+}
+
 nav {
   position: sticky;
   top: 0;
