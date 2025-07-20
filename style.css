@@ -1,4 +1,7 @@
-/* Reset and base */
+/* Import Elegant Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +9,7 @@
 }
 
 html, body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', sans-serif;
   color: #fff;
   background-color: #000;
   scroll-behavior: smooth;
@@ -38,7 +41,7 @@ img {
   padding: 60px 0;
 }
 
-/* === Navbar Styles === */
+/* Navbar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -58,19 +61,17 @@ nav {
 
 .nav-links a {
   color: white;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 0.95rem;
+  font-weight: 300;
   text-transform: uppercase;
-  text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #f0c6e8; /* Light pink highlight */
+  color: #f0c6e8;
 }
 
-/* === Hamburger Menu === */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -86,7 +87,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* Hamburger Active Animation */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg);
   position: relative;
@@ -103,7 +103,6 @@ nav {
   top: -8px;
 }
 
-/* === Responsive Nav === */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -127,13 +126,59 @@ nav {
   }
 }
 
-/* About Section */
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('images/hero.webp') no-repeat center center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  max-width: 90%;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 300;
+  border: 1px solid #fff;
+  background: transparent;
+  color: white;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* About */
 .about-container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  flex-wrap: wrap;
 }
 
 .about-text {
@@ -144,24 +189,22 @@ nav {
 
 .about-text h2 {
   font-size: 2rem;
+  font-weight: 400;
   margin-bottom: 1rem;
-  color: #fff;
 }
 
 .about-text p {
-  color: #ddd;
   line-height: 1.6;
   font-weight: 300;
+  color: #ddd;
   margin-bottom: 1.5rem;
 }
 
 .about-text .cta-btn {
   background-color: #25D366;
-  color: white;
   padding: 12px 20px;
   border-radius: 30px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  font-weight: 400;
 }
 
 .about-text .cta-btn:hover {
@@ -170,7 +213,6 @@ nav {
 
 .about-img {
   flex: 1;
-  min-width: 280px;
   text-align: center;
 }
 
@@ -180,7 +222,7 @@ nav {
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
-/* Services grid */
+/* Services Grid */
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -200,9 +242,9 @@ nav {
 }
 
 .service h3 {
-  margin-bottom: 10px;
   font-weight: 300;
   font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
 .service p {
@@ -213,31 +255,26 @@ nav {
 
 /* Typewriter Text */
 .typewriter-text {
-  display: inline-block;
   font-weight: 200;
   font-size: 1.1rem;
   margin-bottom: 24px;
-  white-space: normal;
   line-height: 1.5;
 }
 
 /* Portfolio Hero */
 .portfolio-hero {
-  position: relative;
-  background-image: url('images/portfolio.webp');
-  background-size: cover;
-  background-position: center;
   height: 60vh;
+  background: url('images/weddingparty.webp') no-repeat center center / cover;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .portfolio-hero .hero-overlay {
   background: rgba(0, 0, 0, 0.6);
   padding: 40px;
   border-radius: 10px;
-  backdrop-filter: blur(8px);
   text-align: center;
   max-width: 90%;
 }
@@ -253,16 +290,14 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  padding-top: 40px;
-  padding-bottom: 60px;
+  padding: 40px 0;
 }
 
 .gallery-grid a {
-  display: block;
-  overflow: hidden;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-grid a:hover {
@@ -272,32 +307,30 @@ nav {
 
 /* Contact Form */
 form {
+  max-width: 600px;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 20px;
-  max-width: 600px;
-  margin-inline: auto;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   background: #111;
-  color: #fff;
-  font-size: 0.95rem;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 4px;
 }
 
 form button {
-  padding: 12px;
-  background: #fff;
-  color: #000;
+  background: white;
+  color: black;
   font-weight: bold;
   border: none;
   border-radius: 4px;
+  padding: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 form button:hover {
@@ -306,10 +339,8 @@ form button:hover {
 
 /* Footer */
 footer {
-  background: transparent;
   padding: 40px 0;
   text-align: center;
-  font-size: 0.9rem;
   font-weight: 200;
 }
 
@@ -318,36 +349,34 @@ footer .social a {
   font-weight: 300;
 }
 
-/* Back to Top Button */
+/* Back to Top */
 #backToTopBtn {
   position: fixed;
   bottom: 30px;
   right: 25px;
-  z-index: 99;
   font-size: 18px;
   border: none;
-  outline: none;
   background-color: #e91e63;
   color: white;
-  cursor: pointer;
   padding: 12px 16px;
   border-radius: 50%;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   display: none;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
+
+/* AOS */
 [data-aos] {
   opacity: 0;
   transform: translateY(30px);
-  transition-property: opacity, transform;
-  transition-duration: 0.6s;
-  transition-timing-function: ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 [data-aos].aos-animate {
   opacity: 1;
   transform: translateY(0);
 }
+
 /* Floating WhatsApp Icon */
 .floating-whatsapp {
   position: fixed;
@@ -357,17 +386,9 @@ footer .social a {
   background: transparent;
   border-radius: 50%;
 }
+
+/* Delayed Sections */
 .delayed-section {
   opacity: 0;
   transition: opacity 1s ease;
-}
-/* AOS Animations */
-[data-aos] {
-  opacity: 0;
-  transition-property: opacity, transform;
-  transition-duration: 0.6s;
-}
-
-[data-aos].aos-animate {
-  opacity: 1;
 }
