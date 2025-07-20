@@ -22,18 +22,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   <!-- Header -->
-  <header class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="images/logo.webp" alt="Glam by Fatma Logo" width="60" height="60" />
-      </a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="order.html" class="active">Order</a>
-      </nav>
+  <header>
+  <nav class="container">
+    <a href="index.html" class="logo">
+      <img src="images/logo.webp" alt="Glam by Fatma Logo" style="height: 50px;">
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </header>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="promo.html">Promo</a></li>
+      <li><a href="book.html" class="active">Book</a></li>
+      <li><a href="#top" id="backToTopLink">Back to Top</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Hero -->
   <section class="hero short-hero" style="background-image: url('images/hero.webp');" aria-label="Order Hero">
@@ -82,5 +91,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
   </script>
+    
+    <script>
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Back to Top smooth scroll
+  document.getElementById('backToTopLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
