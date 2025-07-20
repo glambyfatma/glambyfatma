@@ -52,15 +52,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <nav class="container">
-  <a href="index.html"><img src="images/logo.webp" alt="Glam by Fatma" width="60" height="60" /></a>
+<nav class="container">
+  <a href="index.html">
+    <img src="images/logo.webp" alt="Glam by Fatma" width="60" height="60" />
+  </a>
   
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+  
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
@@ -68,7 +72,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="book.html">Book</a></li>
   </ul>
 </nav>
-</header>
   
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -133,31 +136,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 </section>
-  <!-- Footer -->
-  <footer class="section dark-section">
-    <div class="container">
-      <p>&copy; 2025 Glam by Fatma. All rights reserved.</p>
-      <div class="social">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://wa.me/254114065922" target="_blank" rel="noopener">
-          <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" style="vertical-align: middle;" />
-          WhatsApp
-        </a>
-      </div>
+ <!-- Footer -->
+<footer class="section dark-section">
+  <div class="container">
+    <p>&copy; 2025 Glam by Fatma. All rights reserved.</p>
+    <div class="social">
+      <a href="https://www.instagram.com/glam.by.fatma" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/254114065922" target="_blank" rel="noopener">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" style="vertical-align: middle; margin-right: 6px;" />
+        WhatsApp
+      </a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/254114065922" class="floating-whatsapp" aria-label="Chat on WhatsApp">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" width="40" />
-  </a>
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/254114065922" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+  <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" width="40" />
+</a>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true });
-  </script>
-  <script>
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+<!-- Mobile Nav Toggle -->
+<script>
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   const hamburger = document.querySelector('.hamburger');
@@ -167,9 +172,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     hamburger.classList.toggle('active');
   });
 </script>
-  <script>
+
+<!-- Smooth Anchor Scroll -->
+<script>
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       document.querySelector(this.getAttribute('href')).scrollIntoView({
         behavior: 'smooth'
@@ -177,15 +184,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Section Animation Delay (5s) -->
 <script>
-  AOS.init({
-    duration: 1000,
-    once: true
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.querySelectorAll('.delayed-section').forEach(section => {
+        section.style.opacity = '1';
+        section.classList.add('aos-animate');
+      });
+    }, 5000); // 5 seconds delay
   });
 </script>
-  <script>
-  // Back to Top functionality
+
+<!-- Back to Top Button -->
+<button id="backToTopBtn" title="Go to top">↑</button>
+<script>
   const backToTopBtn = document.getElementById("backToTopBtn");
 
   window.onscroll = function () {
@@ -200,22 +214,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
-  <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-      document.querySelectorAll('.delayed-section').forEach(section => {
-        section.style.opacity = '1';
-        section.classList.add('aos-animate');
-      });
-    }, 5000); // 5 seconds
-  });
-</script>
-  <!-- Back to Top Button -->
 
-  <button id="backToTopBtn" title="Go to top">↑</button>
+<!-- Active Nav Highlight on Scroll -->
 <script>
   const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-links a");
+  const navAnchorLinks = document.querySelectorAll(".nav-links a");
 
   window.addEventListener("scroll", () => {
     let current = "";
@@ -226,7 +229,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
 
-    navLinks.forEach(link => {
+    navAnchorLinks.forEach(link => {
       link.classList.remove("active");
       if (link.getAttribute("href") === `#${current}`) {
         link.classList.add("active");
@@ -234,5 +237,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 </script>
-  </body>
+
+<!-- Back to Top Button Styles -->
+<style>
+  #backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: none;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 10px 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  #backToTopBtn:hover {
+    background: #f0f0f0;
+  }
+</style>
+</body>
 </html>
