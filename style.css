@@ -94,6 +94,12 @@ nav {
   .hamburger {
     display: flex;
   }
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  padding: 20px 0;
+  z-index: 999;
 }
 
 /* Hero Section */
@@ -360,7 +366,18 @@ footer .social a {
   display: none;
   transition: background-color 0.3s ease;
 }
+[data-aos] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition-property: opacity, transform;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+}
 
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Floating WhatsApp Icon */
 .floating-whatsapp {
   position: fixed;
@@ -370,7 +387,10 @@ footer .social a {
   background: transparent;
   border-radius: 50%;
 }
-
+.delayed-section {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
 /* AOS Animations */
 [data-aos] {
   opacity: 0;
