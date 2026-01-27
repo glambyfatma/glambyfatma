@@ -1220,7 +1220,7 @@
 
         navAnchorLinks.forEach(link => {
             link.classList.remove("active");
-            if (link.getAttribute("href") === `#`) {
+            if (link.getAttribute("href") === `#${current}`) {
                 link.classList.add("active");
             }
         });
@@ -1265,10 +1265,11 @@
         const hero = document.querySelector('.hero');
         if (hero) {
             const scrollPosition = window.scrollY;
-            hero.style.backgroundPosition = `center px`;
+            hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
         }
     });
 </script>
 ```
 
 </body>
+</html>
