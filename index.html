@@ -1,1305 +1,1274 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glam by Fatma | Premium Makeup, Henna & Hair Styling in Kenya</title>
-    <meta name="description" content="Experience luxury beauty with Fatma - professional makeup artistry, intricate henna designs, and expert hair styling for weddings and special events across Kenya.">
-    <meta property="og:title" content="Glam by Fatma | Elegance in Every Detail">
-    <meta property="og:description" content="Premium beauty services: makeup, henna, and hair styling crafted with passion and precision.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/d4af37/0a0a0a?text=Glam+by+Fatma">
-    <meta name="theme-color" content="#0a0a0a">
-    <style>
-        /* ============================================
-           FONT IMPORTS & CSS VARIABLES
-           ============================================ */
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TMSRSN4K');</script>
+    <!-- End Google Tag Manager -->
 
-        :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: #1a1a1a;
-            --gold-primary: #d4af37;
-            --gold-secondary: #c9a961;
-            --gold-light: #e8d4b8;
-            --text-primary: #f5f5f5;
-            --text-secondary: #b8b8b8;
-            --accent-rose: #c97c6f;
-            --glass-border: rgba(212, 175, 55, 0.2);
-            --transition-smooth: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+```
+<!-- SEO & Verification -->
+<meta name="google-site-verification" content="45RlH1qH2X98H3EkTaJ2r5BaFrUQPaQMtdGdk6M9cQA" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Glam by Fatma | Makeup, Hairstyling & Henna in Kenya</title>
+<meta name="description" content="Glam by Fatma offers professional makeup, hairstyling, and henna services for weddings, photoshoots, and special events across Kitui and Kenya." />
+<meta name="keywords" content="Makeup Kitui, Bridal makeup Kenya, Henna artist Kenya, Hair stylist Kitui, Glam by Fatma" />
+<link rel="canonical" href="https://fatmaglam.com/" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Glam by Fatma | Bridal Glam, Hair & Henna in Kenya" />
+<meta property="og:description" content="Elevate your look with Fatma's flawless makeup, elegance, and artistic henna for every special occasion." />
+<meta property="og:url" content="https://fatmaglam.com/" />
+<meta property="og:image" content="images/hero.webp" />
+<meta property="og:image:alt" content="Bridal makeup and hair styling by Fatma" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Glam by Fatma | Bridal Glam, Hair & Henna in Kenya" />
+<meta name="twitter:description" content="Makeup, hair, and henna services that turn moments into memories." />
+<meta name="twitter:image" content="images/hero.webp" />
+
+<!-- Preload -->
+<link rel="preload" as="image" href="images/hero.webp" type="image/webp" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+<!-- AOS Animation Library -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+<style>
+    /* ============================================
+       FONT IMPORTS & CSS VARIABLES
+       ============================================ */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+    :root {
+        --bg-dark: #050505;
+        --bg-card: #121212;
+        --gold-primary: #D4AF37;
+        --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%);
+        --text-main: #f0f0f0;
+        --text-muted: #a0a0a0;
+        --glass: rgba(255, 255, 255, 0.05);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --blur: blur(10px);
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    * { 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+    }
+
+    html { 
+        scroll-behavior: smooth; 
+    }
+
+    body {
+        font-family: 'Cormorant Garamond', serif;
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    h1, h2, h3 {
+        font-family: 'Playfair Display', serif;
+        color: #fff;
+    }
+
+    h1 { 
+        font-size: 3.5rem; 
+        line-height: 1.1; 
+        margin-bottom: 1rem; 
+    }
+
+    h2 { 
+        font-size: 2.5rem; 
+        margin-bottom: 1rem; 
+        color: var(--gold-primary); 
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        color: var(--gold-primary);
+    }
+
+    p { 
+        color: var(--text-muted); 
+        font-weight: 300; 
+    }
+
+    .subtitle {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold-primary);
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+
+    /* ============================================
+       NAVIGATION (Glassmorphism)
+       ============================================ */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(5, 5, 5, 0.8);
+        backdrop-filter: var(--blur);
+        z-index: 1000;
+        border-bottom: 1px solid var(--glass-border);
+        transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+        background: rgba(5, 5, 5, 0.95);
+        padding: 10px 5%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .logo img { 
+        height: 50px;
+        transition: transform 0.3s ease;
+    }
+
+    .logo:hover img {
+        transform: scale(1.05);
+    }
+
+    .nav-links { 
+        list-style: none; 
+        display: flex; 
+        gap: 30px; 
+    }
+
+    .nav-links a {
+        text-decoration: none; 
+        color: #fff; 
+        font-size: 0.9rem; 
+        text-transform: uppercase; 
+        letter-spacing: 1px;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    .nav-links a:hover, 
+    .nav-links a.active { 
+        color: var(--gold-primary); 
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gold-primary);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .hamburger { 
+        display: none; 
+        cursor: pointer; 
+        flex-direction: column; 
+        gap: 5px; 
+    }
+
+    .hamburger span { 
+        width: 25px; 
+        height: 3px; 
+        background: var(--gold-primary);
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* ============================================
+       HERO SECTION (Cinematic)
+       ============================================ */
+    .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('images/hero.webp');
+        background-size: cover; 
+        background-position: center; 
+        background-attachment: fixed;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        text-align: center;
+        padding: 0 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent);
+        border-radius: 50%;
+        animation: float 25s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    .hero-overlay {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-text {
+        max-width: 800px;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-text h1 {
+        background: linear-gradient(135deg, #ffffff 0%, var(--gold-primary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        color: #ddd;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 40px;
+        background: var(--gold-gradient);
+        color: #000;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .cta-btn:hover { 
+        transform: translateY(-5px); 
+        box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    /* ============================================
+       SECTIONS
+       ============================================ */
+    .section { 
+        padding: 80px 5%; 
+    }
+
+    .section.dark-section {
+        background: #0a0a0a;
+    }
+
+    .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+    }
+
+    .box {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* ============================================
+       ABOUT SECTION
+       ============================================ */
+    .about {
+        background: linear-gradient(135deg, rgba(21, 21, 21, 0.5), rgba(18, 18, 18, 0.3));
+        border-radius: 20px;
+        padding: 60px;
+        margin: 40px 0;
+        border: 1px solid var(--glass-border);
+    }
+
+    .about-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+    }
+
+    .about-img img {
+        width: 100%;
+        border-radius: 20px;
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease;
+    }
+
+    .about-img:hover img {
+        transform: scale(1.02);
+    }
+
+    /* ============================================
+       SERVICES (Cards)
+       ============================================ */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .service-card {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid var(--glass-border);
+        transition: all 0.4s ease;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: var(--blur);
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+        transition: left 0.8s ease;
+    }
+
+    .service-card:hover::before {
+        left: 100%;
+    }
+
+    .service-card:hover { 
+        transform: translateY(-15px); 
+        border-color: var(--gold-primary);
+        background: rgba(212, 175, 55, 0.08);
+        box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+    }
+
+    .service-card img { 
+        width: 100%; 
+        height: 250px; 
+        object-fit: cover; 
+        border-radius: 10px; 
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .service-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .service-card h3 {
+        margin-bottom: 1rem;
+    }
+
+    .service-card p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-link {
+        color: var(--gold-primary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .service-link:hover {
+        transform: translateX(5px);
+    }
+
+    /* ============================================
+       PORTFOLIO SECTION
+       ============================================ */
+    .portfolio-hero {
+        background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/portfolio.webp');
+        background-size: cover;
+        background-position: center;
+        padding: 100px 20px;
+        text-align: center;
+        color: white;
+    }
+
+    .portfolio-hero h1 {
+        font-size: 3rem;
+        color: white;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+    }
+
+    .gallery-grid a {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-grid a:hover img {
+        transform: scale(1.1);
+    }
+
+    .glightbox {
+        text-decoration: none;
+    }
+
+    /* ============================================
+       TESTIMONIALS
+       ============================================ */
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    .testimonial-card {
+        background: rgba(18, 18, 18, 0.8);
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid var(--glass-border);
+        transition: all 0.3s ease;
+        backdrop-filter: var(--blur);
+    }
+
+    .testimonial-card:hover {
+        border-color: var(--gold-primary);
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+    }
+
+    .stars {
+        color: var(--gold-primary);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        letter-spacing: 3px;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+    }
+
+    .testimonial-author {
+        color: var(--gold-primary);
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+    }
+
+    .testimonial-service {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    footer {
+        background: #000;
+        padding: 40px 0;
+        text-align: center;
+        border-top: 1px solid #222;
+    }
+
+    .social {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .social a {
+        color: var(--gold-primary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .social a:hover {
+        color: #fff;
+        transform: translateY(-3px);
+    }
+
+    /* ============================================
+       FLOATING BUTTONS
+       ============================================ */
+    .floating-whatsapp {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        animation: slideInUp 0.8s ease-out;
+    }
+
+    .floating-whatsapp:hover {
+        transform: scale(1.15) rotate(-15deg);
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    .floating-whatsapp img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #backToTopBtn {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: 998;
+        display: none;
+        background: rgba(212, 175, 55, 0.2);
+        color: var(--gold-primary);
+        border: 2px solid var(--gold-primary);
+        border-radius: 50%;
+        font-size: 20px;
+        padding: 12px 15px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        transition: all 0.3s ease;
+        backdrop-filter: var(--blur);
+    }
+
+    #backToTopBtn:hover {
+        background: var(--gold-primary);
+        color: #000;
+        transform: translateY(-3px);
+    }
+
+    /* ============================================
+       PORTFOLIO MODAL
+       ============================================ */
+    .portfolio-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        backdrop-filter: var(--blur);
+    }
+
+    .portfolio-modal.active {
+        display: flex;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+        border: 2px solid var(--gold-primary);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .close-modal:hover {
+        color: var(--gold-primary);
+        transform: rotate(90deg);
+    }
+
+    /* ============================================
+       CONTACT FORM
+       ============================================ */
+    .contact-form {
+        max-width: 600px;
+        margin: 40px auto;
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--glass-border);
+        border-radius: 10px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--gold-primary);
+        background: rgba(212, 175, 55, 0.08);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+
+    .contact-form textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .section-subtext {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        color: var(--text-muted);
+    }
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+    @keyframes fadeInUp {
+        from { 
+            opacity: 0; 
+            transform: translateY(30px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 768px) {
+        h1 { 
+            font-size: 2.5rem; 
         }
 
-        /* ============================================
-           RESET & BASE STYLES
-           ============================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        h2 { 
+            font-size: 2rem; 
         }
 
-        html {
-            scroll-behavior: smooth;
+        .about-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
-        body {
-            font-family: 'Cormorant Garamond', serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-
-        /* ============================================
-           TYPOGRAPHY
-           ============================================ */
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: 4.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        h2 {
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        h3 {
-            font-size: 1.8rem;
-            color: var(--text-primary);
-        }
-
-        p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold-primary);
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-
-        /* ============================================
-           NAVIGATION WITH GLASS EFFECT
-           ============================================ */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            z-index: 1000;
-            transition: var(--transition-smooth);
-        }
-
-        nav.scrolled {
-            padding: 1rem 5%;
-            background: rgba(10, 10, 10, 0.95);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-        }
-
-        .nav-logo:hover {
-            transform: scale(1.05);
+        .about {
+            padding: 40px 20px;
         }
 
         .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: var(--transition-smooth);
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold-primary);
-        }
-
-        .nav-links a::after {
-            content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary));
-            transition: width 0.4s ease;
-        }
-
-        .nav-links a:hover::after {
+            right: 0;
+            top: 70px;
+            background: #000;
+            flex-direction: column;
             width: 100%;
+            text-align: center;
+            padding: 20px;
+            display: none;
+            border-bottom: 1px solid var(--gold-primary);
+            gap: 15px;
+            z-index: 999;
         }
 
-        .cta-nav {
-            padding: 0.8rem 1.8rem;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-            color: #0a0a0a;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: var(--transition-smooth);
-            font-size: 0.85rem;
-        }
-
-        .cta-nav:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        .nav-links.active {
+            display: flex;
         }
 
         .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2.5px;
-            background: var(--gold-primary);
-            border-radius: 2px;
-            transition: var(--transition-smooth);
-        }
-
-        /* ============================================
-           HERO SECTION
-           ============================================ */
-        .hero {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 4rem;
-            padding: 8rem 5% 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent);
-            border-radius: 50%;
-            animation: float 25s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(201, 124, 111, 0.1), transparent);
-            border-radius: 50%;
-            animation: float 30s ease-in-out infinite reverse;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-content .subtitle {
-            animation: slideInDown 0.8s ease-out;
-        }
-
-        .hero-content h1 {
-            animation: fadeInUp 1.2s ease-out 0.2s both;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            font-size: 3.5rem;
-        }
-
-        .hero-content p {
-            animation: fadeInUp 1.2s ease-out 0.4s both;
-            max-width: 500px;
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-cta {
             display: flex;
-            gap: 1.5rem;
-            animation: fadeInUp 1.2s ease-out 0.6s both;
         }
 
-        .btn-primary {
-            padding: 1.2rem 2.5rem;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-            color: var(--bg-dark);
-            border: none;
-            border-radius: 50px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
+        .section {
+            padding: 50px 5%;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.5);
-        }
-
-        .btn-secondary {
-            padding: 1.2rem 2.5rem;
-            background: transparent;
-            color: var(--gold-primary);
-            border: 2px solid var(--gold-primary);
-            border-radius: 50px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-        }
-
-        .btn-secondary:hover {
-            background: var(--gold-primary);
-            color: var(--bg-dark);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
-        }
-
-        .hero-image {
-            position: relative;
-            z-index: 10;
-            animation: slideInRight 1.2s ease-out;
-        }
-
-        .hero-image img {
+        .cta-btn {
             width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
-            border: 1px solid var(--glass-border);
-            transition: var(--transition-smooth);
         }
 
-        .hero-image:hover img {
-            transform: scale(1.02);
-            box-shadow: 0 50px 100px rgba(212, 175, 55, 0.2);
+        #backToTopBtn {
+            width: 50px;
+            height: 50px;
+            padding: 10px;
         }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-            animation: fadeInUp 1.2s ease-out 0.8s both;
-        }
-
-        .stat-box {
-            padding: 1.5rem;
-            background: rgba(212, 175, 55, 0.05);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            text-align: center;
-            transition: var(--transition-smooth);
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-box:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-8px);
-            background: rgba(212, 175, 55, 0.12);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-        }
-
-        /* ============================================
-           SERVICES SECTION
-           ============================================ */
-        .services {
-            padding: 6rem 5%;
-            background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(26, 26, 26, 0.5) 100%);
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: rgba(26, 26, 26, 0.5);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 3rem 2rem;
-            text-align: center;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .service-card:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-15px);
-            background: rgba(212, 175, 55, 0.08);
-            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15);
-        }
-
-        .service-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-            color: var(--gold-primary);
-        }
-
-        .service-card p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-link {
-            color: var(--gold-primary);
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: var(--transition-smooth);
-            display: inline-block;
-        }
-
-        .service-link:hover {
-            transform: translateX(8px);
-        }
-
-        /* ============================================
-           PORTFOLIO SECTION
-           ============================================ */
-        .portfolio {
-            padding: 6rem 5%;
-            background: var(--bg-dark);
-            position: relative;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            position: relative;
-            aspect-ratio: 1;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            border: 1px solid var(--glass-border);
-            transition: var(--transition-smooth);
-            background: rgba(26, 26, 26, 0.5);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-smooth);
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.08);
-            border-color: var(--gold-primary);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* ============================================
-           TESTIMONIALS SECTION
-           ============================================ */
-        .testimonials {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(201, 124, 111, 0.06));
+        .floating-whatsapp {
+            width: 55px;
+            height: 55px;
         }
 
         .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: 1fr;
         }
 
-        .testimonial-card {
-            background: rgba(26, 26, 26, 0.5);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 2.5rem;
-            transition: var(--transition-smooth);
-            backdrop-filter: blur(10px);
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.8rem;
         }
 
-        .testimonial-card:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
-        }
-
-        .stars {
-            color: var(--gold-primary);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            letter-spacing: 3px;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            line-height: 1.9;
-        }
-
-        .testimonial-author {
-            color: var(--gold-primary);
-            font-weight: 500;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .testimonial-service {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* ============================================
-           CONTACT SECTION
-           ============================================ */
-        .contact {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
-            text-align: center;
-        }
-
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto 3rem;
-        }
-
-        .contact-item {
-            background: rgba(26, 26, 26, 0.5);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: var(--transition-smooth);
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-item:hover {
-            border-color: var(--gold-primary);
-            background: rgba(212, 175, 55, 0.08);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .contact-item h4 {
-            color: var(--gold-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition-smooth);
+        .hero-text p {
             font-size: 1rem;
         }
 
-        .contact-item a:hover {
-            color: var(--gold-primary);
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .section {
+            padding: 40px 5%;
         }
 
         .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            padding: 0 10px;
         }
+    }
+</style>
+```
 
-        .form-group {
-            position: relative;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            border-radius: 10px;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            transition: var(--transition-smooth);
-            font-size: 1rem;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold-primary);
-            background: rgba(212, 175, 55, 0.05);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        footer {
-            background: #000;
-            border-top: 1px solid var(--glass-border);
-            padding: 3rem 5%;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition-smooth);
-        }
-
-        .footer-links a:hover {
-            color: var(--gold-primary);
-            transform: translateY(-3px);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--gold-primary);
-            border-radius: 50%;
-            color: var(--gold-primary);
-            transition: var(--transition-smooth);
-            font-size: 1.2rem;
-            text-decoration: none;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-links a:hover {
-            background: var(--gold-primary);
-            color: var(--bg-dark);
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
-        }
-
-        .footer-bottom {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* ============================================
-           FLOATING BUTTONS
-           ============================================ */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg, #25D366, #20BA5A);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 32px;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            z-index: 999;
-            transition: var(--transition-smooth);
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            animation: slideInUp 0.8s ease-out;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.15);
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 110px;
-            right: 30px;
-            width: 55px;
-            height: 55px;
-            background: rgba(212, 175, 55, 0.15);
-            border: 2px solid var(--gold-primary);
-            border-radius: 50%;
-            color: var(--gold-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition-smooth);
-            z-index: 998;
-            backdrop-filter: blur(10px);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: var(--gold-primary);
-            color: var(--bg-dark);
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
-        }
-
-        /* ============================================
-           ANIMATIONS
-           ============================================ */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            h3 {
-                font-size: 1.3rem;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 6rem 5% 3rem;
-                gap: 2rem;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                background: rgba(10, 10, 10, 0.98);
-                padding: 2rem;
-                gap: 1.5rem;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-                backdrop-filter: blur(10px);
-            }
-
-            .nav-links.active {
-                max-height: 500px;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-            }
-
-            .floating-whatsapp {
-                width: 60px;
-                height: 60px;
-                font-size: 28px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .hero {
-                padding: 5rem 5% 2rem;
-            }
-
-            .services {
-                padding: 4rem 5%;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                gap: 1rem;
-                flex-direction: column;
-            }
-
-            .floating-whatsapp {
-                bottom: 20px;
-                right: 20px;
-                width: 55px;
-                height: 55px;
-            }
-
-            .back-to-top {
-                bottom: 85px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- ============================================
-         NAVIGATION
-         ============================================ -->
-    <nav id="navbar">
-        <a href="#" class="nav-logo">GLAM by Fatma</a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><button class="cta-nav" onclick="scrollToContact()">Book Now</button></li>
-        </ul>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMSRSN4K" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+```
+<!-- NAVIGATION -->
+<header>
+    <nav class="container" id="navbar">
+        <a href="#" class="logo">
+            <img src="images/logo.webp" alt="Glam by Fatma Logo">
+        </a>
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="cta-btn">Book Now</a></li>
+        </ul>
     </nav>
+</header>
 
-    <!-- ============================================
-         HERO SECTION
-         ============================================ -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="subtitle">✨ Elegance in Every Detail</p>
-            <h1>Elevate Your Beauty with Artistry & Grace</h1>
-            <p>Experience the magic of professional makeup, intricate henna designs, and expert hair styling. Three talents, one vision: your unforgettable transformation.</p>
-            <div class="hero-cta">
-                <button class="btn-primary" onclick="scrollToContact()">Book Your Glam</button>
-                <button class="btn-secondary" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">View Portfolio</button>
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-overlay">
+        <div class="hero-text">
+            <h1>Fatma Elevates Your Beauty — With Grace, Passion, and a Gifted Touch</h1>
+            <p>Bridal Glam, Hair Styling & Henna – Personalized for You</p>
+            <a href="#contact" class="cta-btn">Book Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="section" id="about" data-aos="fade-up">
+    <div class="box">
+        <div class="about" data-aos="fade-up">
+            <div class="about-container" data-aos="fade-up">
+                <div class="about-text">
+                    <h2>Meet Fatma — A Naturally Gifted Beauty Artist</h2>
+                    <p>Fatma is a talented makeup artist, hairstylist, and henna designer whose gift is more than skill — it's a calling. Blessed with a natural flair for beauty, she refined her artistry through formal training, building on the raw talent she was born with. Her clients trust her eye, her hands, and her heart — because Fatma doesn't just do makeup; she brings out your glow.</p>
+                    <a href="https://wa.me/254114065922" class="cta-btn" target="_blank">Chat with Fatma</a>
+                </div>
+                <div class="about-img">
+                    <img src="images/fatma.png" alt="Fatma at work" loading="lazy" />
+                </div>
             </div>
-            <div class="stats">
-                <div class="stat-box">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Happy Clients</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">4.9★</div>
-                    <div class="stat-label">Client Rating</div>
-                </div>
-            </div>
         </div>
-        <div class="hero-image">
-            <!-- Replace with your actual image path -->
-            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Glam by Fatma - Professional Beauty Artist" loading="lazy">
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================
-         SERVICES SECTION
-         ============================================ -->
-    <section class="services" id="services">
-        <div class="section-header">
-            <p class="subtitle">Our Expertise</p>
-            <h2>Three Arts, One Vision</h2>
-            <p>Master artistry in makeup, henna, and hair styling combined into your perfect beauty experience.</p>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">💄</div>
-                <h3>Makeup Artistry</h3>
-                <p>From bridal elegance to bold editorial looks, every brushstroke is perfection. Professional-grade products and personalized consultation for your special moment.</p>
+<!-- SERVICES SECTION -->
+<section id="services" class="section dark-section" data-aos="fade-up">
+    <div class="container">
+        <h2 data-aos="fade-up">Our Services</h2>
+        <p class="section-subtext" data-aos="fade-up">Expert beauty transformations for weddings, shoots, and celebrations.</p>
+        
+        <div class="grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/makeup1.webp" alt="Makeup Service" loading="lazy" />
+                <h3>Makeup</h3>
+                <p>Bridal, editorial, and glam looks designed to enhance your beauty and last all day.</p>
                 <a href="#contact" class="service-link">Learn More →</a>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Henna Design</h3>
-                <p>Traditional and contemporary henna patterns that celebrate your culture. Premium natural henna with intricate detailing that lasts and leaves a lasting impression.</p>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/hairstyle.webp" alt="Hair Styling Service" loading="lazy" />
+                <h3>Hair Styling</h3>
+                <p>Elegant updos, curls, and custom styles tailored to your event and personality.</p>
                 <a href="#contact" class="service-link">Learn More →</a>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">✂️</div>
-                <h3>Hair & Styling</h3>
-                <p>Precision cuts, vibrant colors, and stunning styles. From everyday elegance to wedding day perfection with expert care and attention to detail.</p>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="images/henna.webp" alt="Henna Art Service" loading="lazy" />
+                <h3>Henna Art</h3>
+                <p>Intricate, cultural henna designs using safe, natural henna for all occasions.</p>
                 <a href="#contact" class="service-link">Learn More →</a>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<section id="portfolio" class="section" data-aos="fade-up">
+    <div class="box">
+        <h2 data-aos="fade-up">Our Portfolio</h2>
+        <p class="section-subtext" data-aos="fade-up">A showcase of timeless beauty — crafted with heart and expertise.</p>
+    </div>
+
+    <div class="portfolio-hero" id="top">
+        <div class="hero-overlay" data-aos="fade-up">
+            <h1 style="color: white;">Our Customers, Our Pride – Discover the Glam Moments</h1>
+        </div>
+    </div>
+
+    <section class="section" id="gallery" aria-label="Gallery Section">
+        <div class="box">
+            <h2 data-aos="fade-up">Gallery</h2>
+            <p class="section-subtext" data-aos="fade-up">Every look is a work of art. Here's a glimpse of our magic.</p>
+
+            <div class="gallery-grid" data-aos="fade-up">
+                <a href="images/hairstyle.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/hairstyle.webp" alt="Hairstyling" loading="lazy" />
+                </a>
+                <a href="images/makeup1.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/makeup1.webp" alt="Makeup Look" loading="lazy" />
+                </a>
+                <a href="images/henna.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/henna.webp" alt="Henna Design" loading="lazy" />
+                </a>
+                <a href="images/portfolio.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio.webp" alt="Portfolio Cover" loading="lazy" />
+                </a>
+                <a href="images/IMG_5194.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/IMG_5194.webp" alt="IMG 5194" loading="lazy" />
+                </a>
+                <a href="images/IMG_5252.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/IMG_5252.webp" alt="IMG 5252" loading="lazy" />
+                </a>
+                <a href="images/portfolio1.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio1.webp" alt="Portfolio 1" loading="lazy" />
+                </a>
+                <a href="images/portfolio2.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio2.webp" alt="Portfolio 2" loading="lazy" />
+                </a>
+                <a href="images/portfolio9.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio9.webp" alt="Portfolio 9" loading="lazy" />
+                </a>
+                <a href="images/portfolio10.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio10.webp" alt="Portfolio 10" loading="lazy" />
+                </a>
+                <a href="images/portfolio11.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio11.webp" alt="Portfolio 11" loading="lazy" />
+                </a>
+                <a href="images/portfolio12.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio12.webp" alt="Portfolio 12" loading="lazy" />
+                </a>
+                <a href="images/portfolio14.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio14.webp" alt="Portfolio 14" loading="lazy" />
+                </a>
+                <a href="images/portfolio15.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio15.webp" alt="Portfolio 15" loading="lazy" />
+                </a>
+                <a href="images/portfolio16.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio16.webp" alt="Portfolio 16" loading="lazy" />
+                </a>
+                <a href="images/portfolio19.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio19.webp" alt="Portfolio 19" loading="lazy" />
+                </a>
+                <a href="images/portfolio20.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio20.webp" alt="Portfolio 20" loading="lazy" />
+                </a>
+                <a href="images/portfolio21.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio21.webp" alt="Portfolio 21" loading="lazy" />
+                </a>
+                <a href="images/portfolio23.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio23.webp" alt="Portfolio 23" loading="lazy" />
+                </a>
+                <a href="images/portfolio24.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio24.webp" alt="Portfolio 24" loading="lazy" />
+                </a>
+                <a href="images/portfolio25.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio25.webp" alt="Portfolio 25" loading="lazy" />
+                </a>
+                <a href="images/portfolio26.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio26.webp" alt="Portfolio 26" loading="lazy" />
+                </a>
+                <a href="images/portfolio27.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio27.webp" alt="Portfolio 27" loading="lazy" />
+                </a>
+                <a href="images/portfolio28.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/portfolio28.webp" alt="Portfolio 28" loading="lazy" />
+                </a>
+                <a href="images/weddingparty.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/weddingparty.webp" alt="Wedding Party" loading="lazy" />
+                </a>
+                <a href="images/weddingparty2.webp" class="glightbox" data-gallery="glam-portfolio">
+                    <img src="images/weddingparty2.webp" alt="Wedding Party 2" loading="lazy" />
+                </a>
+            </div>
+        </div>
     </section>
+</section>
 
-    <!-- ============================================
-         PORTFOLIO SECTION
-         ============================================ -->
-    <section class="portfolio" id="portfolio">
-        <div class="section-header">
-            <p class="subtitle">Our Work</p>
-            <h2>Client Transformations</h2>
-            <p>Real moments, real beauty. Each image tells a story of transformation and confidence.</p>
-        </div>
-
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Makeup Artistry" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Henna Design" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hair Styling" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bridal Makeup" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1596703923338-48f1c07e4f2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Special Events" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luxury Glam" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         TESTIMONIALS SECTION
-         ============================================ -->
-    <section class="testimonials" id="testimonials">
-        <div class="section-header">
-            <p class="subtitle">Client Love</p>
-            <h2>Words from Our Beauties</h2>
-            <p>Real reviews from real clients who experienced the Glam by Fatma difference.</p>
-        </div>
+<!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="section" data-aos="fade-up">
+    <div class="box">
+        <h2 data-aos="fade-up">What Our Clients Say</h2>
+        <p class="section-subtext" data-aos="fade-up">Real reviews from real clients who experienced the Glam by Fatma difference.</p>
 
         <div class="testimonials-grid">
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="stars">★★★★★</div>
                 <p class="testimonial-text">"Fatma made me feel like the most beautiful bride on my wedding day. Every detail was absolutely perfect, and her attention to care was unmatched."</p>
                 <div class="testimonial-author">Aisha M.</div>
                 <div class="testimonial-service">Bridal Package</div>
             </div>
 
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="stars">★★★★★</div>
                 <p class="testimonial-text">"The transformation was incredible! I walked out feeling completely confident and gorgeous. Fatma has magic in her hands and a genuine passion for her craft."</p>
                 <div class="testimonial-author">Leila K.</div>
                 <div class="testimonial-service">Hair & Makeup</div>
             </div>
 
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="stars">★★★★★</div>
                 <p class="testimonial-text">"Professional, creative, and absolutely talented. The henna work was stunning, and the makeup complemented it perfectly. Highly recommended for any occasion!"</p>
                 <div class="testimonial-author">Noor S.</div>
                 <div class="testimonial-service">Complete Beauty Package</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================
-         CONTACT SECTION
-         ============================================ -->
-    <section class="contact" id="contact">
-        <div class="contact-content">
-            <p class="subtitle">Get In Touch</p>
-            <h2>Ready to Transform?</h2>
-            <p>Book your appointment and discover the artistry of professional beauty enhancement. Let's create magic together.</p>
-        </div>
+<!-- CONTACT SECTION -->
+<section id="contact" class="section" data-aos="fade-up">
+    <div class="box">
+        <h2 data-aos="fade-up">Ready to Book Your Glam?</h2>
+        <p class="section-subtext" data-aos="fade-up">Tell us your vision, date, and location — and let Glam by Fatma bring it to life beautifully.</p>
 
-        <div class="contact-grid">
-            <div class="contact-item">
-                <div class="contact-icon">📱</div>
-                <h4>WhatsApp</h4>
-                <a href="https://wa.me/254114065922" target="_blank">+254 114 065 922</a>
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-icon">📧</div>
-                <h4>Email</h4>
-                <a href="mailto:glambyfatmaa@gmail.com">glambyfatmaa@gmail.com</a>
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <h4>Location</h4>
-                <p style="color: var(--text-secondary);">Kitui, Kenya</p>
-            </div>
-        </div>
-
-        <form class="contact-form" id="contactForm">
-            <div class="form-group">
-                <input type="text" placeholder="Your Name" required id="name">
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Your Email" required id="email">
-            </div>
-            <div class="form-group">
-                <input type="tel" placeholder="Your Phone Number" required id="phone">
-            </div>
-            <div class="form-group">
-                <textarea placeholder="Tell us about your service needs..." required id="message"></textarea>
-            </div>
-            <button type="submit" class="btn-primary">Send Message</button>
+        <form class="contact-form" action="https://formspree.io/f/xvgqzwke" method="POST" data-aos="fade-up">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <input type="tel" name="phone" placeholder="Phone Number (e.g. +254...)" required />
+            <input type="text" name="service" placeholder="Service (e.g. Bridal Makeup)" required />
+            <input type="date" name="date" required />
+            <input type="text" name="location" placeholder="Event Location" required />
+            <textarea name="details" placeholder="Tell us more about your request..." required></textarea>
+            <input type="hidden" name="_next" value="https://fatmaglam.com/thankyou.html" />
+            <button type="submit" class="cta-btn">Send Order</button>
         </form>
 
-        <button class="btn-primary" onclick="openWhatsApp()" style="margin-top: 1rem;">Chat with Fatma on WhatsApp</button>
-    </section>
-
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
-    <footer>
-        <div class="footer-content">
-            <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem;">GLAM by Fatma</h3>
-            <p style="margin-bottom: 2rem;">Elevating beauty through artistry, passion, and precision since 2014</p>
-
-            <div class="social-links">
-                <a href="https://www.instagram.com/glam.by.fatma" target="_blank" title="Instagram">📷</a>
-                <a href="https://www.tiktok.com/@glambyfatmaa" target="_blank" title="TikTok">🎬</a>
-                <a href="https://www.facebook.com/GlambyFatma" target="_blank" title="Facebook">👍</a>
-                <a href="https://wa.me/254114065922" target="_blank" title="WhatsApp">💬</a>
-            </div>
-
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#testimonials">Reviews</a>
-                <a href="#contact">Contact</a>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 Glam by Fatma. All rights reserved. | Crafted with elegance and passion</p>
-            </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Or reach out directly:</p>
+            <a href="https://wa.me/254114065922" target="_blank" class="cta-btn">Chat with Fatma on WhatsApp</a>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <!-- Floating Buttons -->
-    <a href="https://wa.me/254114065922" class="floating-whatsapp" title="Chat on WhatsApp">💬</a>
-    <div class="back-to-top" id="backToTop" title="Back to top">↑</div>
+<!-- FOOTER -->
+<footer class="section dark-section">
+    <div class="container">
+        <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">GLAM by Fatma</h3>
+        <p style="margin-bottom: 1.5rem;">Elevating beauty through artistry, passion, and precision.</p>
+        
+        <div class="social">
+            <a href="https://www.instagram.com/glam.by.fatma" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://wa.me/254114065922" target="_blank" rel="noopener">
+                <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" />
+                WhatsApp
+            </a>
+        </div>
 
-    <!-- ============================================
-         JAVASCRIPT
-         ============================================ -->
-    <script>
-        // ==================== Navigation Scroll Effect ====================
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const backToTop = document.getElementById('backToTop');
-            
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted);">&copy; 2025 Glam by Fatma. All rights reserved.</p>
+    </div>
+</footer>
 
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/254114065922" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" />
+</a>
 
-        // ==================== Hamburger Menu Toggle ====================
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+<!-- Back to Top Button -->
+<button id="backToTopBtn" title="Go to top">↑</button>
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+<!-- Portfolio Modal -->
+<div class="portfolio-modal" id="portfolioModal">
+    <span class="close-modal" onclick="closeModal()">×</span>
+    <img class="modal-content" id="modalImage" src="" alt="Enlarged portfolio image">
+</div>
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-        // ==================== Smooth Scroll Helpers ====================
-        function scrollToContact() {
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+<script>
+    // Initialize AOS
+    AOS.init({ 
+        duration: 1000, 
+        once: true,
+        easing: 'ease-in-out'
+    });
+
+    // Initialize GLightbox
+    const lightbox = GLightbox({ 
+        selector: '.glightbox',
+        openEffect: 'fade',
+        closeEffect: 'fade'
+    });
+
+    // Navigation Scroll Effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
+    });
 
-        function openWhatsApp() {
-            window.open('https://wa.me/254114065922', '_blank');
-        }
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-        // ==================== Back to Top ====================
-        document.getElementById('backToTop').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
         });
+    });
 
-        // ==================== Contact Form ====================
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
+    // Back to Top Button
+    const backToTopBtn = document.getElementById("backToTopBtn");
 
-            if (name && email && phone && message) {
-                // Show success message
-                alert('Thank you for reaching out! Fatma will contact you soon.');
-                document.getElementById('contactForm').reset();
-                
-                // Optionally send to WhatsApp
-                const whatsappMessage = `Hi Fatma, my name is ${name}. ${message}. You can reach me at ${email} or ${phone}`;
-                const whatsappURL = `https://wa.me/254114065922?text=${encodeURIComponent(whatsappMessage)}`;
-                // Uncomment to auto-send to WhatsApp:
-                // window.open(whatsappURL, '_blank');
+    window.addEventListener('scroll', () => {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Active Nav Link on Scroll
+    const sections = document.querySelectorAll("section");
+    const navAnchorLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute("id");
             }
         });
 
-        // ==================== Smooth Scroll for Anchor Links ====================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+        navAnchorLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#`) {
+                link.classList.add("active");
+            }
         });
+    });
 
-        // ==================== Page Load Animation ====================
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.stat-box').forEach((box, index) => {
-                box.style.animation = `fadeInUp 0.8s ease-out ${0.2 + (index * 0.1)}s both`;
-            });
-        });
-    </script>
+    // Portfolio Modal
+    function openModal(src) {
+        const modal = document.getElementById('portfolioModal');
+        const modalImg = document.getElementById('modalImage');
+        modal.classList.add('active');
+        modalImg.src = src;
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('portfolioModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('portfolioModal').addEventListener('click', (e) => {
+        if (e.target.id === 'portfolioModal') {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Form Submission
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        // Allow form to submit normally to formspree
+        const formData = new FormData(this);
+        console.log('Form submitted with data:', Object.fromEntries(formData));
+    });
+
+    // Parallax Effect on Hero
+    window.addEventListener('scroll', () => {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            const scrollPosition = window.scrollY;
+            hero.style.backgroundPosition = `center px`;
+        }
+    });
+</script>
+```
+
 </body>
-</html>
