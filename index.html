@@ -35,7 +35,7 @@
     <meta name="twitter:image" content="images/portfolio.webp" />
 
     <!-- Preload & Preconnect -->
-    <link rel="preload" as="image" href="images/portfolio.webp" type="image/webp" />
+    <link rel="preload" as="image" href="images/portfolio-compressed.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -43,13 +43,12 @@
 
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
     <style>
         /* ============================================
            FONT IMPORTS & CSS VARIABLES
            ============================================ */
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap');
 
         :root {
             --bg-dark: #050505;
@@ -114,18 +113,8 @@
             font-weight: 300; 
         }
 
-        .subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold-primary);
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-
         /* ============================================
-           NAVIGATION (Glassmorphism)
+           NAVIGATION
            ============================================ */
         nav {
             position: fixed;
@@ -146,12 +135,6 @@
             background: rgba(5, 5, 5, 0.95);
             padding: 10px 5%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
         }
 
         .logo img { 
@@ -230,14 +213,14 @@
         }
 
         /* ============================================
-           HERO SECTION (FIXED - Consistent cover)
+           HERO SECTION
            ============================================ */
         .hero {
             height: 100vh;
             min-height: 600px;
             background: 
                 linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)),
-                url('images/portfolio.webp');
+                url('images/portfolio-compressed.webp');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -262,16 +245,8 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        .hero-text {
-            max-width: 800px;
-        }
-
         .hero-text h1 {
             color: #ffffff;
-            background: none;
-            -webkit-background-clip: unset;
-            -webkit-text-fill-color: unset;
-            background-clip: unset;
             margin-bottom: 1rem;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
@@ -304,11 +279,6 @@
             box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
         }
 
-        .cta-btn:focus-visible {
-            outline: 2px solid var(--gold-primary);
-            outline-offset: 3px;
-        }
-
         /* ============================================
            SECTIONS
            ============================================ */
@@ -331,51 +301,71 @@
         }
 
         /* ============================================
-           ABOUT SECTION
+           ABOUT SECTION - Background Image Style
            ============================================ */
         .about {
-            background: linear-gradient(135deg, rgba(21, 21, 21, 0.5), rgba(18, 18, 18, 0.3));
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+                url('images/fatma-compressed.webp');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
             border-radius: 20px;
-            padding: 60px;
+            padding: 80px 60px;
             margin: 40px 0;
             border: 1px solid var(--glass-border);
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
             align-items: center;
         }
 
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                var(--bg-dark) 0%, 
+                rgba(5, 5, 5, 0.9) 30%, 
+                rgba(5, 5, 5, 0.5) 50%, 
+                transparent 70%);
+            z-index: 1;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 50px;
+            max-width: 60%;
+        }
+
         .about-text h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
+            color: var(--gold-primary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .about-text p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.8;
             margin-bottom: 2rem;
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-        }
-
-        .about-img:hover img {
-            transform: scale(1.02);
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
 
         /* ============================================
-           SERVICES (Cards)
+           SERVICES - Cards with Background Images
            ============================================ */
         .grid {
             display: grid;
@@ -393,94 +383,151 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: var(--blur);
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .service-card:nth-child(1) {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+                url('images/makeup1-compressed.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card:nth-child(2) {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+                url('images/hairstyle-compressed.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card:nth-child(3) {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+                url('images/henna-compressed.webp');
+            background-size: cover;
+            background-position: center;
         }
 
         .service-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: left 0.8s ease;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, 
+                rgba(5, 5, 5, 0.9) 0%, 
+                rgba(5, 5, 5, 0.5) 50%, 
+                transparent 100%);
+            z-index: 1;
+            transition: all 0.4s ease;
         }
 
         .service-card:hover::before {
-            left: 100%;
+            background: linear-gradient(to top, 
+                rgba(212, 175, 55, 0.1) 0%, 
+                rgba(5, 5, 5, 0.7) 50%, 
+                transparent 100%);
         }
 
         .service-card:hover { 
             transform: translateY(-15px); 
             border-color: var(--gold-primary);
-            background: rgba(212, 175, 55, 0.08);
             box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
         }
 
-        .service-card img { 
-            width: 100%; 
-            height: 250px; 
-            object-fit: cover; 
-            border-radius: 10px; 
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover img {
-            transform: scale(1.05);
+        .service-card h3,
+        .service-card p,
+        .service-card .service-link {
+            position: relative;
+            z-index: 2;
         }
 
         .service-card h3 {
+            font-size: 2rem;
             margin-bottom: 1rem;
+            color: #ffffff;
         }
 
         .service-card p {
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 1.1rem;
+            line-height: 1.6;
             margin-bottom: 1.5rem;
+            color: #e0e0e0;
         }
 
         .service-link {
-            color: var(--gold-primary);
-            text-decoration: none;
-            font-size: 0.9rem;
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--gold-gradient);
+            color: #000;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
         }
 
-        .service-link:hover {
-            transform: translateX(5px);
+        .service-link:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .section-subtext {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            color: var(--text-muted);
         }
 
         /* ============================================
-           PORTFOLIO CAROUSEL SECTION
+           PORTFOLIO
            ============================================ */
         .portfolio-hero {
-            background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/portfolio.webp');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/portfolio-compressed.webp');
             background-size: cover;
-            background-position: center;
-            padding: 100px 20px;
+            background-position: center center;
+            background-attachment: fixed;
+            padding: 150px 20px;
             text-align: center;
             color: white;
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-hero .hero-overlay {
+            max-width: 800px;
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .portfolio-hero h1 {
-            font-size: 3rem;
-            color: white;
+            font-size: 3.5rem;
+            color: var(--gold-primary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         /* Carousel Styles */
         .carousel-container {
             position: relative;
             width: 100%;
-            max-width: 900px;
+            max-width: 100%;
             margin: 40px auto;
-            background: var(--bg-card);
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid var(--glass-border);
         }
 
         .carousel-wrapper {
@@ -504,7 +551,7 @@
 
         .carousel-slide img {
             width: 100%;
-            height: 600px;
+            height: 80vh;
             object-fit: cover;
             background: #000;
         }
@@ -521,30 +568,30 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 40px;
             transform: translateY(-50%);
             z-index: 10;
         }
 
         .carousel-btn {
-            background: rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.5);
             border: 2px solid var(--gold-primary);
-            color: var(--gold-primary);
-            width: 50px;
-            height: 50px;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 24px;
+            font-size: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             font-weight: bold;
             border: none;
+            backdrop-filter: blur(10px);
         }
 
-        .carousel-btn:hover,
-        .carousel-btn:focus {
+        .carousel-btn:hover {
             background: var(--gold-primary);
             color: #000;
             transform: scale(1.1);
@@ -622,6 +669,46 @@
         .testimonial-service {
             color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        /* ============================================
+           CONTACT FORM
+           ============================================ */
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.08);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         /* ============================================
@@ -714,52 +801,6 @@
         }
 
         /* ============================================
-           CONTACT FORM
-           ============================================ */
-        .contact-form {
-            max-width: 600px;
-            margin: 40px auto;
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            border-radius: 10px;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--gold-primary);
-            background: rgba(212, 175, 55, 0.08);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .section-subtext {
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            color: var(--text-muted);
-        }
-
-        /* ============================================
            ANIMATIONS
            ============================================ */
         @keyframes fadeInUp {
@@ -771,11 +812,6 @@
                 opacity: 1; 
                 transform: translateY(0); 
             }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
         }
 
         @keyframes slideInUp {
@@ -801,13 +837,39 @@
                 font-size: 2rem; 
             }
 
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .about {
+                min-height: 500px;
+                padding: 40px 20px;
+                background-position: right center;
+            }
+            
+            .about::before {
+                background: linear-gradient(90deg, 
+                    var(--bg-dark) 0%, 
+                    rgba(5, 5, 5, 0.95) 50%, 
+                    rgba(5, 5, 5, 0.8) 100%);
+            }
+            
+            .about-text {
+                max-width: 100%;
+                padding-right: 0;
+            }
+            
+            .about-text h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-text p {
+                font-size: 1.1rem;
             }
 
-            .about {
-                padding: 40px 20px;
+            .service-card {
+                min-height: 350px;
+                padding: 25px 20px;
+            }
+            
+            .service-card h3 {
+                font-size: 1.8rem;
             }
 
             .nav-links {
@@ -845,11 +907,15 @@
                 width: 50px;
                 height: 50px;
                 padding: 10px;
+                bottom: 140px;
+                right: 20px;
             }
 
             .floating-whatsapp {
                 width: 55px;
                 height: 55px;
+                bottom: 80px;
+                right: 20px;
             }
 
             .testimonials-grid {
@@ -857,19 +923,30 @@
             }
 
             .carousel-slide img {
-                height: 400px;
+                height: 50vh;
             }
-
+            
+            .carousel-controls {
+                padding: 0 20px;
+            }
+            
             .carousel-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+            
+            .portfolio-hero {
+                padding: 100px 20px;
+                min-height: 50vh;
+                background-attachment: scroll;
+            }
+            
+            .portfolio-hero h1 {
+                font-size: 2.5rem;
             }
 
-            /* Hero responsive */
             .hero {
-                background-size: cover;
-                background-position: center center;
                 min-height: 500px;
             }
             
@@ -891,6 +968,22 @@
                 font-size: 1.8rem;
             }
 
+            .about-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-text p {
+                font-size: 1rem;
+            }
+
+            .service-card {
+                min-height: 300px;
+            }
+            
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+
             .hero-text h1 {
                 font-size: 2rem;
             }
@@ -908,17 +1001,17 @@
             }
 
             .carousel-slide img {
-                height: 300px;
+                height: 40vh;
             }
-
+            
             .carousel-controls {
                 padding: 0 10px;
             }
-
+            
             .carousel-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 16px;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
             }
         }
     </style>
@@ -952,7 +1045,7 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION - FIXED -->
+    <!-- HERO SECTION -->
     <section class="hero" id="home" aria-label="Hero section">
         <div class="hero-overlay">
             <div class="hero-text">
@@ -973,9 +1066,6 @@
                         <p>Fatma is a talented makeup artist, hairstylist, and henna designer whose gift is more than skill — it's a calling. Blessed with a natural flair for beauty, she refined her artistry through formal training, building on the raw talent she was born with. Her clients trust her eye, her hands, and her heart — because Fatma doesn't just do makeup; she brings out your glow.</p>
                         <a href="https://wa.me/254114065922" class="cta-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with Fatma on WhatsApp">Chat with Fatma</a>
                     </div>
-                    <div class="about-img">
-                        <img src="images/fatma.png" alt="Fatma at work" loading="lazy" width="600" height="600" />
-                    </div>
                 </div>
             </div>
         </div>
@@ -989,21 +1079,18 @@
 
             <div class="grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/makeup1.webp" alt="Makeup Service" loading="lazy" width="400" height="250" />
                     <h3>Makeup</h3>
                     <p>Bridal, editorial, and glam looks designed to enhance your beauty and last all day.</p>
                     <a href="#contact" class="service-link" aria-label="Learn more about makeup services">Learn More →</a>
                 </div>
 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/hairstyle.webp" alt="Hair Styling Service" loading="lazy" width="400" height="250" />
                     <h3>Hair Styling</h3>
                     <p>Elegant updos, curls, and custom styles tailored to your event and personality.</p>
                     <a href="#contact" class="service-link" aria-label="Learn more about hair styling services">Learn More →</a>
                 </div>
 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="images/henna.webp" alt="Henna Art Service" loading="lazy" width="400" height="250" />
                     <h3>Henna Art</h3>
                     <p>Intricate, cultural henna designs using safe, natural henna for all occasions.</p>
                     <a href="#contact" class="service-link" aria-label="Learn more about henna art services">Learn More →</a>
@@ -1012,16 +1099,16 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION WITH CAROUSEL -->
+    <!-- PORTFOLIO SECTION -->
     <section id="portfolio" class="section" data-aos="fade-up" aria-label="Portfolio">
         <div class="box">
             <h2 data-aos="fade-up">Our Portfolio</h2>
             <p class="section-subtext" data-aos="fade-up">A showcase of timeless beauty — crafted with heart and expertise.</p>
         </div>
 
-        <div class="portfolio-hero" id="top">
+        <div class="portfolio-hero">
             <div class="hero-overlay" data-aos="fade-up">
-                <h1 style="color: white;">Our Customers, Our Pride – Discover the Glam Moments</h1>
+                <h1>Our Customers, Our Pride – Discover the Glam Moments</h1>
             </div>
         </div>
 
@@ -1035,88 +1122,23 @@
                     <div class="carousel-wrapper" aria-live="polite">
                         <!-- Carousel Slides -->
                         <div class="carousel-slide active" aria-hidden="false">
-                            <img src="images/hairstyle.webp" alt="Hairstyling" loading="lazy" width="900" height="600" />
+                            <img src="images/hairstyle-compressed.webp" alt="Hairstyling" loading="lazy" width="1200" height="800" />
                         </div>
                         <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/makeup1.webp" alt="Makeup Look" loading="lazy" width="900" height="600" />
+                            <img src="images/makeup1-compressed.webp" alt="Makeup Look" loading="lazy" width="1200" height="800" />
                         </div>
                         <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/henna.webp" alt="Henna Design" loading="lazy" width="900" height="600" />
+                            <img src="images/henna-compressed.webp" alt="Henna Design" loading="lazy" width="1200" height="800" />
                         </div>
                         <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio.webp" alt="Portfolio Cover" loading="lazy" width="900" height="600" />
+                            <img src="images/portfolio-compressed.webp" alt="Portfolio Cover" loading="lazy" width="1200" height="800" />
                         </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/IMG_5194.webp" alt="IMG 5194" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/IMG_5252.webp" alt="IMG 5252" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio1.webp" alt="Portfolio 1" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio2.webp" alt="Portfolio 2" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio9.webp" alt="Portfolio 9" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio10.webp" alt="Portfolio 10" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio11.webp" alt="Portfolio 11" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio12.webp" alt="Portfolio 12" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio14.webp" alt="Portfolio 14" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio15.webp" alt="Portfolio 15" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio16.webp" alt="Portfolio 16" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio19.webp" alt="Portfolio 19" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio20.webp" alt="Portfolio 20" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio21.webp" alt="Portfolio 21" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio23.webp" alt="Portfolio 23" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio24.webp" alt="Portfolio 24" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio25.webp" alt="Portfolio 25" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio26.webp" alt="Portfolio 26" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio27.webp" alt="Portfolio 27" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio28.webp" alt="Portfolio 28" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/weddingparty.webp" alt="Wedding Party" loading="lazy" width="900" height="600" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/weddingparty2.webp" alt="Wedding Party 2" loading="lazy" width="900" height="600" />
-                        </div>
+                        <!-- Add other images here with -compressed suffix -->
 
                         <!-- Carousel Controls -->
                         <div class="carousel-controls">
-                            <button class="carousel-btn" onclick="prevSlide()" aria-label="Previous slide">&#10094;</button>
-                            <button class="carousel-btn" onclick="nextSlide()" aria-label="Next slide">&#10095;</button>
+                            <button class="carousel-btn prev-btn" aria-label="Previous slide">&#10094;</button>
+                            <button class="carousel-btn next-btn" aria-label="Next slide">&#10095;</button>
                         </div>
                     </div>
 
@@ -1164,7 +1186,7 @@
             <h2 data-aos="fade-up">Ready to Book Your Glam?</h2>
             <p class="section-subtext" data-aos="fade-up">Tell us your vision, date, and location — and let Glam by Fatma bring it to life beautifully.</p>
 
-            <form class="contact-form" action="https://formspree.io/f/xvgqzwke" method="POST" data-aos="fade-up">
+            <form class="contact-form" action="https://formspree.io/f/xvgqzwke" method="POST" data-aos="fade-up" id="bookingForm">
                 <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
                 <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email" />
                 <input type="tel" name="phone" placeholder="Phone Number (e.g. +254...)" required aria-label="Your Phone Number" />
@@ -1173,12 +1195,12 @@
                 <input type="text" name="location" placeholder="Event Location" required aria-label="Event Location" />
                 <textarea name="details" placeholder="Tell us more about your request..." required aria-label="Additional Details"></textarea>
                 <input type="hidden" name="_next" value="https://fatmaglam.com/thankyou.html" />
-                <button type="submit" class="cta-btn" aria-label="Send booking request">Send Order</button>
+                <button type="submit" class="cta-btn" id="submitBtn" aria-label="Send booking request">Send Order</button>
             </form>
 
             <div style="text-align: center; margin-top: 2rem;">
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Or reach out directly:</p>
-                <a href="https://wa.me/254114065922" target="_blank" class="cta-btn" rel="noopener noreferrer" aria-label="Chat with Fatma on WhatsApp">Chat with Fatma on WhatsApp</a>
+                <a href="https://wa.me/254114065922" target="_blank" class="cta-btn" rel="noopener noreferrer" aria-label="Chat with Fatma on WhatsApp" id="whatsappBtn">Chat with Fatma on WhatsApp</a>
             </div>
         </div>
     </section>
@@ -1190,8 +1212,8 @@
             <p style="margin-bottom: 1.5rem;">Elevating beauty through artistry, passion, and precision.</p>
 
             <div class="social">
-                <a href="https://www.instagram.com/glam.by.fatma" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">Instagram</a>
-                <a href="https://wa.me/254114065922" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+                <a href="https://www.instagram.com/glam.by.fatma" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram" id="instagramBtn">Instagram</a>
+                <a href="https://wa.me/254114065922" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" id="footerWhatsappBtn">
                     <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" height="20" />
                     WhatsApp
                 </a>
@@ -1202,7 +1224,7 @@
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/254114065922" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/254114065922" class="floating-whatsapp" aria-label="Chat on WhatsApp" id="floatingWhatsappBtn">
         <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" width="40" height="40" />
     </a>
 
@@ -1215,18 +1237,21 @@
     <script>
         // Initialize AOS
         AOS.init({ 
-            duration: 1000, 
+            duration: 800, 
             once: true,
             easing: 'ease-in-out'
         });
 
-        // ==================== CAROUSEL FUNCTIONALITY ====================
+        // ==================== FIXED CAROUSEL ====================
         let currentSlide = 0;
+        let slideInterval;
         const slides = document.querySelectorAll('.carousel-slide');
         const totalSlides = slides.length;
 
         function initCarousel() {
             const indicators = document.getElementById('carouselIndicators');
+            indicators.innerHTML = '';
+            
             for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('button');
                 dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
@@ -1234,20 +1259,31 @@
                 dot.onclick = () => goToSlide(i);
                 indicators.appendChild(dot);
             }
+            
+            showSlide(0);
+            
+            // Start auto-advance
+            slideInterval = setInterval(nextSlide, 7000);
+            
+            // Add event listeners to buttons
+            document.querySelector('.prev-btn').addEventListener('click', prevSlide);
+            document.querySelector('.next-btn').addEventListener('click', nextSlide);
         }
 
         function showSlide(n) {
             slides.forEach((slide, index) => {
                 slide.classList.remove('active');
                 slide.setAttribute('aria-hidden', 'true');
-                const dots = document.querySelectorAll('.carousel-dot');
-                dots[index].classList.remove('active');
             });
             
             slides[n].classList.add('active');
             slides[n].setAttribute('aria-hidden', 'false');
+            
             const dots = document.querySelectorAll('.carousel-dot');
-            dots[n].classList.add('active');
+            dots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (index === n) dot.classList.add('active');
+            });
         }
 
         function nextSlide() {
@@ -1265,22 +1301,7 @@
             showSlide(currentSlide);
         }
 
-        // Initialize carousel on load
-        document.addEventListener('DOMContentLoaded', initCarousel);
-
-        // Auto-advance carousel every 7 seconds
-        let slideInterval = setInterval(nextSlide, 7000);
-
-        // Pause auto-advance on hover
-        const carouselContainer = document.querySelector('.carousel-container');
-        if (carouselContainer) {
-            carouselContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-            carouselContainer.addEventListener('mouseleave', () => {
-                slideInterval = setInterval(nextSlide, 7000);
-            });
-        }
-
-        // ==================== NAVIGATION SCROLL EFFECT ====================
+        // ==================== NAVIGATION ====================
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -1288,6 +1309,9 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+            
+            // Update active nav link
+            updateActiveNav();
         });
 
         // ==================== HAMBURGER MENU ====================
@@ -1309,6 +1333,28 @@
             });
         });
 
+        // ==================== ACTIVE NAV LINK ====================
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
         // ==================== BACK TO TOP ====================
         const backToTopBtn = document.getElementById("backToTopBtn");
 
@@ -1324,32 +1370,99 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ==================== SMOOTH SCROLL ====================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
+        // ==================== FORM SUBMISSION WITH FEEDBACK ====================
+        const bookingForm = document.getElementById('bookingForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                try {
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: new FormData(this),
+                        headers: { 'Accept': 'application/json' }
                     });
+                    
+                    if (response.ok) {
+                        submitBtn.textContent = '✓ Sent Successfully!';
+                        submitBtn.style.background = '#25D366';
+                        this.reset();
+                        
+                        // Track form submission
+                        if (window.dataLayer) {
+                            window.dataLayer.push({
+                                'event': 'form_submission',
+                                'form_type': 'booking'
+                            });
+                        }
+                        
+                        setTimeout(() => {
+                            submitBtn.textContent = originalText;
+                            submitBtn.style.background = '';
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    submitBtn.textContent = '✗ Error - Try Again';
+                    submitBtn.disabled = false;
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                    }, 3000);
                 }
             });
-        });
+        }
 
-        // ==================== FORM SUBMISSION ====================
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            const formData = new FormData(this);
-            console.log('Form submitted with data:', Object.fromEntries(formData));
-        });
-
-        // ==================== PARALLAX EFFECT ====================
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                const scrollPosition = window.scrollY;
-                hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+        // ==================== ANALYTICS EVENTS ====================
+        document.getElementById('whatsappBtn')?.addEventListener('click', () => {
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'whatsapp_click',
+                    'button_location': 'contact_section'
+                });
             }
+        });
+
+        document.getElementById('floatingWhatsappBtn')?.addEventListener('click', () => {
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'whatsapp_click',
+                    'button_location': 'floating_button'
+                });
+            }
+        });
+
+        document.getElementById('instagramBtn')?.addEventListener('click', () => {
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'social_click',
+                    'platform': 'instagram'
+                });
+            }
+        });
+
+        // ==================== PERFORMANCE MONITORING ====================
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`Page loaded in ${loadTime}ms`);
+                
+                // Send to analytics if needed
+                if (loadTime > 3000 && window.dataLayer) {
+                    window.dataLayer.push({
+                        'event': 'slow_load_time',
+                        'load_time': loadTime
+                    });
+                }
+            }, 0);
         });
 
         // ==================== IMAGE LOADING OPTIMIZATION ====================
@@ -1357,7 +1470,6 @@
             const images = document.querySelectorAll('img[loading="lazy"]');
             
             if ('loading' in HTMLImageElement.prototype) {
-                // Browser supports native lazy loading
                 images.forEach(img => {
                     if (img.complete) {
                         img.classList.add('loaded');
@@ -1365,9 +1477,30 @@
                         img.addEventListener('load', function() {
                             this.classList.add('loaded');
                         });
+                        img.addEventListener('error', function() {
+                            console.warn('Failed to load image:', this.src);
+                        });
                     }
                 });
             }
+            
+            // Initialize carousel after DOM is loaded
+            initCarousel();
+        });
+
+        // ==================== PREFETCH CRITICAL IMAGES ====================
+        const criticalImages = [
+            'images/portfolio-compressed.webp',
+            'images/fatma-compressed.webp',
+            'images/makeup1-compressed.webp'
+        ];
+        
+        criticalImages.forEach(src => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = src;
+            document.head.appendChild(link);
         });
     </script>
 </body>
