@@ -492,7 +492,7 @@
         }
 
         /* ============================================
-           PORTFOLIO
+           PORTFOLIO MASONRY GALLERY WITH FILTERS
            ============================================ */
         .portfolio-hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('images/portfolio.webp');
@@ -524,109 +524,191 @@
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
         }
 
-        /* Carousel Styles */
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            margin: 60px auto;
-            background: transparent;
-            border-radius: 20px;
-            overflow: hidden;
-            border: none;
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0 50px;
+            flex-wrap: wrap;
+            padding: 0 20px;
         }
 
-        .carousel-wrapper {
+        .filter-buttons button {
+            padding: 14px 32px;
+            border-radius: 30px;
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .filter-buttons button.active,
+        .filter-buttons button:hover {
+            background: var(--gold-primary);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Masonry Grid (Lazy Loaded) */
+        .masonry {
+            columns: 4;
+            column-gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 25px;
+            cursor: zoom-in;
+            transition: opacity 0.3s ease;
             position: relative;
-            width: 100%;
-            overflow: hidden;
+        }
+
+        .masonry-item img {
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .masonry-item:hover img {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 1200px) {
+            .masonry { columns: 3; }
+        }
+        @media (max-width: 900px) {
+            .masonry { columns: 2; }
+        }
+        @media (max-width: 600px) {
+            .masonry { columns: 1; }
+            .filter-buttons {
+                gap: 12px;
+            }
+            .filter-buttons button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Instagram-Style Modal */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.98);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active { 
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            text-align: center;
+        }
+
+        .modal-content img {
+            max-height: 80vh;
+            max-width: 90vw;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+        }
+
+        .modal-caption {
+            margin-top: 25px;
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            padding: 0 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Modal Close Button */
+        .modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10000;
         }
 
-        .carousel-slide {
-            display: none;
-            width: 100%;
-            animation: fadeIn 0.6s ease-in-out;
+        .modal-close:hover {
+            transform: scale(1.2);
         }
 
-        .carousel-slide.active {
-            display: block;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 85vh;
-            max-height: 800px;
-            object-fit: cover;
-            background: #000;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Carousel Controls */
-        .carousel-controls {
-            position: absolute;
+        /* Modal Navigation Arrows */
+        .modal-nav {
+            position: fixed;
             top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 50px;
             transform: translateY(-50%);
-            z-index: 10;
-        }
-
-        .carousel-btn {
-            background: rgba(212, 175, 55, 0.6);
-            border: 2px solid var(--gold-primary);
-            color: #ffffff;
+            font-size: 3.5rem;
+            color: var(--gold-primary);
+            cursor: pointer;
+            user-select: none;
+            background: rgba(0,0,0,0.5);
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            cursor: pointer;
-            font-size: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-            font-weight: bold;
             border: none;
-            backdrop-filter: blur(15px);
+            z-index: 10000;
         }
 
-        .carousel-btn:hover {
+        .modal-nav:hover {
             background: var(--gold-primary);
             color: #000;
-            transform: scale(1.15);
+            transform: translateY(-50%) scale(1.1);
         }
 
-        /* Carousel Indicators */
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            padding: 25px;
-            background: rgba(0, 0, 0, 0.4);
-        }
+        .modal-prev { left: 30px; }
+        .modal-next { right: 30px; }
 
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--glass-border);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .carousel-dot.active {
-            background: var(--gold-primary);
-            width: 35px;
-            border-radius: 8px;
+        @media (max-width: 768px) {
+            .modal-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 2.5rem;
+            }
+            .modal-prev { left: 15px; }
+            .modal-next { right: 15px; }
+            .modal-close {
+                top: -40px;
+                font-size: 2rem;
+            }
         }
 
         /* ============================================
@@ -853,10 +935,6 @@
                 min-height: 450px;
             }
             
-            .carousel-slide img {
-                height: 70vh;
-            }
-            
             .portfolio-hero h1 {
                 font-size: 3.5rem;
             }
@@ -896,16 +974,6 @@
             
             .portfolio-hero h1 {
                 font-size: 3.2rem;
-            }
-            
-            .carousel-slide img {
-                height: 60vh;
-            }
-            
-            .carousel-btn {
-                width: 60px;
-                height: 60px;
-                font-size: 28px;
             }
         }
 
@@ -1029,24 +1097,6 @@
             .portfolio-hero h1 {
                 font-size: 2.5rem;
             }
-            
-            .carousel-slide img {
-                height: 50vh;
-            }
-            
-            .carousel-controls {
-                padding: 0 25px;
-            }
-            
-            .carousel-btn {
-                width: 55px;
-                height: 55px;
-                font-size: 26px;
-            }
-            
-            .carousel-indicators {
-                padding: 20px;
-            }
 
             .hero {
                 min-height: 500px;
@@ -1116,20 +1166,6 @@
             
             .portfolio-hero h1 {
                 font-size: 2rem;
-            }
-            
-            .carousel-slide img {
-                height: 40vh;
-            }
-            
-            .carousel-controls {
-                padding: 0 15px;
-            }
-            
-            .carousel-btn {
-                width: 45px;
-                height: 45px;
-                font-size: 22px;
             }
             
             .testimonial-card {
@@ -1256,107 +1292,192 @@
             </div>
         </div>
 
-        <!-- CAROUSEL SLIDER -->
+        <!-- MASONRY GALLERY WITH FILTERS -->
         <section class="section" id="gallery" aria-label="Gallery Section">
             <div class="box">
-                <h2 data-aos="fade-up">Carousel Gallery</h2>
-                <p class="section-subtext" data-aos="fade-up">Swipe through our beautiful portfolio moments.</p>
+                <h2 data-aos="fade-up">Portfolio Gallery</h2>
+                <p class="section-subtext" data-aos="fade-up">Browse our beautiful portfolio by category or view all.</p>
 
-                <div class="carousel-container" data-aos="fade-up" aria-label="Portfolio carousel">
-                    <div class="carousel-wrapper" aria-live="polite">
-                        <!-- Carousel Slides -->
-                        <div class="carousel-slide active" aria-hidden="false">
-                            <img src="images/hairstyle.webp" alt="Hairstyling" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/makeup1.webp" alt="Makeup Look" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/henna.webp" alt="Henna Design" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio.webp" alt="Portfolio Cover" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/IMG_5194.webp" alt="IMG 5194" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/IMG_5252.webp" alt="IMG 5252" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio1.webp" alt="Portfolio 1" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio2.webp" alt="Portfolio 2" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio9.webp" alt="Portfolio 9" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio10.webp" alt="Portfolio 10" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio11.webp" alt="Portfolio 11" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio12.webp" alt="Portfolio 12" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio14.webp" alt="Portfolio 14" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio15.webp" alt="Portfolio 15" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio16.webp" alt="Portfolio 16" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio19.webp" alt="Portfolio 19" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio20.webp" alt="Portfolio 20" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio21.webp" alt="Portfolio 21" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio23.webp" alt="Portfolio 23" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio24.webp" alt="Portfolio 24" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio25.webp" alt="Portfolio 25" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio26.webp" alt="Portfolio 26" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio27.webp" alt="Portfolio 27" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/portfolio28.webp" alt="Portfolio 28" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/weddingparty.webp" alt="Wedding Party" loading="lazy" width="1200" height="800" />
-                        </div>
-                        <div class="carousel-slide" aria-hidden="true">
-                            <img src="images/weddingparty2.webp" alt="Wedding Party 2" loading="lazy" width="1200" height="800" />
-                        </div>
+                <!-- FILTER BUTTONS -->
+                <div class="filter-buttons" data-aos="fade-up">
+                    <button class="active" data-filter="all">All</button>
+                    <button data-filter="makeup">Makeup</button>
+                    <button data-filter="hair">Hair</button>
+                    <button data-filter="henna">Henna</button>
+                </div>
 
-                        <!-- Carousel Controls -->
-                        <div class="carousel-controls">
-                            <button class="carousel-btn prev-btn" aria-label="Previous slide">&#10094;</button>
-                            <button class="carousel-btn next-btn" aria-label="Next slide">&#10095;</button>
-                        </div>
+                <!-- MASONRY GRID -->
+                <div class="masonry" id="masonry">
+                    <!-- Makeup Images -->
+                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/makeup1.webp" loading="lazy" 
+                             data-caption="Bridal glam makeup by Glam by Fatma" 
+                             alt="Bridal makeup look">
                     </div>
 
-                    <!-- Carousel Indicators -->
-                    <div class="carousel-indicators" id="carouselIndicators" aria-label="Carousel navigation dots"></div>
+                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="150">
+                        <img src="images/IMG_5194.webp" loading="lazy" 
+                             data-caption="Soft glam bridal look" 
+                             alt="Soft glam makeup">
+                    </div>
+
+                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/IMG_5252.webp" loading="lazy" 
+                             data-caption="Luxury makeup finish" 
+                             alt="Luxury makeup">
+                    </div>
+
+                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="250">
+                        <img src="images/portfolio2.webp" loading="lazy" 
+                             data-caption="Classic bridal beauty" 
+                             alt="Classic bridal makeup">
+                    </div>
+
+                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/portfolio10.webp" loading="lazy" 
+                             data-caption="Editorial glam look" 
+                             alt="Editorial makeup">
+                    </div>
+
+                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="350">
+                        <img src="images/portfolio14.webp" loading="lazy" 
+                             data-caption="Evening glam makeup" 
+                             alt="Evening makeup">
+                    </div>
+
+                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="400">
+                        <img src="images/portfolio15.webp" loading="lazy" 
+                             data-caption="Natural bridal makeup" 
+                             alt="Natural makeup">
+                    </div>
+
+                    <!-- Hair Images -->
+                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/hairstyle.webp" loading="lazy" 
+                             data-caption="Elegant hair styling for special occasions" 
+                             alt="Hair styling">
+                    </div>
+
+                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="150">
+                        <img src="images/portfolio1.webp" loading="lazy" 
+                             data-caption="Styled curls with volume" 
+                             alt="Curl hairstyle">
+                    </div>
+
+                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/portfolio11.webp" loading="lazy" 
+                             data-caption="Elegant updo hairstyle" 
+                             alt="Updo hairstyle">
+                    </div>
+
+                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="250">
+                        <img src="images/portfolio12.webp" loading="lazy" 
+                             data-caption="Wedding hairstyle with accessories" 
+                             alt="Wedding hairstyle">
+                    </div>
+
+                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/portfolio16.webp" loading="lazy" 
+                             data-caption="Braided hairstyle" 
+                             alt="Braided hair">
+                    </div>
+
+                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="350">
+                        <img src="images/weddingparty.webp" loading="lazy" 
+                             data-caption="Wedding party styling" 
+                             alt="Wedding party hair">
+                    </div>
+
+                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="400">
+                        <img src="images/weddingparty2.webp" loading="lazy" 
+                             data-caption="Bridal group styling" 
+                             alt="Group hairstyling">
+                    </div>
+
+                    <!-- Henna Images -->
+                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/henna.webp" loading="lazy" 
+                             data-caption="Intricate henna artistry" 
+                             alt="Henna design">
+                    </div>
+
+                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="150">
+                        <img src="images/portfolio9.webp" loading="lazy" 
+                             data-caption="Traditional henna details" 
+                             alt="Traditional henna">
+                    </div>
+
+                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/portfolio19.webp" loading="lazy" 
+                             data-caption="Beautiful henna patterns" 
+                             alt="Henna patterns">
+                    </div>
+
+                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="250">
+                        <img src="images/portfolio20.webp" loading="lazy" 
+                             data-caption="Detailed henna artwork" 
+                             alt="Detailed henna">
+                    </div>
+
+                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/portfolio21.webp" loading="lazy" 
+                             data-caption="Modern henna designs" 
+                             alt="Modern henna">
+                    </div>
+
+                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="350">
+                        <img src="images/portfolio23.webp" loading="lazy" 
+                             data-caption="Bridal henna application" 
+                             alt="Bridal henna">
+                    </div>
+
+                    <!-- Additional Images -->
+                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="450">
+                        <img src="images/portfolio24.webp" loading="lazy" 
+                             data-caption="Complete bridal look" 
+                             alt="Complete bridal makeup">
+                    </div>
+
+                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="450">
+                        <img src="images/portfolio25.webp" loading="lazy" 
+                             data-caption="Special occasion hairstyle" 
+                             alt="Special occasion hair">
+                    </div>
+
+                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="500">
+                        <img src="images/portfolio26.webp" loading="lazy" 
+                             data-caption="Professional makeup artistry" 
+                             alt="Professional makeup">
+                    </div>
+
+                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="500">
+                        <img src="images/portfolio27.webp" loading="lazy" 
+                             data-caption="Hairstyling for photoshoots" 
+                             alt="Photoshoot hair">
+                    </div>
+
+                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="400">
+                        <img src="images/portfolio28.webp" loading="lazy" 
+                             data-caption="Artistic henna creations" 
+                             alt="Artistic henna">
+                    </div>
                 </div>
             </div>
         </section>
     </section>
+
+    <!-- INSTAGRAM-STYLE MODAL -->
+    <div class="modal" id="modal">
+        <button class="modal-nav modal-prev" aria-label="Previous image">&#10094;</button>
+        
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <img src="" alt="">
+            <div class="modal-caption"></div>
+        </div>
+        
+        <button class="modal-nav modal-next" aria-label="Next image">&#10095;</button>
+    </div>
 
     <!-- TESTIMONIALS SECTION -->
     <section id="testimonials" class="section" data-aos="fade-up" aria-label="Customer Testimonials">
@@ -1451,72 +1572,133 @@
             easing: 'ease-in-out'
         });
 
-        // ==================== FIXED CAROUSEL ====================
-        let currentSlide = 0;
-        let slideInterval;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const totalSlides = slides.length;
+        // ==================== PORTFOLIO FILTERING ====================
+        const filterButtons = document.querySelectorAll('.filter-buttons button');
+        const masonryItems = document.querySelectorAll('.masonry-item');
 
-        function initCarousel() {
-            const indicators = document.getElementById('carouselIndicators');
-            indicators.innerHTML = '';
-            
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('button');
-                dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
-                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-                dot.onclick = () => goToSlide(i);
-                indicators.appendChild(dot);
-            }
-            
-            showSlide(0);
-            
-            // Start auto-advance
-            slideInterval = setInterval(nextSlide, 7000);
-            
-            // Add event listeners to buttons
-            document.querySelector('.prev-btn').addEventListener('click', prevSlide);
-            document.querySelector('.next-btn').addEventListener('click', nextSlide);
-            
-            // Pause auto-advance on hover
-            const carouselContainer = document.querySelector('.carousel-container');
-            if (carouselContainer) {
-                carouselContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-                carouselContainer.addEventListener('mouseleave', () => {
-                    slideInterval = setInterval(nextSlide, 7000);
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Get filter value
+                const filter = btn.dataset.filter;
+                
+                // Show/hide items
+                masonryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
                 });
+            });
+        });
+
+        // ==================== INSTAGRAM-STYLE MODAL ====================
+        const modal = document.getElementById('modal');
+        const modalImg = modal.querySelector('img');
+        const modalCaption = modal.querySelector('.modal-caption');
+        const modalClose = modal.querySelector('.modal-close');
+        const modalPrev = modal.querySelector('.modal-prev');
+        const modalNext = modal.querySelector('.modal-next');
+        
+        // Get all masonry images
+        const masonryImages = Array.from(document.querySelectorAll('.masonry-item img'));
+        let currentImageIndex = 0;
+
+        // Function to open modal with specific image
+        function openModal(index) {
+            currentImageIndex = index;
+            const img = masonryImages[index];
+            
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modalCaption.textContent = img.dataset.caption || '';
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        // Function to navigate images
+        function navigateModal(direction) {
+            currentImageIndex = (currentImageIndex + direction + masonryImages.length) % masonryImages.length;
+            openModal(currentImageIndex);
+        }
+
+        // Open modal when clicking on masonry images
+        masonryImages.forEach((img, index) => {
+            img.addEventListener('click', () => openModal(index));
+        });
+
+        // Modal controls
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        modalPrev.addEventListener('click', () => navigateModal(-1));
+        modalNext.addEventListener('click', () => navigateModal(1));
+
+        // Close modal when clicking outside image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
             }
-        }
+        });
 
-        function showSlide(n) {
-            slides.forEach((slide, index) => {
-                slide.classList.remove('active');
-                slide.setAttribute('aria-hidden', 'true');
-            });
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
             
-            slides[n].classList.add('active');
-            slides[n].setAttribute('aria-hidden', 'false');
+            switch(e.key) {
+                case 'Escape':
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    break;
+                case 'ArrowLeft':
+                    navigateModal(-1);
+                    break;
+                case 'ArrowRight':
+                    navigateModal(1);
+                    break;
+            }
+        });
+
+        // Touch swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        modal.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        modal.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
             
-            const dots = document.querySelectorAll('.carousel-dot');
-            dots.forEach((dot, index) => {
-                dot.classList.remove('active');
-                if (index === n) dot.classList.add('active');
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        function goToSlide(n) {
-            currentSlide = n;
-            showSlide(currentSlide);
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next image
+                    navigateModal(1);
+                } else {
+                    // Swipe right - previous image
+                    navigateModal(-1);
+                }
+            }
         }
 
         // ==================== NAVIGATION ====================
@@ -1683,7 +1865,22 @@
             }, 0);
         });
 
-        // ==================== IMAGE LOADING OPTIMIZATION ====================
+        // ==================== PREFETCH CRITICAL IMAGES ====================
+        const criticalImages = [
+            'images/portfolio.webp',
+            'images/fatma.png',
+            'images/makeup1.webp'
+        ];
+        
+        criticalImages.forEach(src => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = src;
+            document.head.appendChild(link);
+        });
+
+        // ==================== LAZY LOADING OPTIMIZATION ====================
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('img[loading="lazy"]');
             
@@ -1701,24 +1898,6 @@
                     }
                 });
             }
-            
-            // Initialize carousel after DOM is loaded
-            initCarousel();
-        });
-
-        // ==================== PREFETCH CRITICAL IMAGES ====================
-        const criticalImages = [
-            'images/portfolio.webp',
-            'images/fatma.png',
-            'images/makeup1.webp'
-        ];
-        
-        criticalImages.forEach(src => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = src;
-            document.head.appendChild(link);
         });
     </script>
 </body>
