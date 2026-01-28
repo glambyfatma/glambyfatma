@@ -605,7 +605,16 @@
         border-radius: 10px;
         box-shadow: 0 20px 60px rgba(0,0,0,0.8);
     }
+/* ===== MODAL FADE-IN SEQUENCE ===== */
 
+.modal-content img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.modal-content img.loaded {
+    opacity: 1;
+}
     .modal-close, .modal-nav {
         position: fixed;
         z-index: 10000;
@@ -1064,114 +1073,151 @@
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+/* =====================
+   AOS
+===================== */
+AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
 
-    // Portfolio Filtering - Hide by default, show on click
-    const masonry = document.getElementById('masonry');
-    
-    document.querySelectorAll('.filter-buttons button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filter = btn.dataset.filter;
-            
-            // Show/hide items based on filter
-            document.querySelectorAll('.masonry-item').forEach(item => {
-                if (item.classList.contains(filter)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            
-            // Show masonry with animation
-            masonry.classList.add('active');
-        });
+/* =====================
+   PORTFOLIO FILTER + HASH ROUTING
+===================== */
+const masonry = document.getElementById('masonry');
+const filterButtons = document.querySelectorAll('.filter-buttons button');
+
+function applyFilter(filter, updateHash = true) {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    const activeBtn = [...filterButtons].find(b => b.dataset.filter === filter);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    document.querySelectorAll('.masonry-item').forEach(item => {
+        item.style.display = item.classList.contains(filter) ? 'block' : 'none';
     });
 
-    // Modal Gallery
-    const modal = document.getElementById('modal');
-    const masonryImages = Array.from(document.querySelectorAll('.masonry-item img'));
-    let currentImageIndex = 0;
+    masonry.classList.add('active');
 
-    function openModal(index) {
-        currentImageIndex = index;
-        const img = masonryImages[index];
-        modal.querySelector('img').src = img.src;
-        modal.querySelector('img').alt = img.alt;
-        modal.querySelector('div:last-child').textContent = img.dataset.caption || '';
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    if (updateHash) {
+        history.replaceState(null, '', `#portfolio#${filter}`);
     }
+}
 
-    function navigateModal(direction) {
-        currentImageIndex = (currentImageIndex + direction + masonryImages.length) % masonryImages.length;
-        openModal(currentImageIndex);
-    }
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+});
 
-    masonryImages.forEach((img, index) => {
-        img.addEventListener('click', () => openModal(index));
+/* Auto-load from URL hash */
+window.addEventListener('load', () => {
+    const hash = location.hash.split('#')[2];
+    if (hash) applyFilter(hash, false);
+});
+
+/* =====================
+   MODAL GALLERY CORE
+===================== */
+const modal = document.getElementById('modal');
+const modalImg = modal.querySelector('img');
+const caption = modal.querySelector('div:last-child');
+const closeBtn = modal.querySelector('.modal-close');
+const prevBtn = modal.querySelector('.modal-prev');
+const nextBtn = modal.querySelector('.modal-next');
+
+const images = [...document.querySelectorAll('.masonry-item img')];
+let currentIndex = 0;
+let lastFocusedElement = null;
+
+/* ===== IMAGE PRELOAD ===== */
+function preload(src) {
+    return new Promise(res => {
+        const i = new Image();
+        i.src = src;
+        i.onload = res;
     });
+}
 
-    modal.querySelector('.modal-close').addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
+/* ===== OPEN MODAL ===== */
+async function openModal(index) {
+    lastFocusedElement = document.activeElement;
+    currentIndex = index;
 
-    modal.querySelector('.modal-prev').addEventListener('click', () => navigateModal(-1));
-    modal.querySelector('.modal-next').addEventListener('click', () => navigateModal(1));
+    modalImg.classList.remove('loaded');
+    await preload(images[index].src);
 
-    document.addEventListener('keydown', (e) => {
-        if (!modal.classList.contains('active')) return;
-        if (e.key === 'Escape') { modal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-        if (e.key === 'ArrowLeft') navigateModal(-1);
-        if (e.key === 'ArrowRight') navigateModal(1);
-    });
+    modalImg.src = images[index].src;
+    modalImg.alt = images[index].alt;
+    caption.textContent = images[index].dataset.caption || '';
 
-    // Navigation
-    window.addEventListener('scroll', () => {
-        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-    });
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
 
-    document.getElementById('hamburger').addEventListener('click', () => {
-        document.getElementById('navLinks').classList.toggle('active');
-    });
+    modalImg.onload = () => modalImg.classList.add('loaded');
+    closeBtn.focus();
+}
 
-    // Back to Top
-    window.addEventListener('scroll', () => {
-        document.getElementById('backToTopBtn').style.display = window.scrollY > 200 ? 'block' : 'none';
-    });
+/* ===== CLOSE MODAL ===== */
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    if (lastFocusedElement) lastFocusedElement.focus();
+}
 
-    document.getElementById('backToTopBtn').addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+/* ===== NAVIGATION ===== */
+function navigate(dir) {
+    currentIndex = (currentIndex + dir + images.length) % images.length;
+    openModal(currentIndex);
+}
 
-    // Form Submission
-    document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+/* Click bindings */
+images.forEach((img, i) => img.addEventListener('click', () => openModal(i)));
+closeBtn.addEventListener('click', closeModal);
+prevBtn.addEventListener('click', () => navigate(-1));
+nextBtn.addEventListener('click', () => navigate(1));
+
+/* =====================
+   KEYBOARD + FOCUS TRAP
+===================== */
+document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('active')) return;
+
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+
+    if (e.key === 'Tab') {
+        const focusables = [closeBtn, prevBtn, nextBtn];
+        const index = focusables.indexOf(document.activeElement);
         e.preventDefault();
-        const btn = document.getElementById('submitBtn');
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-        try {
-            const response = await fetch(e.target.action, {
-                method: 'POST',
-                body: new FormData(e.target),
-                headers: { 'Accept': 'application/json' }
-            });
-            if (response.ok) {
-                btn.textContent = '✓ Sent!';
-                btn.style.background = '#25D366';
-                e.target.reset();
-                setTimeout(() => {
-                    btn.textContent = 'Send Order';
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }, 3000);
-            }
-        } catch (error) {
-            btn.textContent = '✗ Error';
-        }
-    });
+        focusables[(index + 1) % focusables.length].focus();
+    }
+});
+
+/* =====================
+   TOUCH SWIPE (MOBILE)
+===================== */
+let startX = 0;
+
+modal.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+});
+
+modal.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].clientX - startX;
+    if (Math.abs(diff) > 50) navigate(diff < 0 ? 1 : -1);
+});
+
+/* =====================
+   NAV + UI
+===================== */
+window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', scrollY > 50);
+    document.getElementById('backToTopBtn').style.display = scrollY > 200 ? 'block' : 'none';
+});
+
+document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('active');
+});
+
+document.getElementById('backToTopBtn').addEventListener('click', () => {
+    scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
 
 
