@@ -656,7 +656,17 @@
 
     .modal-prev { left: 30px; }
     .modal-next { right: 30px; }
+/* ===== GALLERY FADE-IN ===== */
+.masonry-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
 
+.masonry-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
     /* TESTIMONIALS */
     .testimonials-grid {
         display: grid;
@@ -1074,44 +1084,62 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 /* =====================
-   AOS
-===================== */
-AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
-
-/* =====================
-   PORTFOLIO FILTER + HASH ROUTING
+   PORTFOLIO CORE (SINGLE SOURCE)
 ===================== */
 const masonry = document.getElementById('masonry');
+const items = [...masonry.children];
 const filterButtons = document.querySelectorAll('.filter-buttons button');
 
+/* ===== FILTER ===== */
 function applyFilter(filter, updateHash = true) {
     filterButtons.forEach(b => b.classList.remove('active'));
-    const activeBtn = [...filterButtons].find(b => b.dataset.filter === filter);
-    if (activeBtn) activeBtn.classList.add('active');
+    const active = [...filterButtons].find(b => b.dataset.filter === filter);
+    if (active) active.classList.add('active');
 
-    document.querySelectorAll('.masonry-item').forEach(item => {
+    items.forEach(item => {
         item.style.display = item.classList.contains(filter) ? 'block' : 'none';
     });
 
     masonry.classList.add('active');
+    observeVisibleItems();
 
-    if (updateHash) {
-        history.replaceState(null, '', `#portfolio#${filter}`);
-    }
+    if (updateHash) history.replaceState(null, '', `#portfolio#${filter}`);
 }
 
-filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
-});
+filterButtons.forEach(btn =>
+    btn.addEventListener('click', () => applyFilter(btn.dataset.filter))
+);
 
-/* Auto-load from URL hash */
 window.addEventListener('load', () => {
     const hash = location.hash.split('#')[2];
     if (hash) applyFilter(hash, false);
 });
 
 /* =====================
-   MODAL GALLERY CORE
+   FADE-IN ON SCROLL
+===================== */
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.15 }
+);
+
+function observeVisibleItems() {
+    items.forEach(item => {
+        if (item.style.display !== 'none') observer.observe(item);
+    });
+}
+
+observeVisibleItems();
+
+/* =====================
+   MODAL GALLERY
 ===================== */
 const modal = document.getElementById('modal');
 const modalImg = modal.querySelector('img');
@@ -1120,27 +1148,16 @@ const closeBtn = modal.querySelector('.modal-close');
 const prevBtn = modal.querySelector('.modal-prev');
 const nextBtn = modal.querySelector('.modal-next');
 
-const images = [...document.querySelectorAll('.masonry-item img')];
 let currentIndex = 0;
-let lastFocusedElement = null;
+let lastFocused = null;
 
-/* ===== IMAGE PRELOAD ===== */
-function preload(src) {
-    return new Promise(res => {
-        const i = new Image();
-        i.src = src;
-        i.onload = res;
-    });
-}
+const images = items.map(item => item.querySelector('img'));
 
-/* ===== OPEN MODAL ===== */
-async function openModal(index) {
-    lastFocusedElement = document.activeElement;
+function openModal(index) {
+    lastFocused = document.activeElement;
     currentIndex = index;
 
     modalImg.classList.remove('loaded');
-    await preload(images[index].src);
-
     modalImg.src = images[index].src;
     modalImg.alt = images[index].alt;
     caption.textContent = images[index].dataset.caption || '';
@@ -1152,27 +1169,27 @@ async function openModal(index) {
     closeBtn.focus();
 }
 
-/* ===== CLOSE MODAL ===== */
 function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
-    if (lastFocusedElement) lastFocusedElement.focus();
+    if (lastFocused) lastFocused.focus();
 }
 
-/* ===== NAVIGATION ===== */
 function navigate(dir) {
     currentIndex = (currentIndex + dir + images.length) % images.length;
     openModal(currentIndex);
 }
 
-/* Click bindings */
-images.forEach((img, i) => img.addEventListener('click', () => openModal(i)));
+images.forEach((img, i) =>
+    img.addEventListener('click', () => openModal(i))
+);
+
 closeBtn.addEventListener('click', closeModal);
 prevBtn.addEventListener('click', () => navigate(-1));
 nextBtn.addEventListener('click', () => navigate(1));
 
 /* =====================
-   KEYBOARD + FOCUS TRAP
+   KEYBOARD ACCESSIBILITY
 ===================== */
 document.addEventListener('keydown', e => {
     if (!modal.classList.contains('active')) return;
@@ -1183,40 +1200,10 @@ document.addEventListener('keydown', e => {
 
     if (e.key === 'Tab') {
         const focusables = [closeBtn, prevBtn, nextBtn];
-        const index = focusables.indexOf(document.activeElement);
         e.preventDefault();
-        focusables[(index + 1) % focusables.length].focus();
+        const i = focusables.indexOf(document.activeElement);
+        focusables[(i + 1) % focusables.length].focus();
     }
-});
-
-/* =====================
-   TOUCH SWIPE (MOBILE)
-===================== */
-let startX = 0;
-
-modal.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-});
-
-modal.addEventListener('touchend', e => {
-    const diff = e.changedTouches[0].clientX - startX;
-    if (Math.abs(diff) > 50) navigate(diff < 0 ? 1 : -1);
-});
-
-/* =====================
-   NAV + UI
-===================== */
-window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', scrollY > 50);
-    document.getElementById('backToTopBtn').style.display = scrollY > 200 ? 'block' : 'none';
-});
-
-document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('navLinks').classList.toggle('active');
-});
-
-document.getElementById('backToTopBtn').addEventListener('click', () => {
-    scrollTo({ top: 0, behavior: 'smooth' });
 });
 </script>
 
