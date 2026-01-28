@@ -714,7 +714,7 @@
             }
         }
 
-        /* MODAL for individual image view */
+        /* MODAL for individual image view - FIXED with proper selectors */
         .modal {
             position: fixed;
             inset: 0;
@@ -725,6 +725,9 @@
             z-index: 10000;
             opacity: 0;
             transition: opacity 0.3s ease;
+            /* Accessibility improvements */
+            role: dialog;
+            aria-modal: true;
         }
 
         .modal.active { display: flex; opacity: 1; }
@@ -742,6 +745,15 @@
             object-fit: contain;
             border-radius: 10px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+        }
+
+        /* Modal caption - FIXED with proper class selector */
+        .modal-caption {
+            margin-top: 25px;
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            /* Accessibility improvement */
+            aria-live: polite;
         }
 
         .modal-close, .modal-nav {
@@ -1069,13 +1081,13 @@
                 </div>
             </div>
 
-            <!-- Category Section -->
-            <section class="category-section" id="gallery" data-aos="fade-up">
+            <!-- Category Section - REMOVED unnecessary AOS attributes -->
+            <section class="category-section" id="gallery">
                 <div class="box">
-                    <h2 data-aos="fade-up">Portfolio Gallery</h2>
-                    <p class="section-subtext" data-aos="fade-up">Browse our beautiful portfolio by category or view all.</p>
+                    <h2>Portfolio Gallery</h2>
+                    <p class="section-subtext">Browse our beautiful portfolio by category or view all.</p>
 
-                    <div class="filter-buttons" data-aos="fade-up">
+                    <div class="filter-buttons">
                         <button data-filter="makeup">Makeup</button>
                         <button data-filter="hair">Hair</button>
                         <button data-filter="henna">Henna</button>
@@ -1115,13 +1127,13 @@
             </div>
         </div>
 
-        <!-- MODAL for individual image view -->
-        <div class="modal" id="modal">
+        <!-- MODAL for individual image view - FIXED with proper selector -->
+        <div class="modal" id="modal" role="dialog" aria-modal="true">
             <button class="modal-nav modal-prev" aria-label="Previous image">❮</button>
             <div class="modal-content">
                 <button class="modal-close" aria-label="Close modal">×</button>
                 <img src="" alt="">
-                <div style="margin-top: 25px; color: var(--gold-primary); font-size: 1.2rem;"></div>
+                <div class="modal-caption" aria-live="polite"></div>
             </div>
             <button class="modal-nav modal-next" aria-label="Next image">❯</button>
         </div>
@@ -1212,8 +1224,17 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+        // Initialize AOS - Only on key sections
+        AOS.init({ 
+            duration: 800, 
+            once: true, 
+            easing: 'ease-in-out',
+            // Reduce animation triggers for performance
+            offset: 100,
+            disable: function() {
+                return window.innerWidth < 768;
+            }
+        });
 
         // Portfolio Images Data - WebP optimized
         const portfolioImages = {
@@ -1314,8 +1335,9 @@
             });
         });
 
-        // Modal functionality
+        // Modal functionality - FIXED caption selector
         const modal = document.getElementById('modal');
+        const modalCaption = modal.querySelector('.modal-caption'); // FIXED: Proper class selector
         let currentModalImages = [];
         let currentModalIndex = 0;
 
@@ -1326,7 +1348,7 @@
             const img = currentModalImages[currentModalIndex];
             modal.querySelector('img').src = img.src;
             modal.querySelector('img').alt = img.alt;
-            modal.querySelector('div:last-child').textContent = img.caption;
+            modalCaption.textContent = img.caption; // FIXED: Using proper selector
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -1336,7 +1358,7 @@
             const img = currentModalImages[currentModalIndex];
             modal.querySelector('img').src = img.src;
             modal.querySelector('img').alt = img.alt;
-            modal.querySelector('div:last-child').textContent = img.caption;
+            modalCaption.textContent = img.caption; // FIXED: Using proper selector
         }
 
         modal.querySelector('.modal-close').addEventListener('click', () => {
@@ -1388,6 +1410,7 @@
         document.getElementById('bookingForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
+            const originalText = btn.textContent;
             btn.textContent = 'Sending...';
             btn.disabled = true;
             try {
@@ -1401,14 +1424,17 @@
                     btn.style.background = '#25D366';
                     e.target.reset();
                     setTimeout(() => {
-                        btn.textContent = 'Send Order';
+                        btn.textContent = originalText;
                         btn.style.background = '';
                         btn.disabled = false;
                     }, 3000);
                 }
             } catch (error) {
                 btn.textContent = '✗ Error';
-                btn.disabled = false;
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }, 3000);
             }
         });
 
