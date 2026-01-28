@@ -10,6 +10,7 @@
     })(window,document,'script','dataLayer','GTM-TMSRSN4K');</script>
     <!-- End Google Tag Manager -->
 
+```
 <!-- SEO & Verification -->
 <meta name="google-site-verification" content="45RlH1qH2X98H3EkTaJ2r5BaFrUQPaQMtdGdk6M9cQA" />
 <meta charset="UTF-8" />
@@ -368,49 +369,52 @@
        ============================================ */
     .about-section {
         min-height: 100vh;
-        background: url('images/fatma.png') center/cover no-repeat fixed;
         background-color: var(--bg-dark);
         position: relative;
-        padding: 100px 5%;
+        padding: 80px 5%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .about-section::before {
+    .about-container {
+        position: relative;
+        max-width: 900px;
+        width: 100%;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .about-glass {
+        background: url('images/fatma.png') center/cover no-repeat;
+        background-color: var(--bg-dark);
+        border-radius: 20px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        padding: 80px 60px;
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        position: relative;
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    /* Glassmorphic overlay on about section */
+    .about-glass::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(90deg, 
-            rgba(5, 5, 5, 0.95) 0%, 
-            rgba(5, 5, 5, 0.85) 40%, 
-            rgba(5, 5, 5, 0.5) 70%, 
-            rgba(5, 5, 5, 0.3) 100%);
-        pointer-events: none;
+        background: rgba(18, 18, 18, 0.65);
+        backdrop-filter: blur(15px);
         z-index: 1;
     }
 
-    .about-container {
+    .about-glass h2 {
         position: relative;
         z-index: 2;
-        max-width: 900px;
-        width: 100%;
-    }
-
-    .about-glass {
-        background: rgba(18, 18, 18, 0.6);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        padding: 80px 60px;
-        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-        animation: fadeInUp 1s ease-out;
-    }
-
-    .about-glass h2 {
         font-size: 3rem;
         margin-bottom: 2rem;
         color: var(--gold-primary);
@@ -418,6 +422,8 @@
     }
 
     .about-glass p {
+        position: relative;
+        z-index: 2;
         font-size: 1.3rem;
         line-height: 1.9;
         margin-bottom: 2rem;
@@ -426,6 +432,8 @@
     }
 
     .about-glass .cta-btn {
+        position: relative;
+        z-index: 2;
         margin-top: 2rem;
     }
 
@@ -1325,7 +1333,7 @@
         }
     }
 </style>
-
+```
 
 </head>
 <body>
@@ -1334,7 +1342,7 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMSRSN4K" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
 
-
+```
 <!-- Skip to Main Content Link -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -1992,7 +2000,7 @@
         }
     });
 </script>
-
+```
 
 </body>
 </html>
