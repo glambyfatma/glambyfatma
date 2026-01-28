@@ -10,6 +10,7 @@
     })(window,document,'script','dataLayer','GTM-TMSRSN4K');</script>
     <!-- End Google Tag Manager -->
 
+```
 <!-- SEO & Verification -->
 <meta name="google-site-verification" content="45RlH1qH2X98H3EkTaJ2r5BaFrUQPaQMtdGdk6M9cQA" />
 <meta charset="UTF-8" />
@@ -133,14 +134,14 @@
         height: auto;
         min-height: 100vh;
         background-color: var(--bg-dark);
-        padding: 100px 5%;
+        padding: 80px 5% 0;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .hero-container {
-        max-width: 1000px;
+        max-width: 1200px;
         width: 100%;
         animation: fadeInUp 1s ease-out;
     }
@@ -148,7 +149,7 @@
     .hero-glass-box {
         position: relative;
         overflow: hidden;
-        min-height: 700px;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -174,29 +175,34 @@
     }
 
     .hero-glass-content {
-        padding: 50px 40px;
+        padding: 60px 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         position: relative;
         z-index: 2;
         text-align: center;
-        max-width: 600px;
+        max-width: 700px;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+        border-radius: 15px;
     }
 
     .hero-glass-content h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
         color: #ffffff;
-        margin-bottom: 1rem;
-        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
+        margin-bottom: 1.2rem;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
         line-height: 1.2;
+        font-weight: 700;
     }
 
     .hero-glass-content p {
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-        color: #f0f0f0;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: #ffffff;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+        font-weight: 300;
     }
 
     @media (max-width: 992px) {
@@ -215,16 +221,16 @@
 
     /* ABOUT SECTION - Image as background, text overlay */
     .about-section {
-        min-height: 100vh;
+        min-height: auto;
         background-color: var(--bg-dark);
-        padding: 100px 5%;
+        padding: 0 5%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .about-container {
-        max-width: 1000px;
+        max-width: 1200px;
         width: 100%;
         animation: fadeInUp 1s ease-out;
     }
@@ -232,7 +238,7 @@
     .about-glass-box {
         position: relative;
         overflow: hidden;
-        min-height: 700px;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -258,29 +264,33 @@
     }
 
     .about-glass-content {
-        padding: 50px 40px;
+        padding: 60px 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         position: relative;
         z-index: 2;
         text-align: center;
-        max-width: 600px;
+        max-width: 700px;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+        border-radius: 15px;
     }
 
     .about-glass-content h2 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+        font-size: 3.2rem;
+        margin-bottom: 0.8rem;
         color: var(--gold-primary);
-        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.9);
+        font-weight: 700;
     }
 
     .about-glass-content p {
-        font-size: 1.05rem;
-        line-height: 1.8;
-        margin-bottom: 1rem;
-        color: #f5f5f5;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        font-size: 1.15rem;
+        line-height: 1.9;
+        margin-bottom: 1.2rem;
+        color: #ffffff;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
     }
 
     @media (max-width: 992px) {
@@ -321,7 +331,7 @@
     }
 
     /* SECTIONS */
-    .section { padding: 80px 5%; }
+    .section { padding: 60px 5%; }
     .section.dark-section { background: #0a0a0a; }
     .container { max-width: 1200px; margin: 0 auto; }
     .box { max-width: 1200px; margin: 0 auto; }
@@ -329,7 +339,7 @@
 
     /* SERVICES SECTION */
     .services-section {
-        padding: 100px 5%;
+        padding: 60px 5%;
         background: #0a0a0a;
     }
 
@@ -452,7 +462,7 @@
     }
 
     /* PORTFOLIO SECTION */
-    .portfolio-section { padding: 100px 5%; background: #050505; }
+    .portfolio-section { padding: 60px 5%; background: #050505; }
     .portfolio-hero {
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('images/portfolio.webp') center/cover no-repeat;
         padding: 150px 20px;
@@ -635,7 +645,7 @@
     .testimonial-service { color: var(--text-muted); font-size: 0.95rem; }
 
     /* CONTACT FORM */
-    .contact-section { padding: 100px 5%; }
+    .contact-section { padding: 60px 5%; }
 
     .contact-form {
         max-width: 700px;
@@ -770,6 +780,7 @@
         .cta-btn { width: 100%; }
     }
 </style>
+```
 
 </head>
 <body>
@@ -778,7 +789,7 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMSRSN4K" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
 
-
+```
 <!-- NAVIGATION -->
 <header>
     <nav class="container" id="navbar" role="navigation" aria-label="Main navigation">
@@ -1120,7 +1131,7 @@
         }
     });
 </script>
-
+```
 
 </body>
 </html>
