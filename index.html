@@ -10,6 +10,7 @@
     })(window,document,'script','dataLayer','GTM-TMSRSN4K');</script>
     <!-- End Google Tag Manager -->
 
+```
 <!-- SEO & Verification -->
 <meta name="google-site-verification" content="45RlH1qH2X98H3EkTaJ2r5BaFrUQPaQMtdGdk6M9cQA" />
 <meta charset="UTF-8" />
@@ -20,21 +21,12 @@
 <meta name="keywords" content="Makeup Kitui, Bridal makeup Kenya, Henna artist Kenya, Hair stylist Kitui, Glam by Fatma" />
 <link rel="canonical" href="https://fatmaglam.com/" />
 
-<!-- Open Graph (Fixed paths with absolute URLs) -->
+<!-- Open Graph -->
 <meta property="og:title" content="Glam by Fatma | Bridal Glam, Hair & Henna in Kenya" />
 <meta property="og:description" content="Elevate your look with Fatma's flawless makeup, elegance, and artistic henna for every special occasion." />
 <meta property="og:url" content="https://fatmaglam.com/" />
 <meta property="og:image" content="https://fatmaglam.com/images/portfolio.webp" />
-<meta property="og:image:alt" content="Bridal makeup and hair styling by Fatma" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
 <meta property="og:type" content="website" />
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Glam by Fatma | Bridal Glam, Hair & Henna in Kenya" />
-<meta name="twitter:description" content="Makeup, hair, and henna services that turn moments into memories." />
-<meta name="twitter:image" content="https://fatmaglam.com/images/portfolio.webp" />
 
 <!-- Preload & Preconnect -->
 <link rel="preload" as="image" href="images/portfolio.webp" type="image/webp" />
@@ -47,11 +39,7 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
 <style>
-    /* ============================================
-       FONT IMPORTS & CSS VARIABLES
-       ============================================ */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap');
-
+    /* CSS VARIABLES */
     :root {
         --bg-dark: #050505;
         --bg-card: #121212;
@@ -64,19 +52,9 @@
         --blur: blur(10px);
     }
 
-    /* ============================================
-       RESET & BASE
-       ============================================ */
-    * { 
-        margin: 0; 
-        padding: 0; 
-        box-sizing: border-box; 
-    }
-
-    html { 
-        scroll-behavior: smooth; 
-    }
-
+    /* RESET & BASE */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
         font-family: 'Cormorant Garamond', serif;
         background-color: var(--bg-dark);
@@ -84,66 +62,18 @@
         overflow-x: hidden;
         line-height: 1.6;
     }
+    img { max-width: 100%; height: auto; display: block; }
 
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
+    /* TYPOGRAPHY */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap');
 
-    /* ============================================
-       TYPOGRAPHY
-       ============================================ */
-    h1, h2, h3 {
-        font-family: 'Playfair Display', serif;
-        color: #fff;
-        font-weight: 600;
-    }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; color: #fff; font-weight: 600; }
+    h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.5px; }
+    h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--gold-primary); }
+    h3 { font-size: 1.5rem; color: var(--gold-primary); }
+    p { color: var(--text-muted); font-weight: 300; }
 
-    h1 { 
-        font-size: 3.5rem; 
-        line-height: 1.1; 
-        margin-bottom: 1rem; 
-        letter-spacing: -0.5px;
-    }
-
-    h2 { 
-        font-size: 2.5rem; 
-        margin-bottom: 1rem; 
-        color: var(--gold-primary); 
-    }
-
-    h3 {
-        font-size: 1.5rem;
-        color: var(--gold-primary);
-    }
-
-    p { 
-        color: var(--text-muted); 
-        font-weight: 300; 
-    }
-
-    /* ============================================
-       SKIP LINK
-       ============================================ */
-    .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background: var(--gold-primary);
-        color: #000;
-        padding: 8px;
-        text-decoration: none;
-        z-index: 100;
-    }
-
-    .skip-link:focus {
-        top: 0;
-    }
-
-    /* ============================================
-       NAVIGATION
-       ============================================ */
+    /* NAVIGATION */
     nav {
         position: fixed;
         top: 0;
@@ -165,45 +95,22 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
-    .logo {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        gap: 10px;
-    }
+    .logo { display: flex; align-items: center; text-decoration: none; gap: 10px; }
+    .logo img { height: 50px; width: auto; transition: transform 0.3s ease; }
+    .logo:hover img { transform: scale(1.05); }
 
-    .logo img { 
-        height: 50px;
-        width: auto;
-        transition: transform 0.3s ease;
-    }
-
-    .logo:hover img {
-        transform: scale(1.05);
-    }
-
-    .nav-links { 
-        list-style: none; 
-        display: flex; 
-        gap: 30px; 
-    }
-
+    .nav-links { list-style: none; display: flex; gap: 30px; }
     .nav-links a {
-        text-decoration: none; 
-        color: #fff; 
-        font-size: 0.9rem; 
-        text-transform: uppercase; 
+        text-decoration: none;
+        color: #fff;
+        font-size: 0.9rem;
+        text-transform: uppercase;
         letter-spacing: 1px;
         transition: 0.3s;
         position: relative;
         padding-bottom: 5px;
     }
-
-    .nav-links a:hover, 
-    .nav-links a.active { 
-        color: var(--gold-primary); 
-    }
-
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-primary); }
     .nav-links a::after {
         content: '';
         position: absolute;
@@ -214,183 +121,187 @@
         background: var(--gold-primary);
         transition: width 0.3s ease;
     }
+    .nav-links a:hover::after { width: 100%; }
 
-    .nav-links a:hover::after,
-    .nav-links a:focus::after {
-        width: 100%;
-    }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 10px; }
+    .hamburger span { width: 25px; height: 3px; background: var(--gold-primary); transition: all 0.3s ease; display: block; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(10px, 10px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
 
-    .hamburger { 
-        display: none; 
-        cursor: pointer; 
-        flex-direction: column; 
-        gap: 5px;
-        background: none;
-        border: none;
-        padding: 10px;
-    }
-
-    .hamburger:focus {
-        outline: 2px solid var(--gold-primary);
-        border-radius: 5px;
-    }
-
-    .hamburger span { 
-        width: 25px; 
-        height: 3px; 
-        background: var(--gold-primary);
-        transition: all 0.3s ease;
-        display: block;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(10px, 10px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-
-    /* ============================================
-       HERO SECTION - Portfolio image CLEAR & VISIBLE + Glassmorphic text
-       ============================================ */
+    /* HERO SECTION - Image as background, text overlay */
     .hero {
         height: auto;
         min-height: 100vh;
         background-color: var(--bg-dark);
-        padding: 80px 5%;
-        display: flex; 
-        align-items: center; 
+        padding: 100px 5%;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        position: relative;
-        overflow: visible;
     }
 
     .hero-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-        max-width: 1200px;
+        max-width: 1000px;
         width: 100%;
         animation: fadeInUp 1s ease-out;
     }
 
-    .hero-image {
+    .hero-glass-box {
         position: relative;
-        z-index: 1;
-        width: 100%;
-        max-height: 600px;
         overflow: hidden;
-        border-radius: 20px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
     }
 
-    .hero-image img {
+    .hero-glass-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .hero-glass-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
     }
 
-    .hero::before {
-        display: none;
-    }
-
-    .hero-overlay {
+    .hero-glass-content {
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         position: relative;
         z-index: 2;
-        background: rgba(18, 18, 18, 0.7);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        padding: 60px;
-        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-        text-align: left;
+        text-align: center;
+        max-width: 600px;
     }
 
-    .hero-text h1 {
-        color: #ffffff;
-        margin-bottom: 1.5rem;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    .hero-glass-content h1 {
         font-size: 2.8rem;
-        line-height: 1.1;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
+        line-height: 1.2;
     }
 
-    .hero-text p {
+    .hero-glass-content p {
         font-size: 1.2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         color: #f0f0f0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
     }
 
     @media (max-width: 992px) {
-        .hero {
-            padding: 60px 5%;
-        }
-
-        .hero-container {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-
-        .hero-image {
-            max-height: 400px;
-        }
-
-        .hero-overlay {
-            padding: 40px;
-            text-align: center;
-        }
-
-        .hero-text h1 {
-            font-size: 2.3rem;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-        }
+        .hero-glass-box { min-height: 500px; }
+        .hero-glass-content { max-width: 400px; padding: 40px 30px; }
+        .hero-glass-content h1 { font-size: 2rem; }
     }
 
     @media (max-width: 768px) {
-        .hero {
-            padding: 50px 5%;
-            min-height: auto;
-        }
-
-        .hero-container {
-            gap: 30px;
-        }
-
-        .hero-image {
-            max-height: 300px;
-        }
-
-        .hero-overlay {
-            padding: 30px;
-        }
-
-        .hero-text h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-text p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero .cta-btn {
-            width: 100%;
-        }
+        .hero { padding: 50px 5%; }
+        .hero-glass-box { min-height: 450px; }
+        .hero-glass-content { max-width: 350px; padding: 35px 25px; }
+        .hero-glass-content h1 { font-size: 1.8rem; }
+        .hero-glass-content p { font-size: 0.95rem; }
     }
 
+    /* ABOUT SECTION - Image as background, text overlay */
+    .about-section {
+        min-height: 100vh;
+        background-color: var(--bg-dark);
+        padding: 100px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-container {
+        max-width: 1000px;
+        width: 100%;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .about-glass-box {
+        position: relative;
+        overflow: hidden;
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .about-glass-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .about-glass-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .about-glass-content {
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 600px;
+    }
+
+    .about-glass-content h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--gold-primary);
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
+    }
+
+    .about-glass-content p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+        color: #f5f5f5;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    @media (max-width: 992px) {
+        .about-glass-box { min-height: 500px; }
+        .about-glass-content { max-width: 400px; padding: 40px 30px; }
+        .about-glass-content h2 { font-size: 2.2rem; }
+    }
+
+    @media (max-width: 768px) {
+        .about-section { padding: 60px 5%; }
+        .about-glass-box { min-height: 450px; }
+        .about-glass-content { max-width: 350px; padding: 35px 25px; }
+        .about-glass-content h2 { font-size: 2rem; }
+        .about-glass-content p { font-size: 0.95rem; }
+    }
+
+    /* CTA BUTTON */
     .cta-btn {
         display: inline-block;
-        margin-top: 20px;
+        margin-top: 15px;
         padding: 15px 40px;
         background: var(--gold-gradient);
         color: #000;
@@ -404,166 +315,20 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         font-family: 'Montserrat', sans-serif;
     }
-
-    .cta-btn:hover,
-    .cta-btn:focus { 
+    .cta-btn:hover, .cta-btn:focus { 
         transform: translateY(-5px); 
         box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
         outline: none;
     }
 
-    /* ============================================
-       SECTIONS
-       ============================================ */
-    .section { 
-        padding: 80px 5%; 
-    }
+    /* SECTIONS */
+    .section { padding: 80px 5%; }
+    .section.dark-section { background: #0a0a0a; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .box { max-width: 1200px; margin: 0 auto; }
+    .section-subtext { font-size: 1.1rem; margin-top: 1rem; color: var(--text-muted); }
 
-    .section.dark-section {
-        background: #0a0a0a;
-    }
-
-    .container { 
-        max-width: 1200px; 
-        margin: 0 auto; 
-    }
-
-    .box {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .section-subtext {
-        font-size: 1.1rem;
-        margin-top: 1rem;
-        color: var(--text-muted);
-    }
-
-    /* ============================================
-       ABOUT SECTION - FATMA PHOTO CLEAR & VISIBLE
-       ============================================ */
-    .about-section {
-        min-height: 100vh;
-        background-color: var(--bg-dark);
-        position: relative;
-        padding: 80px 5%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .about-container {
-        position: relative;
-        max-width: 1100px;
-        width: 100%;
-        animation: fadeInUp 1s ease-out;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-    }
-
-    /* Fatma's clear photo on the left */
-    .about-image {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        max-height: 600px;
-        overflow: hidden;
-        border-radius: 20px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    }
-
-    .about-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    /* Glassmorphic text box on the right */
-    .about-glass {
-        background: rgba(18, 18, 18, 0.7);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        padding: 60px;
-        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-        position: relative;
-        z-index: 2;
-    }
-
-    .about-glass h2 {
-        font-size: 2.8rem;
-        margin-bottom: 1.5rem;
-        color: var(--gold-primary);
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    }
-
-    .about-glass p {
-        font-size: 1.15rem;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-        color: #f5f5f5;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    }
-
-    .about-glass .cta-btn {
-        margin-top: 1.5rem;
-    }
-
-    @media (max-width: 992px) {
-        .about-container {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-
-        .about-image {
-            max-height: 400px;
-        }
-
-        .about-glass {
-            padding: 40px;
-        }
-
-        .about-glass h2 {
-            font-size: 2.3rem;
-        }
-
-        .about-glass p {
-            font-size: 1.1rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .about-section {
-            padding: 60px 5%;
-        }
-
-        .about-container {
-            gap: 30px;
-        }
-
-        .about-image {
-            max-height: 300px;
-        }
-
-        .about-glass {
-            padding: 30px;
-        }
-
-        .about-glass h2 {
-            font-size: 2rem;
-        }
-
-        .about-glass p {
-            font-size: 1rem;
-        }
-    }
-
-    /* ============================================
-       SERVICES SECTION - OPTIMIZED WITH IMAGES
-       ============================================ */
+    /* SERVICES SECTION */
     .services-section {
         padding: 100px 5%;
         background: #0a0a0a;
@@ -582,7 +347,6 @@
         border-radius: 20px;
         overflow: hidden;
         cursor: pointer;
-        group: service-cards;
         transition: all 0.4s ease;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     }
@@ -601,22 +365,11 @@
         z-index: 0;
     }
 
-    /* Individual Service Card Backgrounds */
-    .service-card:nth-child(1)::before {
-        background-image: url('images/makeup1.webp');
-    }
+    .service-card:nth-child(1)::before { background-image: url('images/makeup1.webp'); }
+    .service-card:nth-child(2)::before { background-image: url('images/hairstyle.webp'); }
+    .service-card:nth-child(3)::before { background-image: url('images/henna.webp'); }
 
-    .service-card:nth-child(2)::before {
-        background-image: url('images/hairstyle.webp');
-    }
-
-    .service-card:nth-child(3)::before {
-        background-image: url('images/henna.webp');
-    }
-
-    .service-card:hover::before {
-        transform: scale(1.08);
-    }
+    .service-card:hover::before { transform: scale(1.08); }
 
     .service-card::after {
         content: '';
@@ -625,21 +378,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(to top, 
-            rgba(5, 5, 5, 0.95) 0%, 
-            rgba(5, 5, 5, 0.7) 30%, 
-            rgba(5, 5, 5, 0.3) 60%, 
-            rgba(5, 5, 5, 0) 100%);
+        background: linear-gradient(to top, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0.7) 30%, rgba(5, 5, 5, 0.3) 60%, rgba(5, 5, 5, 0) 100%);
         z-index: 1;
-        transition: all 0.4s ease;
-    }
-
-    .service-card:hover::after {
-        background: linear-gradient(to top, 
-            rgba(212, 175, 55, 0.2) 0%, 
-            rgba(5, 5, 5, 0.8) 40%, 
-            rgba(5, 5, 5, 0.4) 70%, 
-            rgba(5, 5, 5, 0) 100%);
     }
 
     .service-content {
@@ -653,11 +393,6 @@
         flex-direction: column;
         justify-content: flex-end;
         height: 100%;
-        transition: all 0.4s ease;
-    }
-
-    .service-card:hover .service-content {
-        padding-bottom: 60px;
     }
 
     .service-content h3 {
@@ -679,14 +414,8 @@
         margin-bottom: 2rem;
         color: #f0f0f0;
         text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
-    }
-
-    .service-card:hover .service-content p {
         opacity: 1;
-        transform: translateY(0);
+        display: block;
     }
 
     .service-link {
@@ -704,14 +433,7 @@
         transition: all 0.3s ease;
         font-family: 'Montserrat', sans-serif;
         font-size: 0.95rem;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
-    }
-
-    .service-card:hover .service-link {
         opacity: 1;
-        transform: translateY(0);
     }
 
     .service-link:hover { 
@@ -724,50 +446,41 @@
         box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
     }
 
-    /* ============================================
-       PORTFOLIO SECTION
-       ============================================ */
-    .portfolio-section {
-        padding: 100px 5%;
-        background: #050505;
+    @media (max-width: 768px) {
+        .services-grid { grid-template-columns: 1fr; }
+        .service-card { height: 450px; }
+        .service-content { padding: 35px 25px; }
     }
 
+    /* PORTFOLIO SECTION */
+    .portfolio-section { padding: 100px 5%; background: #050505; }
     .portfolio-hero {
-        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
-                    url('images/portfolio.webp') center/cover no-repeat;
-        padding: 180px 20px;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('images/portfolio.webp') center/cover no-repeat;
+        padding: 150px 20px;
         text-align: center;
         color: white;
         border-radius: 20px;
         margin: 60px 0;
-        position: relative;
-        min-height: 70vh;
+        min-height: 60vh;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .portfolio-hero .hero-overlay {
-        background: rgba(18, 18, 18, 0.7);
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(212, 175, 55, 0.3);
-        padding: 80px 60px;
-    }
-
     .portfolio-hero h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
         color: var(--gold-primary);
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+        max-width: 800px;
+        line-height: 1.3;
     }
 
-    /* Filter Buttons */
     .filter-buttons {
         display: flex;
         gap: 20px;
         justify-content: center;
         margin: 50px 0;
         flex-wrap: wrap;
-        padding: 0 20px;
     }
 
     .filter-buttons button {
@@ -785,28 +498,24 @@
         text-transform: uppercase;
     }
 
-    .filter-buttons button.active,
-    .filter-buttons button:hover {
+    .filter-buttons button.active, .filter-buttons button:hover {
         background: var(--gold-primary);
         color: #000;
         transform: translateY(-3px);
         box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
     }
 
-    /* Masonry Grid */
     .masonry {
         columns: 4;
         column-gap: 25px;
         max-width: 1400px;
         margin: 0 auto 100px;
-        padding: 0 20px;
     }
 
     .masonry-item {
         break-inside: avoid;
         margin-bottom: 25px;
         cursor: zoom-in;
-        transition: opacity 0.3s ease;
         position: relative;
         border-radius: 12px;
         overflow: hidden;
@@ -820,21 +529,13 @@
         transition: transform 0.3s ease;
     }
 
-    .masonry-item:hover img {
-        transform: scale(1.05);
-    }
+    .masonry-item:hover img { transform: scale(1.05); }
 
-    @media (max-width: 1200px) {
-        .masonry { columns: 3; }
-    }
-    @media (max-width: 900px) {
-        .masonry { columns: 2; }
-    }
-    @media (max-width: 600px) {
-        .masonry { columns: 1; }
-    }
+    @media (max-width: 1200px) { .masonry { columns: 3; } }
+    @media (max-width: 900px) { .masonry { columns: 2; } }
+    @media (max-width: 600px) { .masonry { columns: 1; } }
 
-    /* Modal */
+    /* MODAL */
     .modal {
         position: fixed;
         inset: 0;
@@ -847,10 +548,7 @@
         transition: opacity 0.3s ease;
     }
 
-    .modal.active { 
-        display: flex;
-        opacity: 1;
-    }
+    .modal.active { display: flex; opacity: 1; }
 
     .modal-content {
         position: relative;
@@ -867,57 +565,37 @@
         box-shadow: 0 20px 60px rgba(0,0,0,0.8);
     }
 
-    .modal-caption {
-        margin-top: 25px;
+    .modal-close, .modal-nav {
+        position: fixed;
+        z-index: 10000;
+        background: rgba(0,0,0,0.5);
         color: var(--gold-primary);
-        font-size: 1.2rem;
-        font-family: 'Playfair Display', serif;
-        padding: 0 20px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
     }
 
     .modal-close {
-        position: absolute;
-        top: -50px;
-        right: 0;
+        top: 20px;
+        right: 20px;
         font-size: 2.5rem;
-        color: var(--gold-primary);
-        cursor: pointer;
-        background: none;
-        border: none;
         width: 50px;
         height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
-        z-index: 10000;
-    }
-
-    .modal-close:hover {
-        transform: scale(1.2);
     }
 
     .modal-nav {
-        position: fixed;
         top: 50%;
         transform: translateY(-50%);
         font-size: 3.5rem;
-        color: var(--gold-primary);
-        cursor: pointer;
-        user-select: none;
-        background: rgba(0,0,0,0.5);
         width: 70px;
         height: 70px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
-        border: none;
-        z-index: 10000;
     }
 
     .modal-nav:hover {
@@ -929,23 +607,7 @@
     .modal-prev { left: 30px; }
     .modal-next { right: 30px; }
 
-    @media (max-width: 768px) {
-        .modal-nav {
-            width: 50px;
-            height: 50px;
-            font-size: 2.5rem;
-        }
-        .modal-prev { left: 15px; }
-        .modal-next { right: 15px; }
-        .modal-close {
-            top: -40px;
-            font-size: 2rem;
-        }
-    }
-
-    /* ============================================
-       TESTIMONIALS
-       ============================================ */
+    /* TESTIMONIALS */
     .testimonials-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -960,7 +622,6 @@
         border: 1px solid var(--glass-border);
         transition: all 0.3s ease;
         backdrop-filter: var(--blur);
-        min-height: 320px;
     }
 
     .testimonial-card:hover {
@@ -969,38 +630,13 @@
         box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
     }
 
-    .stars {
-        color: var(--gold-primary);
-        font-size: 1.4rem;
-        margin-bottom: 1.2rem;
-        letter-spacing: 4px;
-    }
+    .stars { color: var(--gold-primary); font-size: 1.4rem; margin-bottom: 1.2rem; letter-spacing: 4px; }
+    .testimonial-text { font-style: italic; margin-bottom: 1.8rem; line-height: 1.8; font-size: 1.1rem; }
+    .testimonial-author { color: var(--gold-primary); font-weight: 600; margin-bottom: 0.5rem; }
+    .testimonial-service { color: var(--text-muted); font-size: 0.95rem; }
 
-    .testimonial-text {
-        font-style: italic;
-        margin-bottom: 1.8rem;
-        line-height: 1.8;
-        font-size: 1.1rem;
-    }
-
-    .testimonial-author {
-        color: var(--gold-primary);
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        font-size: 1.1rem;
-    }
-
-    .testimonial-service {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-    }
-
-    /* ============================================
-       CONTACT FORM
-       ============================================ */
-    .contact-section {
-        padding: 100px 5%;
-    }
+    /* CONTACT FORM */
+    .contact-section { padding: 100px 5%; }
 
     .contact-form {
         max-width: 700px;
@@ -1021,11 +657,6 @@
         font-size: 1.05rem;
     }
 
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-    }
-
     .contact-form input:focus,
     .contact-form textarea:focus {
         outline: none;
@@ -1034,14 +665,9 @@
         box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
     }
 
-    .contact-form textarea {
-        resize: vertical;
-        min-height: 150px;
-    }
+    .contact-form textarea { resize: vertical; min-height: 150px; }
 
-    /* ============================================
-       FOOTER
-       ============================================ */
+    /* FOOTER */
     footer {
         background: #000;
         padding: 60px 0;
@@ -1049,14 +675,7 @@
         border-top: 1px solid #222;
     }
 
-    footer h3 {
-        color: var(--gold-primary);
-        margin-bottom: 1rem;
-    }
-
-    footer p {
-        margin-bottom: 1.5rem;
-    }
+    footer h3 { color: var(--gold-primary); margin-bottom: 1rem; }
 
     .social {
         margin-top: 2rem;
@@ -1073,19 +692,11 @@
         display: flex;
         align-items: center;
         gap: 0.8rem;
-        font-size: 1.05rem;
     }
 
-    .social a:hover,
-    .social a:focus {
-        color: #fff;
-        transform: translateY(-5px);
-        outline: none;
-    }
+    .social a:hover { color: #fff; transform: translateY(-5px); }
 
-    /* ============================================
-       FLOATING BUTTONS
-       ============================================ */
+    /* FLOATING BUTTONS */
     .floating-whatsapp {
         position: fixed;
         bottom: 30px;
@@ -1101,21 +712,16 @@
         transition: all 0.3s ease;
         text-decoration: none;
         box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-        animation: slideInUp 0.8s ease-out;
         border: none;
+        animation: slideInUp 0.8s ease-out;
     }
 
-    .floating-whatsapp:hover,
-    .floating-whatsapp:focus {
+    .floating-whatsapp:hover {
         transform: scale(1.2) rotate(-15deg);
         box-shadow: 0 12px 35px rgba(37, 211, 102, 0.7);
-        outline: none;
     }
 
-    .floating-whatsapp img {
-        width: 45px;
-        height: 45px;
-    }
+    .floating-whatsapp img { width: 45px; height: 45px; }
 
     #backToTopBtn {
         position: fixed;
@@ -1130,333 +736,42 @@
         font-size: 24px;
         padding: 15px 18px;
         cursor: pointer;
-        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
         transition: all 0.3s ease;
-        backdrop-filter: var(--blur);
     }
 
-    #backToTopBtn:hover,
-    #backToTopBtn:focus {
+    #backToTopBtn:hover {
         background: var(--gold-primary);
         color: #000;
         transform: translateY(-5px);
-        outline: none;
     }
 
-    /* ============================================
-       ANIMATIONS
-       ============================================ */
+    /* ANIMATIONS */
     @keyframes fadeInUp {
-        from { 
-            opacity: 0; 
-            transform: translateY(30px); 
-        }
-        to { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes slideInUp {
-        from {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ============================================
-       RESPONSIVE DESIGN
-       ============================================ */
-    @media (max-width: 1200px) {
-        h1 { 
-            font-size: 3rem; 
-        }
-
-        h2 { 
-            font-size: 2.2rem; 
-        }
-
-        .about-glass {
-            padding: 60px 40px;
-        }
-
-        .about-glass h2 {
-            font-size: 2.5rem;
-        }
-
-        .about-glass p {
-            font-size: 1.2rem;
-        }
-
-        .service-card {
-            height: 550px;
-        }
-
-        .service-content h3 {
-            font-size: 2.2rem;
-        }
-
-        .portfolio-hero h1 {
-            font-size: 3.5rem;
-        }
-    }
-
-    @media (max-width: 992px) {
-        .about-glass {
-            padding: 50px 30px;
-        }
-
-        .about-glass h2 {
-            font-size: 2.2rem;
-        }
-
-        .service-card {
-            height: 500px;
-        }
-
-        .service-content {
-            padding: 40px 30px;
-        }
-
-        .portfolio-hero {
-            padding: 120px 20px;
-        }
-    }
-
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-        h1 { 
-            font-size: 2.5rem; 
-        }
-
-        h2 { 
-            font-size: 2rem; 
-        }
-
-        .about-section {
-            min-height: 80vh;
-            padding: 60px 5%;
-        }
-
-        .about-section::before {
-            background: linear-gradient(90deg, 
-                var(--bg-dark) 0%, 
-                rgba(5, 5, 5, 0.95) 100%);
-        }
-
-        .about-glass {
-            padding: 40px 25px;
-        }
-
-        .about-glass h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-glass p {
-            font-size: 1.1rem;
-        }
-
-        .services-grid {
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .service-card {
-            height: 450px;
-            min-height: 400px;
-        }
-
-        .service-content {
-            padding: 35px 25px;
-        }
-
-        .service-content h3 {
-            font-size: 2rem;
-        }
-
-        .service-content p {
-            font-size: 1rem;
-        }
-
-        .nav-links {
-            position: absolute;
-            right: 0;
-            top: 70px;
-            background: #000;
-            flex-direction: column;
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-            display: none;
-            border-bottom: 1px solid var(--gold-primary);
-            gap: 15px;
-            z-index: 999;
-        }
-
-        .nav-links.active {
-            display: flex;
-        }
-
-        .hamburger {
-            display: flex;
-        }
-
-        .section {
-            padding: 60px 5%;
-        }
-
-        .cta-btn {
-            width: 100%;
-        }
-
-        .portfolio-hero {
-            padding: 80px 20px;
-        }
-
-        .portfolio-hero h1 {
-            font-size: 2.5rem;
-        }
-
-        .hero {
-            min-height: 500px;
-        }
-
-        .hero-overlay {
-            padding: 40px 25px;
-        }
-
-        .hero-text h1 {
-            font-size: 2.2rem;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-        }
-
-        #backToTopBtn {
-            width: 55px;
-            height: 55px;
-            padding: 12px;
-            bottom: 140px;
-            right: 20px;
-            font-size: 20px;
-        }
-
-        .floating-whatsapp {
-            width: 60px;
-            height: 60px;
-            bottom: 80px;
-            right: 20px;
-        }
-
-        .floating-whatsapp img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .testimonials-grid {
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
+        .nav-links { gap: 15px; }
+        .hamburger { display: flex; }
+        .nav-links { position: absolute; right: 0; top: 70px; background: #000; flex-direction: column; width: 100%; text-align: center; padding: 20px; display: none; border-bottom: 1px solid var(--gold-primary); gap: 15px; z-index: 999; }
+        .nav-links.active { display: flex; }
     }
 
     @media (max-width: 480px) {
-        h1 {
-            font-size: 1.8rem;
-        }
-
-        h2 {
-            font-size: 1.6rem;
-        }
-
-        .about-section {
-            min-height: 70vh;
-            padding: 40px 5%;
-        }
-
-        .about-glass {
-            padding: 30px 20px;
-        }
-
-        .about-glass h2 {
-            font-size: 1.8rem;
-        }
-
-        .about-glass p {
-            font-size: 1rem;
-        }
-
-        .services-grid {
-            gap: 20px;
-        }
-
-        .service-card {
-            height: 380px;
-        }
-
-        .service-content {
-            padding: 30px 20px;
-        }
-
-        .service-content h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-hero {
-            padding: 60px 15px;
-            border-radius: 15px;
-        }
-
-        .portfolio-hero h1 {
-            font-size: 2rem;
-        }
-
-        .hero-text h1 {
-            font-size: 1.8rem;
-        }
-
-        .hero-text p {
-            font-size: 1rem;
-        }
-
-        .section {
-            padding: 50px 5%;
-        }
-
-        .contact-form {
-            padding: 0 10px;
-            gap: 1.5rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 15px;
-        }
-
-        .testimonial-card {
-            padding: 25px 20px;
-        }
-
-        .filter-buttons {
-            gap: 10px;
-        }
-
-        .filter-buttons button {
-            padding: 12px 20px;
-            font-size: 0.85rem;
-        }
+        h1 { font-size: 1.8rem; }
+        h2 { font-size: 1.6rem; }
+        .section { padding: 50px 5%; }
+        .cta-btn { width: 100%; }
     }
 </style>
+```
 
 </head>
 <body>
@@ -1465,29 +780,24 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMSRSN4K" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
 
-
-<!-- Skip to Main Content Link -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
+```
 <!-- NAVIGATION -->
 <header>
     <nav class="container" id="navbar" role="navigation" aria-label="Main navigation">
         <a href="#home" class="logo" aria-label="Glam by Fatma Home">
             <img src="images/logo.webp" alt="Glam by Fatma Logo" width="150" height="50" />
         </a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks" role="menubar">
-            <li role="none"><a href="#home" role="menuitem">Home</a></li>
-            <li role="none"><a href="#about" role="menuitem">About</a></li>
-            <li role="none"><a href="#services" role="menuitem">Services</a></li>
-            <li role="none"><a href="#portfolio" role="menuitem">Portfolio</a></li>
-            <li role="none"><a href="#testimonials" role="menuitem">Reviews</a></li>
-            <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
-            <li role="none"><a href="#contact" class="cta-btn" role="menuitem">Book Now</a></li>
+            <li><a href="#home" role="menuitem">Home</a></li>
+            <li><a href="#about" role="menuitem">About</a></li>
+            <li><a href="#services" role="menuitem">Services</a></li>
+            <li><a href="#portfolio" role="menuitem">Portfolio</a></li>
+            <li><a href="#testimonials" role="menuitem">Reviews</a></li>
+            <li><a href="#contact" role="menuitem">Contact</a></li>
+            <li><a href="#contact" class="cta-btn" role="menuitem">Book Now</a></li>
         </ul>
     </nav>
 </header>
@@ -1496,63 +806,65 @@
 <main id="main-content">
     <!-- HERO SECTION -->
     <section class="hero" id="home" aria-label="Hero section">
-        <div class="hero-container">
-            <div class="hero-image" data-aos="fade-up">
-                <img src="images/portfolio.webp" alt="Glam by Fatma Portfolio" width="500" height="600" />
-            </div>
-            <div class="hero-overlay" data-aos="fade-up">
-                <div class="hero-text">
+        <div class="hero-container" data-aos="fade-up">
+            <div class="hero-glass-box">
+                <div class="hero-glass-image">
+                    <img src="images/portfolio.webp" alt="Glam by Fatma Portfolio" width="500" height="600" />
+                </div>
+                <div class="hero-glass-content">
                     <h1>Fatma Elevates Your Beauty — With Grace, Passion, and a Gifted Touch</h1>
                     <p>Bridal Glam, Hair Styling & Henna – Personalized for You</p>
-                    <a href="#contact" class="cta-btn" aria-label="Book your appointment now">Book Now</a>
+                    <a href="#contact" class="cta-btn">Book Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION - FULLY OPTIMIZED -->
-    <section class="about-section" id="about" data-aos="fade-up" aria-label="About Fatma">
-        <div class="about-container">
-            <div class="about-image" data-aos="fade-up">
-                <img src="images/fatma.png" alt="Fatma - Beauty Artist" width="500" height="600" />
-            </div>
-            <div class="about-glass" data-aos="fade-up">
-                <h2>Meet Fatma</h2>
-                <p><strong style="color: var(--gold-primary); font-size: 1.2rem;">A Naturally Gifted Beauty Artist</strong></p>
-                <p>Fatma is a talented makeup artist, hairstylist, and henna designer whose gift is more than skill — it's a calling. Blessed with a natural flair for beauty, she refined her artistry through formal training, building on the raw talent she was born with. Her clients trust her eye, her hands, and her heart — because Fatma doesn't just do makeup; she brings out your glow.</p>
-                <a href="https://wa.me/254114065922" class="cta-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with Fatma on WhatsApp">Chat with Fatma</a>
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about" aria-label="About Fatma">
+        <div class="about-container" data-aos="fade-up">
+            <div class="about-glass-box">
+                <div class="about-glass-image">
+                    <img src="images/fatma.png" alt="Fatma - Beauty Artist" width="500" height="600" />
+                </div>
+                <div class="about-glass-content">
+                    <h2>Meet Fatma</h2>
+                    <p><strong style="color: var(--gold-primary);">A Naturally Gifted Beauty Artist</strong></p>
+                    <p>Fatma is a talented makeup artist, hairstylist, and henna designer whose gift is more than skill — it's a calling. Blessed with a natural flair for beauty, she refined her artistry through formal training, building on the raw talent she was born with. Her clients trust her eye, her hands, and her heart — because Fatma doesn't just do makeup; she brings out your glow.</p>
+                    <a href="https://wa.me/254114065922" class="cta-btn" target="_blank" rel="noopener noreferrer">Chat with Fatma</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION - FULLY OPTIMIZED -->
+    <!-- SERVICES SECTION -->
     <section id="services" class="services-section" data-aos="fade-up" aria-label="Our Services">
         <div class="container">
             <h2 data-aos="fade-up">Our Services</h2>
             <p class="section-subtext" data-aos="fade-up">Expert beauty transformations for weddings, shoots, and celebrations.</p>
 
             <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100" role="article">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-content">
                         <h3>Makeup</h3>
                         <p>Bridal, editorial, and glam looks designed to enhance your beauty and last all day.</p>
-                        <a href="#contact" class="service-link" aria-label="Learn more about makeup services and book">Learn More →</a>
+                        <a href="#contact" class="service-link">Learn More →</a>
                     </div>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200" role="article">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-content">
                         <h3>Hair Styling</h3>
                         <p>Elegant updos, curls, and custom styles tailored to your event and personality.</p>
-                        <a href="#contact" class="service-link" aria-label="Learn more about hair styling services and book">Learn More →</a>
+                        <a href="#contact" class="service-link">Learn More →</a>
                     </div>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300" role="article">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-content">
                         <h3>Henna Art</h3>
                         <p>Intricate, cultural henna designs using safe, natural henna for all occasions.</p>
-                        <a href="#contact" class="service-link" aria-label="Learn more about henna art services and book">Learn More →</a>
+                        <a href="#contact" class="service-link">Learn More →</a>
                     </div>
                 </div>
             </div>
@@ -1567,18 +879,14 @@
         </div>
 
         <div class="portfolio-hero">
-            <div class="hero-overlay" data-aos="fade-up">
-                <h1>Our Customers, Our Pride – Discover the Glam Moments</h1>
-            </div>
+            <h1>Our Customers, Our Pride – Discover the Glam Moments</h1>
         </div>
 
-        <!-- MASONRY GALLERY WITH FILTERS -->
-        <section class="section" id="gallery" aria-label="Gallery Section">
+        <section class="section" id="gallery">
             <div class="box">
                 <h2 data-aos="fade-up">Portfolio Gallery</h2>
                 <p class="section-subtext" data-aos="fade-up">Browse our beautiful portfolio by category or view all.</p>
 
-                <!-- FILTER BUTTONS -->
                 <div class="filter-buttons" data-aos="fade-up">
                     <button class="active" data-filter="all">All</button>
                     <button data-filter="makeup">Makeup</button>
@@ -1586,244 +894,116 @@
                     <button data-filter="henna">Henna</button>
                 </div>
 
-                <!-- MASONRY GRID -->
                 <div class="masonry" id="masonry">
-                    <!-- Makeup Images -->
-                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="100">
-                        <img src="images/makeup1.webp" loading="lazy" 
-                             data-caption="Bridal glam makeup by Glam by Fatma" 
-                             alt="Bridal makeup look" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="150">
-                        <img src="images/IMG_5194.webp" loading="lazy" 
-                             data-caption="Soft glam bridal look" 
-                             alt="Soft glam makeup" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="200">
-                        <img src="images/IMG_5252.webp" loading="lazy" 
-                             data-caption="Luxury makeup finish" 
-                             alt="Luxury makeup" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="250">
-                        <img src="images/portfolio2.webp" loading="lazy" 
-                             data-caption="Classic bridal beauty" 
-                             alt="Classic bridal makeup" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="300">
-                        <img src="images/portfolio10.webp" loading="lazy" 
-                             data-caption="Editorial glam look" 
-                             alt="Editorial makeup" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="350">
-                        <img src="images/portfolio14.webp" loading="lazy" 
-                             data-caption="Evening glam makeup" 
-                             alt="Evening makeup" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="400">
-                        <img src="images/portfolio15.webp" loading="lazy" 
-                             data-caption="Natural bridal makeup" 
-                             alt="Natural makeup" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="450">
-                        <img src="images/portfolio24.webp" loading="lazy" 
-                             data-caption="Complete bridal look" 
-                             alt="Complete bridal makeup" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item makeup" data-aos="fade-up" data-aos-delay="500">
-                        <img src="images/portfolio26.webp" loading="lazy" 
-                             data-caption="Professional makeup artistry" 
-                             alt="Professional makeup" width="400" height="500">
-                    </div>
-
-                    <!-- Hair Images -->
-                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="100">
-                        <img src="images/hairstyle.webp" loading="lazy" 
-                             data-caption="Elegant hair styling for special occasions" 
-                             alt="Hair styling" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="150">
-                        <img src="images/portfolio1.webp" loading="lazy" 
-                             data-caption="Styled curls with volume" 
-                             alt="Curl hairstyle" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="200">
-                        <img src="images/portfolio11.webp" loading="lazy" 
-                             data-caption="Elegant updo hairstyle" 
-                             alt="Updo hairstyle" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="250">
-                        <img src="images/portfolio12.webp" loading="lazy" 
-                             data-caption="Wedding hairstyle with accessories" 
-                             alt="Wedding hairstyle" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="300">
-                        <img src="images/portfolio16.webp" loading="lazy" 
-                             data-caption="Braided hairstyle" 
-                             alt="Braided hair" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="350">
-                        <img src="images/weddingparty.webp" loading="lazy" 
-                             data-caption="Wedding party styling" 
-                             alt="Wedding party hair" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="400">
-                        <img src="images/weddingparty2.webp" loading="lazy" 
-                             data-caption="Bridal group styling" 
-                             alt="Group hairstyling" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="450">
-                        <img src="images/portfolio25.webp" loading="lazy" 
-                             data-caption="Special occasion hairstyle" 
-                             alt="Special occasion hair" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item hair" data-aos="fade-up" data-aos-delay="500">
-                        <img src="images/portfolio27.webp" loading="lazy" 
-                             data-caption="Hairstyling for photoshoots" 
-                             alt="Photoshoot hair" width="400" height="500">
-                    </div>
-
-                    <!-- Henna Images -->
-                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="100">
-                        <img src="images/henna.webp" loading="lazy" 
-                             data-caption="Intricate henna artistry" 
-                             alt="Henna design" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="150">
-                        <img src="images/portfolio9.webp" loading="lazy" 
-                             data-caption="Traditional henna details" 
-                             alt="Traditional henna" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="200">
-                        <img src="images/portfolio19.webp" loading="lazy" 
-                             data-caption="Beautiful henna patterns" 
-                             alt="Henna patterns" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="250">
-                        <img src="images/portfolio20.webp" loading="lazy" 
-                             data-caption="Detailed henna artwork" 
-                             alt="Detailed henna" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="300">
-                        <img src="images/portfolio21.webp" loading="lazy" 
-                             data-caption="Modern henna designs" 
-                             alt="Modern henna" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="350">
-                        <img src="images/portfolio23.webp" loading="lazy" 
-                             data-caption="Bridal henna application" 
-                             alt="Bridal henna" width="400" height="500">
-                    </div>
-
-                    <div class="masonry-item henna" data-aos="fade-up" data-aos-delay="400">
-                        <img src="images/portfolio28.webp" loading="lazy" 
-                             data-caption="Artistic henna creations" 
-                             alt="Artistic henna" width="400" height="500">
-                    </div>
+                    <div class="masonry-item makeup"><img src="images/makeup1.webp" loading="lazy" data-caption="Bridal glam makeup" alt="Makeup" width="400" height="500"></div>
+                    <div class="masonry-item makeup"><img src="images/IMG_5194.webp" loading="lazy" data-caption="Soft glam bridal" alt="Makeup" width="400" height="500"></div>
+                    <div class="masonry-item makeup"><img src="images/IMG_5252.webp" loading="lazy" data-caption="Luxury finish" alt="Makeup" width="400" height="500"></div>
+                    <div class="masonry-item makeup"><img src="images/portfolio2.webp" loading="lazy" data-caption="Classic bridal" alt="Makeup" width="400" height="500"></div>
+                    <div class="masonry-item makeup"><img src="images/portfolio10.webp" loading="lazy" data-caption="Editorial glam" alt="Makeup" width="400" height="500"></div>
+                    <div class="masonry-item makeup"><img src="images/portfolio14.webp" loading="lazy" data-caption="Evening glam" alt="Makeup" width="400" height="500"></div>
+                    <div class="masonry-item makeup"><img src="images/portfolio15.webp" loading="lazy" data-caption="Natural bridal" alt="Makeup" width="400" height="500"></div>
+                    <div class="masonry-item makeup"><img src="images/portfolio24.webp" loading="lazy" data-caption="Complete look" alt="Makeup" width="400" height="500"></div>
+                    <div class="masonry-item makeup"><img src="images/portfolio26.webp" loading="lazy" data-caption="Professional artistry" alt="Makeup" width="400" height="500"></div>
+                    
+                    <div class="masonry-item hair"><img src="images/hairstyle.webp" loading="lazy" data-caption="Elegant styling" alt="Hair" width="400" height="500"></div>
+                    <div class="masonry-item hair"><img src="images/portfolio1.webp" loading="lazy" data-caption="Styled curls" alt="Hair" width="400" height="500"></div>
+                    <div class="masonry-item hair"><img src="images/portfolio11.webp" loading="lazy" data-caption="Elegant updo" alt="Hair" width="400" height="500"></div>
+                    <div class="masonry-item hair"><img src="images/portfolio12.webp" loading="lazy" data-caption="Wedding style" alt="Hair" width="400" height="500"></div>
+                    <div class="masonry-item hair"><img src="images/portfolio16.webp" loading="lazy" data-caption="Braided style" alt="Hair" width="400" height="500"></div>
+                    <div class="masonry-item hair"><img src="images/weddingparty.webp" loading="lazy" data-caption="Party styling" alt="Hair" width="400" height="500"></div>
+                    <div class="masonry-item hair"><img src="images/weddingparty2.webp" loading="lazy" data-caption="Group styling" alt="Hair" width="400" height="500"></div>
+                    <div class="masonry-item hair"><img src="images/portfolio25.webp" loading="lazy" data-caption="Occasion hair" alt="Hair" width="400" height="500"></div>
+                    <div class="masonry-item hair"><img src="images/portfolio27.webp" loading="lazy" data-caption="Photoshoot hair" alt="Hair" width="400" height="500"></div>
+                    
+                    <div class="masonry-item henna"><img src="images/henna.webp" loading="lazy" data-caption="Intricate henna" alt="Henna" width="400" height="500"></div>
+                    <div class="masonry-item henna"><img src="images/portfolio9.webp" loading="lazy" data-caption="Traditional henna" alt="Henna" width="400" height="500"></div>
+                    <div class="masonry-item henna"><img src="images/portfolio19.webp" loading="lazy" data-caption="Henna patterns" alt="Henna" width="400" height="500"></div>
+                    <div class="masonry-item henna"><img src="images/portfolio20.webp" loading="lazy" data-caption="Detailed henna" alt="Henna" width="400" height="500"></div>
+                    <div class="masonry-item henna"><img src="images/portfolio21.webp" loading="lazy" data-caption="Modern henna" alt="Henna" width="400" height="500"></div>
+                    <div class="masonry-item henna"><img src="images/portfolio23.webp" loading="lazy" data-caption="Bridal henna" alt="Henna" width="400" height="500"></div>
+                    <div class="masonry-item henna"><img src="images/portfolio28.webp" loading="lazy" data-caption="Artistic henna" alt="Henna" width="400" height="500"></div>
                 </div>
             </div>
         </section>
     </section>
 
-    <!-- INSTAGRAM-STYLE MODAL -->
+    <!-- MODAL -->
     <div class="modal" id="modal">
-        <button class="modal-nav modal-prev" aria-label="Previous image">&#10094;</button>
-        
+        <button class="modal-nav modal-prev">❮</button>
         <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <button class="modal-close">×</button>
             <img src="" alt="">
-            <div class="modal-caption"></div>
+            <div style="margin-top: 25px; color: var(--gold-primary); font-size: 1.2rem;"></div>
         </div>
-        
-        <button class="modal-nav modal-next" aria-label="Next image">&#10095;</button>
+        <button class="modal-nav modal-next">❯</button>
     </div>
 
     <!-- TESTIMONIALS SECTION -->
-    <section id="testimonials" class="section" data-aos="fade-up" aria-label="Customer Testimonials">
+    <section id="testimonials" class="section" data-aos="fade-up" aria-label="Testimonials">
         <div class="box">
             <h2 data-aos="fade-up">What Our Clients Say</h2>
-            <p class="section-subtext" data-aos="fade-up">Real reviews from real clients who experienced the Glam by Fatma difference.</p>
+            <p class="section-subtext" data-aos="fade-up">Real reviews from clients who experienced Glam by Fatma.</p>
 
-            <div class="testimonials-grid" role="list">
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100" role="listitem">
-                    <div class="stars" aria-label="5 stars">★★★★★</div>
-                    <p class="testimonial-text">"Fatma made me feel like the most beautiful bride on my wedding day. Every detail was absolutely perfect, and her attention to care was unmatched."</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Fatma made me feel beautiful on my wedding day. Every detail was perfect."</p>
                     <div class="testimonial-author">Aisha M.</div>
                     <div class="testimonial-service">Bridal Package</div>
                 </div>
 
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200" role="listitem">
-                    <div class="stars" aria-label="5 stars">★★★★★</div>
-                    <p class="testimonial-text">"The transformation was incredible! I walked out feeling completely confident and gorgeous. Fatma has magic in her hands and a genuine passion for her craft."</p>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The transformation was incredible! Fatma has magic in her hands and genuine passion."</p>
                     <div class="testimonial-author">Leila K.</div>
                     <div class="testimonial-service">Hair & Makeup</div>
                 </div>
 
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300" role="listitem">
-                    <div class="stars" aria-label="5 stars">★★★★★</div>
-                    <p class="testimonial-text">"Professional, creative, and absolutely talented. The henna work was stunning, and the makeup complemented it perfectly. Highly recommended for any occasion!"</p>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Professional, creative, and absolutely talented. Highly recommended!"</p>
                     <div class="testimonial-author">Noor S.</div>
-                    <div class="testimonial-service">Complete Beauty Package</div>
+                    <div class="testimonial-service">Complete Package</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="contact-section" data-aos="fade-up" aria-label="Contact Form">
+    <section id="contact" class="contact-section" data-aos="fade-up" aria-label="Contact">
         <div class="box">
             <h2 data-aos="fade-up">Ready to Book Your Glam?</h2>
-            <p class="section-subtext" data-aos="fade-up">Tell us your vision, date, and location — and let Glam by Fatma bring it to life beautifully.</p>
+            <p class="section-subtext" data-aos="fade-up">Tell us your vision, date, and location.</p>
 
-            <form class="contact-form" action="https://formspree.io/f/xvgqzwke" method="POST" data-aos="fade-up" id="bookingForm">
-                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
-                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email" />
-                <input type="tel" name="phone" placeholder="Phone Number (e.g. +254...)" required aria-label="Your Phone Number" />
-                <input type="text" name="service" placeholder="Service (e.g. Bridal Makeup)" required aria-label="Desired Service" />
-                <input type="date" name="date" required aria-label="Event Date" />
-                <input type="text" name="location" placeholder="Event Location" required aria-label="Event Location" />
-                <textarea name="details" placeholder="Tell us more about your request..." required aria-label="Additional Details"></textarea>
+            <form class="contact-form" action="https://formspree.io/f/xvgqzwke" method="POST" id="bookingForm">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <input type="tel" name="phone" placeholder="Phone Number (e.g. +254...)" required />
+                <input type="text" name="service" placeholder="Service (e.g. Bridal Makeup)" required />
+                <input type="date" name="date" required />
+                <input type="text" name="location" placeholder="Event Location" required />
+                <textarea name="details" placeholder="Tell us more..." required></textarea>
                 <input type="hidden" name="_next" value="https://fatmaglam.com/thankyou.html" />
-                <button type="submit" class="cta-btn" id="submitBtn" aria-label="Send booking request">Send Order</button>
+                <button type="submit" class="cta-btn" id="submitBtn">Send Order</button>
             </form>
 
             <div style="text-align: center; margin-top: 2rem;">
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Or reach out directly:</p>
-                <a href="https://wa.me/254114065922" target="_blank" class="cta-btn" rel="noopener noreferrer" aria-label="Chat with Fatma on WhatsApp" id="whatsappBtn">Chat with Fatma on WhatsApp</a>
+                <a href="https://wa.me/254114065922" target="_blank" class="cta-btn" rel="noopener noreferrer">Chat on WhatsApp</a>
             </div>
         </div>
     </section>
 </main>
 
 <!-- FOOTER -->
-<footer class="section dark-section" aria-label="Footer">
+<footer class="section dark-section">
     <div class="container">
         <h3>GLAM by Fatma</h3>
         <p>Elevating beauty through artistry, passion, and precision.</p>
 
         <div class="social">
-            <a href="https://www.instagram.com/glam.by.fatma" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram" id="instagramBtn">Instagram</a>
-            <a href="https://wa.me/254114065922" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" id="footerWhatsappBtn">
+            <a href="https://www.instagram.com/glam.by.fatma" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://wa.me/254114065922" target="_blank" rel="noopener noreferrer">
                 <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" height="20" />
                 WhatsApp
             </a>
@@ -1834,70 +1014,41 @@
 </footer>
 
 <!-- Floating WhatsApp -->
-<a href="https://wa.me/254114065922" class="floating-whatsapp" aria-label="Chat on WhatsApp" id="floatingWhatsappBtn">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" width="40" height="40" />
+<a href="https://wa.me/254114065922" class="floating-whatsapp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp" width="40" height="40" />
 </a>
 
-<!-- Back to Top Button -->
-<button id="backToTopBtn" title="Go to top" aria-label="Back to top">↑</button>
+<!-- Back to Top -->
+<button id="backToTopBtn" title="Go to top">↑</button>
 
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
-    // Initialize AOS
-    AOS.init({ 
-        duration: 800, 
-        once: true,
-        easing: 'ease-in-out'
-    });
+    AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
 
-    // ==================== PORTFOLIO FILTERING ====================
-    const filterButtons = document.querySelectorAll('.filter-buttons button');
-    const masonryItems = document.querySelectorAll('.masonry-item');
-
-    filterButtons.forEach(btn => {
+    // Portfolio Filtering
+    document.querySelectorAll('.filter-buttons button').forEach(btn => {
         btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
             const filter = btn.dataset.filter;
-            
-            masonryItems.forEach(item => {
-                if (filter === 'all' || item.classList.contains(filter)) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                    }, 10);
-                } else {
-                    item.style.opacity = '0';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
+            document.querySelectorAll('.masonry-item').forEach(item => {
+                item.style.display = (filter === 'all' || item.classList.contains(filter)) ? 'block' : 'none';
             });
         });
     });
 
-    // ==================== MODAL GALLERY ====================
+    // Modal Gallery
     const modal = document.getElementById('modal');
-    const modalImg = modal.querySelector('img');
-    const modalCaption = modal.querySelector('.modal-caption');
-    const modalClose = modal.querySelector('.modal-close');
-    const modalPrev = modal.querySelector('.modal-prev');
-    const modalNext = modal.querySelector('.modal-next');
-    
     const masonryImages = Array.from(document.querySelectorAll('.masonry-item img'));
     let currentImageIndex = 0;
 
     function openModal(index) {
         currentImageIndex = index;
         const img = masonryImages[index];
-        
-        modalImg.src = img.src;
-        modalImg.alt = img.alt;
-        modalCaption.textContent = img.dataset.caption || '';
-        
+        modal.querySelector('img').src = img.src;
+        modal.querySelector('img').alt = img.alt;
+        modal.querySelector('div:last-child').textContent = img.dataset.caption || '';
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -1911,227 +1062,67 @@
         img.addEventListener('click', () => openModal(index));
     });
 
-    modalClose.addEventListener('click', () => {
+    modal.querySelector('.modal-close').addEventListener('click', () => {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
 
-    modalPrev.addEventListener('click', () => navigateModal(-1));
-    modalNext.addEventListener('click', () => navigateModal(1));
-
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
+    modal.querySelector('.modal-prev').addEventListener('click', () => navigateModal(-1));
+    modal.querySelector('.modal-next').addEventListener('click', () => navigateModal(1));
 
     document.addEventListener('keydown', (e) => {
         if (!modal.classList.contains('active')) return;
-        
-        switch(e.key) {
-            case 'Escape':
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-                break;
-            case 'ArrowLeft':
-                navigateModal(-1);
-                break;
-            case 'ArrowRight':
-                navigateModal(1);
-                break;
-        }
+        if (e.key === 'Escape') { modal.classList.remove('active'); document.body.style.overflow = 'auto'; }
+        if (e.key === 'ArrowLeft') navigateModal(-1);
+        if (e.key === 'ArrowRight') navigateModal(1);
     });
 
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    modal.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-
-    modal.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
-        
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-                navigateModal(1);
-            } else {
-                navigateModal(-1);
-            }
-        }
-    }
-
-    // ==================== NAVIGATION ====================
+    // Navigation
     window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        updateActiveNav();
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // ==================== HAMBURGER MENU ====================
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-
-    hamburger.addEventListener('click', () => {
-        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded', !isExpanded);
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('navLinks').classList.toggle('active');
     });
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            navLinks.classList.remove('active');
-        });
-    });
-
-    // ==================== ACTIVE NAV LINK ====================
-    function updateActiveNav() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // ==================== BACK TO TOP ====================
-    const backToTopBtn = document.getElementById("backToTopBtn");
-
+    // Back to Top
     window.addEventListener('scroll', () => {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            backToTopBtn.style.display = "block";
-        } else {
-            backToTopBtn.style.display = "none";
-        }
+        document.getElementById('backToTopBtn').style.display = window.scrollY > 200 ? 'block' : 'none';
     });
 
-    backToTopBtn.addEventListener("click", () => {
+    document.getElementById('backToTopBtn').addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // ==================== FORM SUBMISSION ====================
-    const bookingForm = document.getElementById('bookingForm');
-    const submitBtn = document.getElementById('submitBtn');
-
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            try {
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: new FormData(this),
-                    headers: { 'Accept': 'application/json' }
-                });
-                
-                if (response.ok) {
-                    submitBtn.textContent = '✓ Sent Successfully!';
-                    submitBtn.style.background = '#25D366';
-                    this.reset();
-                    
-                    if (window.dataLayer) {
-                        window.dataLayer.push({
-                            'event': 'form_submission',
-                            'form_type': 'booking'
-                        });
-                    }
-                    
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.style.background = '';
-                        submitBtn.disabled = false;
-                    }, 3000);
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                submitBtn.textContent = '✗ Error - Try Again';
-                submitBtn.disabled = false;
+    // Form Submission
+    document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        try {
+            const response = await fetch(e.target.action, {
+                method: 'POST',
+                body: new FormData(e.target),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                btn.textContent = '✓ Sent!';
+                btn.style.background = '#25D366';
+                e.target.reset();
                 setTimeout(() => {
-                    submitBtn.textContent = originalText;
+                    btn.textContent = 'Send Order';
+                    btn.style.background = '';
+                    btn.disabled = false;
                 }, 3000);
             }
-        });
-    }
-
-    // ==================== ANALYTICS EVENTS ====================
-    document.getElementById('whatsappBtn')?.addEventListener('click', () => {
-        if (window.dataLayer) {
-            window.dataLayer.push({
-                'event': 'whatsapp_click',
-                'button_location': 'contact_section'
-            });
-        }
-    });
-
-    document.getElementById('floatingWhatsappBtn')?.addEventListener('click', () => {
-        if (window.dataLayer) {
-            window.dataLayer.push({
-                'event': 'whatsapp_click',
-                'button_location': 'floating_button'
-            });
-        }
-    });
-
-    document.getElementById('instagramBtn')?.addEventListener('click', () => {
-        if (window.dataLayer) {
-            window.dataLayer.push({
-                'event': 'social_click',
-                'platform': 'instagram'
-            });
-        }
-    });
-
-    // ==================== LAZY LOADING OPTIMIZATION ====================
-    document.addEventListener('DOMContentLoaded', function() {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        
-        if ('loading' in HTMLImageElement.prototype) {
-            images.forEach(img => {
-                if (img.complete) {
-                    img.classList.add('loaded');
-                } else {
-                    img.addEventListener('load', function() {
-                        this.classList.add('loaded');
-                    });
-                    img.addEventListener('error', function() {
-                        console.warn('Failed to load image:', this.src);
-                    });
-                }
-            });
+        } catch (error) {
+            btn.textContent = '✗ Error';
         }
     });
 </script>
+```
 
 </body>
 </html>
